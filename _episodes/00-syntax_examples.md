@@ -66,3 +66,31 @@ To create an un-numbered list in Markdown, do this:
 * list
 ~~~
 {: .source}
+
+## Tables - To insert a small table into your episode, do this:
+
+| Category | Item | 
+|--------- | ---- |
+| Food     | Sandwich |
+| Drink    | Tea | 
+| Food     | Apple |
+
+
+~~~
+| Category | Item | 
+|--------- | ---- |
+| Food     | Sandwich |
+| Drink    | Tea | 
+| Food     | Apple |
+~~~
+{: .source}
+
+## Images or figures
+
+![](../fig/fig_one.svg)
+
+~~~
+![Figure Description](../fig/figure_file_name.svg)
+~~~
+{: .source}
+
