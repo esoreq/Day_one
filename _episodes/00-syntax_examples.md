@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "syntax_examples"
 teaching: 0
 exercises: 0
 questions:
@@ -50,8 +50,19 @@ To create text paragraphs in Markdown, just type as you normally would!
 
 1. Lists - To create a numbered list in Markdown, do this:
 
-```markdown
+~~~
 1. A
 1. numbered
 1. list
-```
+~~~
+{: .source}
+
+Hint: You can use sequential numbers if you want, but it’s easier to update the list later if you use only 1s. Markdown will create the sequence for you.
+
+To create an un-numbered list in Markdown, do this:
+~~~
+* An
+* unnumbered
+* list
+~~~
+{: .source}
