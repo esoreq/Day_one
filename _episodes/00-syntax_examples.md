@@ -194,3 +194,5 @@ Exercise solutions are nested within the blockquote for that exercise, as shown 
 {: .challenge}
 
 {% include links.md %}
+
+[slides](../slides/slides/index.html)
