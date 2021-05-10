@@ -195,4 +195,4 @@ Exercise solutions are nested within the blockquote for that exercise, as shown 
 
 {% include links.md %}
 
-[slides](../slides/slides/index.html)
+[slides](../slides/index.html)
