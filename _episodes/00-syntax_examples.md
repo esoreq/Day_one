@@ -192,3 +192,5 @@ Exercise solutions are nested within the blockquote for that exercise, as shown 
 > > This is the body of the solution.
 > {: .solution}
 {: .challenge}
+
+{% include links.md %}
