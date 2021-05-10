@@ -171,3 +171,24 @@ Which looks like this
 > text
 > text
 {: .solution}
+
+
+> ## keypoints test
+>
+> - text
+> - text
+> - text
+{: .keypoints}
+
+## Nested blockquote
+Exercise solutions are nested within the blockquote for that exercise, as shown below:
+
+
+> ## challenge
+>
+> This is the body of the challenge.
+> > ## Solution 
+> >
+> > This is the body of the solution.
+> {: .solution}
+{: .challenge}

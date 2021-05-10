@@ -1,9 +1,12 @@
 ---
 layout: lesson
-root: .  # Is the only page that doesn't follow the pattern /:path/index.html
-permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
+root: .  
+permalink: index.html  
 ---
-FIXME: home page introduction
+
+The best way to learn how to program is to do something useful,
+so this introduction to Python is built around a common scientific task:
+**data analysis**.
 
 <!-- this is an html comment -->
 
