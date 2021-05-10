@@ -115,4 +115,59 @@ This is a genral error tag
 {: .error}
 
 
-Special blockquotes - Exercises, solutions, helpful tips, and a few other types of special information are formatted as blockquotes within the episode file. Each blockquote has the same general structure, but ends with a different tag. The ending tag determines how the blockquote will appear on the lesson webpage. The general structure of a blockquote is:
+# Special blockquotes - 
+Exercises, solutions, helpful tips, and a few other types of special information are formatted as blockquotes within the episode file. Each blockquote has the same general structure, but ends with a different tag. The ending tag determines how the blockquote will appear on the lesson webpage. The general structure of a blockquote is:
+
+~~~
+> ## Title
+>
+> text
+> text
+> text
+{: .callout}
+~~~
+
+Which looks like this 
+
+> ## Title
+>
+> text
+> text
+> text
+{: .callout}
+
+# There are different blockquotes tags
+
+- `{: .callout}` for sharing an aside or comment. Use sparingly.
+- `{: .challenge}` for an exercise.
+- `{: .discussion}` for a discussion question.
+- `{: .solution}` for an exercise solution.
+
+
+> ## callout
+>
+> text
+> text
+> text
+{: .callout}
+
+> ## challenge
+>
+> text
+> text
+> text
+{: .challenge}
+
+> ## discussion
+>
+> text
+> text
+> text
+{: .discussion}
+
+> ## solution
+>
+> text
+> text
+> text
+{: .solution}
