@@ -9,7 +9,7 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-
+All of this is based on the following [website](https://carpentries.github.io/curriculum-development/developing-content.html)
 
 # Episode files
 The majority of a lessons content is in its episode files. Episode files are stored in the _episodes/ folder within your lesson repo (or in _episodes_rmd/ for lessons written in R). Episode file names must start with a two-digit identifier number (e.g. 01) followed by a short descriptive name, separated by a dash (-). For example 02-loop.md, 03-lists.md. The numeric identifier is used to place your episode files in the correct sequence within the lesson. Episode files are written in Markdown (more on that in a moment) or RMarkdown.
@@ -94,3 +94,25 @@ To create an un-numbered list in Markdown, do this:
 ~~~
 {: .source}
 
+## Code chunks 
+
+Code chunks that learners should type out with the Instructor should use the {: .source} tag as shown above. Chunks that show expected output should use the {: .output} tag. Chunks that show an expected error message should use the {: .error} tag.
+
+~~~
+This is a genral source tag
+~~~
+{: .source}
+
+~~~
+This is a genral output tag
+~~~
+{: .output}
+
+
+~~~
+This is a genral error tag
+~~~
+{: .error}
+
+
+Special blockquotes - Exercises, solutions, helpful tips, and a few other types of special information are formatted as blockquotes within the episode file. Each blockquote has the same general structure, but ends with a different tag. The ending tag determines how the blockquote will appear on the lesson webpage. The general structure of a blockquote is:
