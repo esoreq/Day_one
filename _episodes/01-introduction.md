@@ -1,6 +1,7 @@
 ---
 title: "Introduction"
 teaching: 0
+start: true
 exercises: 0
 questions:
 - "Key question (FIXME)"
