@@ -1,6 +1,8 @@
 ---
 title: "Data science bootcamp"
 teaching: 10
+author: "Dr. Eyal Soreq" 
+date: "05/03/2021"
 start: true
 exercises: 10
 questions:
