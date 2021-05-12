@@ -123,14 +123,33 @@ In order to confirm, we could use wildcards like `ls sandbox/*/*/*` where each a
 > {: .solution}
 {: .challenge}
 
+## Removing a directory 
+If we add a folder, we should also have the ability to remove it, else we risk having a very messy file system.
 
-> ## Removing a directory 
-> Please type the following command in the prompt. <br>
+> ## The `rm` command 
+> If we try to use the `rm` command to remove the `sandbox/` folder we get the following error: <br>
+> ~~~
+> $ rm sandbox/
+> rm: cannot remove 'sandbox/': Directory not empty
+> ~~~
+> {: .error}
+> The -d option may also be selected correctly by reading the help, but this results in the following error: <br>
+> ~~~
+> $ rm -d sandbox/
+> rm: cannot remove 'sandbox/': Directory not empty
+> ~~~
+> {: .error}
 > By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
 > ~~~
 > $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
 > ~~~
 > {: .language-bash}
+> > ## Solution 
+> > The solution is to remove all the structure recursively (using the -r option), starting with the empty directories and moving upward in the hierarchy. We add the -f (force) option to handle directories that are not empty.
+> > ~~~
+> > $ rm -rf sandbox/
+> > ~~~
+> > {: .language-bash}
 {: .challenge}
 
 
