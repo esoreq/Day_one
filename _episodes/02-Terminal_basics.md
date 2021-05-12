@@ -94,7 +94,37 @@ The part of the operating system responsible for managing individual files and d
 {: .challenge}
 
 
-> ## removing a folder 
+> ## `ls` has options too 
+> If we want to confirm our makdir command worked we should use one of the many options the `ls` command has. <br>
+> Try to use the `ls --help` to figure out what option is the most sutiable. 
+> > ## Solution 
+> > ~~~
+> > $ ls sandbox/ -R
+> > ~~~
+> > {: .language-bash}
+> > Here we state the root folder to start listing from, and then use the recursive  option to list all subdirectories recursively to the prompt
+> > 
+> {: .solution}
+> > ## Output
+> > ~~~
+> > sandbox/:
+> > root
+> > sandbox/root:
+> > dir_a  dir_b  dir_c
+> > sandbox/root/dir_a:
+> > sandbox/root/dir_b:
+> > leaf_1  leaf_2
+> > sandbox/root/dir_b/leaf_1:
+> > sandbox/root/dir_b/leaf_2:
+> > sandbox/root/dir_c:
+> > ~~~
+> > {: .language-bash}
+> 
+{: .challeng
+
+
+
+> ## Removing a folder 
 > Please type the following command in the prompt. <br>
 > By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
 > ~~~
