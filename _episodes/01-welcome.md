@@ -4,7 +4,7 @@ teaching: 10
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 start: true
-exercises: 10
+exercises: 0
 questions:
 - "Who am I and how do I approach teaching?"
 - "What should you expect from this bootcamp?"
