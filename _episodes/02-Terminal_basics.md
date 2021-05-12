@@ -148,11 +148,12 @@ If we add a folder, we should also have the ability to remove it, else we risk h
 {: .challenge}
 
 ## Why would we want to use the terminal 
-Clearly, there is an elephant in the room... I don't want to waste your time by teaching you this old interface.
+Clearly, there is an elephant in the room... Why would I want to waste your time by teaching you this old interface.
 > ## Solution 
 > The solution lies in automation and standardization.
+> If I know that the filesystem will look the same for every project I create, I can set up automatic processes that will take that into account. Look at the following line for example. 
 > ~~~
-> mkdir -p sandbox/Project/{Data,Notebooks,Code,Tmp,Report/{Tables,Figures,Background,Presentation}}
+> mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Background/{pdf,pptx},Presentation}}
 > ~~~
 > {: .language-bash}
 {: .solution}
