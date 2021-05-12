@@ -103,8 +103,6 @@ The part of the operating system responsible for managing individual files and d
 > > ~~~
 > > {: .language-bash}
 > > Here we state the root folder to start listing from, and then use the recursive  option to list all subdirectories recursively to the prompt
-> > 
-> {: .solution}
 > > ## Output
 > > ~~~
 > > sandbox/:
@@ -119,7 +117,8 @@ The part of the operating system responsible for managing individual files and d
 > > sandbox/root/dir_c:
 > > ~~~
 > > {: .language-bash}
-> 
+> > 
+> {: .solution}
 {: .challeng
 
 
