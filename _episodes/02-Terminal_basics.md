@@ -144,21 +144,22 @@ If we add a folder, we should also have the ability to remove it, else we risk h
 > > ~~~
 > > $ rm -rf sandbox/
 > > ~~~
-> > {: .solution}
+> {: .solution}
 {: .challenge}
 
-
-> ## Removing a folder 
-> Please type the following command in the prompt. <br>
-> By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
+## Why would we want to use the terminal 
+Clearly, there is an elephant in the room... I don't want to waste your time by teaching you this old interface.
+> ## Solution 
+> The solution lies in automation and standardization.
 > ~~~
-> $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
+> mkdir -p sandbox/Project/{Data,Notebooks,Code,Tmp,Report/{Tables,Figures,Background,Presentation}}
 > ~~~
 > {: .language-bash}
-{: .challeng
+{: .solution}
 
 ## Navigating the filesystem
-To move to and view directories, files, and content, we need some basic navigation skills. The following commands and excersises will provide you with these capabilities: 
+To move to and view directories, files, and content, we need some basic navigation skills. 
+
 
 
 {% include links.md %}
