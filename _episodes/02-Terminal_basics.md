@@ -103,20 +103,20 @@ The part of the operating system responsible for managing individual files and d
 > > ~~~
 > > {: .language-bash}
 > > Here we state the root folder to start listing from, and then use the recursive  option to list all subdirectories recursively to the prompt
-> > ## Output
-> > ~~~
-> > sandbox/:
-> > root
-> > sandbox/root:
-> > dir_a  dir_b  dir_c
-> > sandbox/root/dir_a:
-> > sandbox/root/dir_b:
-> > leaf_1  leaf_2
-> > sandbox/root/dir_b/leaf_1:
-> > sandbox/root/dir_b/leaf_2:
-> > sandbox/root/dir_c:
-> > ~~~
-> > {: .language-bash}
+> > > ## Output
+> > >~~~
+> > >sandbox/:
+> > >root
+> > >sandbox/root:
+> > >dir_a  dir_b  dir_c
+> > >sandbox/root/dir_a:
+> > >sandbox/root/dir_b:
+> > >leaf_1  leaf_2
+> > >sandbox/root/dir_b/leaf_1:
+> > >sandbox/root/dir_b/leaf_2:
+> > >sandbox/root/dir_c:
+> > >~~~
+> > >{: .language-bash}
 > > 
 > {: .solution}
 {: .challeng
