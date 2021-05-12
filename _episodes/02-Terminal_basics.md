@@ -94,8 +94,10 @@ The part of the operating system responsible for managing individual files and d
 {: .challenge}
 
 
-> ## `ls` has options too 
-> If we want to confirm our makdir command worked we should use one of the many options the `ls` command has. <br>
+## list folder structure
+In order to confirm, we could use wildcards like `ls sandbox/*/*/*` where each astrix corresponds to a different level in the hierarchy folder we created. However, there is a good chance that one of the many options of the `ls` command might be able to solve this problem in a generic way.<br>
+
+> ## list folder structure
 > Try to use the `ls --help` to figure out what option is the most sutiable. 
 > > ## Solution 
 > > ~~~
@@ -119,8 +121,17 @@ The part of the operating system responsible for managing individual files and d
 > > >{: .language-bash}
 > > 
 > {: .solution}
-{: .challeng
+{: .challenge}
 
+
+> ## Removing a directory 
+> Please type the following command in the prompt. <br>
+> By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
+> ~~~
+> $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
+> ~~~
+> {: .language-bash}
+{: .challenge}
 
 
 > ## Removing a folder 
