@@ -72,7 +72,7 @@ The part of the operating system responsible for managing individual files and d
 > mkdir: cannot create directory ‘sandbox’: File exists
 > ~~~
 > {: .error}
-{: .challenge}
+{: .note}
 
 > ## mkdir options allow us to issue more advanced commands
 > By adding the --help option, prints out the different options you can use to extend the mkdir program.
@@ -81,17 +81,17 @@ The part of the operating system responsible for managing individual files and d
 > $ mkdir --help
 > ~~~
 > {: .language-bash}
-{: .challenge}
+{: .note}
 
 
-> ## mkdir options allow us to issue more advanced commands
+> ## mkdir --parent gives us the ability to form filesystem structures
 > Please type the following command in the prompt. <br>
 > By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
 > ~~~
 > $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
 > ~~~
 > {: .language-bash}
-{: .challenge}
+{: .note}
 
 
 ## list folder structure
