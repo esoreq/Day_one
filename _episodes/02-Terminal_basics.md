@@ -69,8 +69,8 @@ The part of the operating system responsible for managing individual files and d
 > $ mkdir sandbox
 > mkdir: cannot create directory ‘sandbox’: File exists
 > ~~~
-> {: .language-bash}
-{: .error}
+> {: .error}
+{: .challenge}
 
 
 
