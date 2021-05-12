@@ -139,17 +139,12 @@ If we add a folder, we should also have the ability to remove it, else we risk h
 > rm: cannot remove 'sandbox/': Directory not empty
 > ~~~
 > {: .error}
-> By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
-> ~~~
-> $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
-> ~~~
-> {: .language-bash}
 > > ## Solution 
 > > The solution is to remove all the structure recursively (using the -r option), starting with the empty directories and moving upward in the hierarchy. We add the -f (force) option to handle directories that are not empty.
 > > ~~~
 > > $ rm -rf sandbox/
 > > ~~~
-> > {: .language-bash}
+> > {: .solution}
 {: .challenge}
 
 
