@@ -52,15 +52,16 @@ Command [options] [arguments]
 ```
 
 > ## Use `ls` to list your home contents 
-> The first command we will use is `ls`, which displays the current directory contents.
-> Now type `ls` and press the <kbd>Enter</kbd> key to execute it.
+> The first command we will use is `ls`, which displays the current directory contents. <br>
+> Type `ls` and press the <kbd>Enter</kbd> key to execute it.
 {: .challenge}
 
 ## Managing Content in the Filesystem
 The part of the operating system responsible for managing individual files and directories is called the **file system**. This part of the system categorizes our data into files or directories that contain files. 
 
 > ## Creating a sandbox directory using mkdir
-> Make a new directory by typing `mkdir sandbox` in the prompt. Here, mkdir is the program name and sandbox is the argument, in this case the name of the directory we are creating.
+> Make a new directory by typing `mkdir sandbox` in the prompt. <br>
+> Here, mkdir is the program name and sandbox is the argument, in this case the name of the directory we are creating.
 {: .challenge}
 
 > ## mkdir assumes no such directory exists 
