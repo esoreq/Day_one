@@ -47,9 +47,10 @@ $
 
 ## Shell Commands structure
 You interact with the shell via commands, which can be used to execute CLI programs with names similar to the commands. For each action that you wish to perform using the terminal, you use a program call following this basic scheme:
-```shell
+~~~
 Command [options] [arguments] 
-```
+~~~
+{: .language-bash}
 
 > ## Use `ls` to list your home contents 
 > The first command we will use is `ls`, which displays the current directory contents. <br>
@@ -73,7 +74,34 @@ The part of the operating system responsible for managing individual files and d
 > {: .error}
 {: .challenge}
 
+> ## mkdir options allow us to issue more advanced commands
+> By adding the --help option, prints out the different options you can use to extend the mkdir program.
+> Please type the following command in the prompt. <br>
+> ~~~
+> $ mkdir --help
+> ~~~
+> {: .language-bash}
+{: .challenge}
 
+
+> ## mkdir options allow us to issue more advanced commands
+> Please type the following command in the prompt. <br>
+> By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
+> ~~~
+> $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
+> ~~~
+> {: .language-bash}
+{: .challenge}
+
+
+> ## removing a folder 
+> Please type the following command in the prompt. <br>
+> By adding the -p (aka parent) option, the mkdir program will create a hierarchical folder structure.
+> ~~~
+> $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
+> ~~~
+> {: .language-bash}
+{: .challeng
 
 ## Navigating the filesystem
 To move to and view directories, files, and content, we need some basic navigation skills. The following commands and excersises will provide you with these capabilities: 
