@@ -65,14 +65,14 @@ The part of the operating system responsible for managing individual files and d
 > Here, mkdir is the program name and sandbox is the argument, in this case the name of the directory we are creating.
 {: .challenge}
 
-> ## mkdir assumes no such directory exists 
-> Type `mkdir sandbox` again. Now the program returns an error.
-> ~~~
-> $ mkdir sandbox
-> mkdir: cannot create directory ‘sandbox’: File exists
-> ~~~
-> {: .error}
-{: .note}
+## mkdir assumes no such directory exists 
+Type `mkdir sandbox` again. Now the program returns an error.
+~~~
+$ mkdir sandbox
+mkdir: cannot create directory ‘sandbox’: File exists
+~~~
+{: .error}
+
 
 > ## mkdir options allow us to issue more advanced commands
 > By adding the --help option, prints out the different options you can use to extend the mkdir program.
@@ -81,7 +81,7 @@ The part of the operating system responsible for managing individual files and d
 > $ mkdir --help
 > ~~~
 > {: .language-bash}
-{: .note}
+{: .challenge}
 
 
 > ## mkdir --parent gives us the ability to form filesystem structures
@@ -91,7 +91,7 @@ The part of the operating system responsible for managing individual files and d
 > $ mkdir -p sandbox/root/{dir_a,dir_b/{leaf_1,leaf_2},dir_c}
 > ~~~
 > {: .language-bash}
-{: .note}
+{: .challenge}
 
 
 ## list folder structure
@@ -158,10 +158,32 @@ Clearly, there is an elephant in the room... Why would I want to waste your time
 > {: .language-bash}
 {: .solution}
 
+
+<!-- tee -a ~/.ssh/config << END
+Host localhost
+  ForwardAgent yes
+END -->
+
 ## Navigating the filesystem
 To move to and view directories, files, and content, we need some basic navigation skills. 
 
+## Change Directory  `CD`
+Navigation is the most fundamental skill in any computer program. The Change Directory command provides us with capability to switch from one place to another. For example, we can go to the Data folder we just created by using the following command:
+~~~
+cd sandbox/My_first_project/Data
+~~~
+{: .language-bash}
 
+## Knowing where you are 
+Another important thing is knowing where you are. 
+
+## Print working directory `pwd`
+Using the print working directory command will show you where you are currently located. 
+~~~
+$ pwd
+/home/jovyan/sandbox/My_first_project/Data
+~~~
+{: .language-bash}
 
 {% include links.md %}
 
