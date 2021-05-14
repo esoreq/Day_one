@@ -12,10 +12,16 @@ objectives:
 - Explain the advantages of command-line interfaces over graphical interfaces.
 - Explain the read, run, and print steps of the shell.
 keypoints:
-- 
+- "The file system is the structure of our Information."
+- "Structure is formed by a directory tree."
+- "Directories can store other directories and files."
+- "There multiple commands that enable navigation of the filesystem"
+- "A relative path specifies a location starting from the current location."
+- "An absolute path specifies a location from the root of the file system."
+- "`..` means 'the directory above the current one'; `.` on its own means 'the current directory'."
 ---
 
-## Introduction to Linux Based Command Line Interactions
+# Introduction to Linux Based Command Line Interactions
 
 
 ### graphical user interface (GUI)
@@ -82,7 +88,6 @@ mkdir: cannot create directory ‘sandbox’: File exists
 > ~~~
 > {: .language-bash}
 {: .challenge}
-
 
 > ## mkdir --parent gives us the ability to form filesystem structures
 > Please type the following command in the prompt. <br>
@@ -153,7 +158,7 @@ Clearly, there is an elephant in the room... Why would I want to waste your time
 > The solution lies in automation and standardization.
 > If I know that the filesystem will look the same for every project I create, I can set up automatic processes that will take that into account. Look at the following line for example. 
 > ~~~
-> mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Background/{pdf,pptx},Presentation}}
+> mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Text,Background/{pdf,pptx},Presentation}}
 > ~~~
 > {: .language-bash}
 {: .solution}
@@ -174,16 +179,117 @@ cd sandbox/My_first_project/Data
 ~~~
 {: .language-bash}
 
-## Knowing where you are 
-Another important thing is knowing where you are. 
+> # Examples
+> ~~~
+> cd / # change directory to the root directory
+> cd ~ # change directory to your home directory
+> cd ~/sandbox/My_first_project/Report # goto Report dir
+> cd "dir name"
+> # if for some reason you created a folder name with spaces
+> # (DONT!!!) this is how you call it
+> ~~~
+{: .keypoints}
 
-## Print working directory `pwd`
-Using the print working directory command will show you where you are currently located. 
+## Knowing where you are 
+Another important thing is knowing where you are. The print working directory `pwd` will show you where you are currently located. Try it... 
+
 ~~~
 $ pwd
-/home/jovyan/sandbox/My_first_project/Data
 ~~~
 {: .language-bash}
 
+~~~
+/home/jovyan/sandbox/My_first_project/Data
+~~~
+{: .output}
+
+
+## listing all folders contents 
+Recall that `ls` contains many options, among the most useful ones are `-a`  which stands for all and means that the command does not ignore entries starting with `.`. Another useful option is `-l` which tells the command to use a long listing format. 
+
+~~~
+$ ls -al
+~~~
+{: .language-bash}
+
+~~~
+drwxr-xr-x 5 jovyan users 4096 May 13 14:31 .
+drwxr-xr-x 8 jovyan users 4096 May 13 14:31 ..
+drwxr-xr-x 2 jovyan users 4096 May 13 14:31 csv
+drwxr-xr-x 2 jovyan users 4096 May 13 14:31 pkl
+drwxr-xr-x 2 jovyan users 4096 May 13 14:31 zip
+~~~
+{: .output}
+
+## Let's unpack one line of the output from right to left 
+
+- Let's unpack the bottom line from right to left
+
+|  |  |
+| :-- | :-- |
+| `..` | file/folder name |
+| `May 13 14:31` | The **last** modification time |
+| `4096` | File size in bytes |
+| `users` | Group name |
+| `jovyan` | Owner name |
+| `8` | Number of links |
+| `drwxr-xr-x` | Permissions |
+| | |
+		
+----
+
+## Basics of permissions
+
+- Permission settings are grouped in a string of characters (-, r, w, x)
+- The characters r, w, and x stand for **read**, **write**, and **execute**.
+classified into four sections:
+- <span style="color:GOLD">-</span>rwxrwxrwx - File type has three possibilities:
+- regular file (–)
+- a directory (d)
+- or a link (i)
+- -<span style="color:GOLD">rwx</span>rwxrwx - File permission of the user (owner)
+- -rwx<span style="color:GOLD">rwx</span>rwx - File permission of the owner’s group
+- -rwxrwx<span style="color:GOLD">rwx</span> - File permission of other users
+
+		
+----
+
+## Changing permissions
+
+- Any Linux user, will at some point need to modify the permission settings of a file/directory.
+- This can be done using the `chmod` command.
+- The basic syntax is:
+
+~~~
+chmod [permission] [file_name]
+# one way that is the simplest to remember
+chmod u=rwx,g=rwx,o=rwx [file_name]
+~~~
+{: .language-bash}
+
+- rwx stand for r(ead),w(rite) and (e)x(ecute)
+- and ugo stand for u(ser), g(roup) and o(ther)
+		
+----
+
+## Knowing how to go home
+A program that tracks your location provides an opportunity to discuss the difference between **relative** and **absolute** locations. The `pwd` command returns the absolute path to where you are. The shell contains two important variables, both of which are subjective. The first is the environment variable `$PWD`, which specifies your current active location. The other is `$HOME`, which is the active user's home folder. We can create our own variables in the shell to make navigation easier. Consider the following code:  
+~~~
+ORIGIN=$PWD
+echo $PWD
+cd $HOME
+echo $PWD
+echo $ORIGIN
+~~~
+{: .language-bash}
+
+## 
+
+- `$` dollar sign is used to represent the value of a variable. If the value of the variable NAME is Mike, you can get the value of "Mike" using $NAME.
+- `#` the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with `#` is not executed.
+- `>` Output redirection
+- `<` input redirection
+- `>>` Output redirection (append mode)
 {% include links.md %}
 
+mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Background/{pdf,pptx},Presentation}}
