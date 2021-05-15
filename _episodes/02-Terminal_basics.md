@@ -390,6 +390,44 @@ Hence, it is useful to keep all aliases in one file.
 
 You can see we are using the -a option, which appends the content between the two END statements into the filename. What might happen if we won’t use that option?
 
+## Using the concept of relative path we can create our first generlised Bash script 
 
+
+> # Is this function useful? Can you explain what it does?
+> ~~~
+> tee -a ~/.make_dir << END
+> mkdir -p ./{Notebooks,Code,Tmp,Data,Report,Presentation}
+> mkdir -p ./Data/{pkl,csv,zip}
+> mkdir -p ./Report/{Tables,Figures,Text}
+> mkdir -p ./Background/{pdf,pptx}
+> END
+> ~~~
+> {: .language-bash}
+{: .discussion}
+
+
+> # Try it... 
+> ~~~
+> cd ~/sandbox
+> mkdir -p test
+> cd test
+> source ~/.make_dir
+> source ~/.bash_aliases
+> ll 
+> ~~~
+> {: .language-bash}
+{: .discussion}
+
+
+## Last but not least, `nano`, the easiest editor ever
+
+Sometimes you need to write free text in a terminal, `nano` is the simplest and most intuitive text editor out there. 
+
+> ## Try spawning `nano` and write a `~/.profile` that prints "running my .profile" when excuted
+> > ~~~
+> > nano ~/.profile
+> > ~~~
+> {: .language-bash}
+{: .solution}
 {% include links.md %}
 
