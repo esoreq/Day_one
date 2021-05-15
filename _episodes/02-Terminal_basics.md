@@ -2,8 +2,8 @@
 title: "Introduction to Linux Terminal"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
-teaching: 15
-exercises: 10
+teaching: 25
+exercises: 5
 questions:
 - What is a terminal and why would I use one?
 - What is the prompt and what does it indicate? 
@@ -163,12 +163,6 @@ Clearly, there is an elephant in the room... Why would I want to waste your time
 > {: .language-bash}
 {: .solution}
 
-
-<!-- tee -a ~/.ssh/config << END
-Host localhost
-  ForwardAgent yes
-END -->
-
 ## Navigating the filesystem
 To move to and view directories, files, and content, we need some basic navigation skills. 
 
@@ -179,7 +173,10 @@ cd sandbox/My_first_project/Data
 ~~~
 {: .language-bash}
 
-> # Examples
+## Hash tag - add comments to you code 
+- `#` the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with `#` is not executed.
+
+> ### Examples for `cd` and `#`
 > ~~~
 > cd / # change directory to the root directory
 > cd ~ # change directory to your home directory
@@ -273,23 +270,130 @@ chmod u=rwx,g=rwx,o=rwx [file_name]
 ----
 
 ## Knowing how to go home
-A program that tracks your location provides an opportunity to discuss the difference between **relative** and **absolute** locations. The `pwd` command returns the absolute path to where you are. The shell contains two important variables, both of which are subjective. The first is the environment variable `$PWD`, which specifies your current active location. The other is `$HOME`, which is the active user's home folder. We can create our own variables in the shell to make navigation easier. Consider the following code:  
+A program that tracks your location provides an opportunity to discuss the difference between **relative** and **absolute** locations. The `pwd` command returns the absolute path to where you are. The shell contains two important variables, both of which are subjective. The first is the environment variable `$PWD`, which specifies your current active location. The other is `$HOME`, which is the active user's home folder. We can create our own variables in the shell to make navigation easier. Try to discuss when this following code can be useful?  
+
 ~~~
 ORIGIN=$PWD
-echo $PWD
 cd $HOME
-echo $PWD
-echo $ORIGIN
+# do stuff
+cd $ORIGIN
 ~~~
 {: .language-bash}
 
-## 
+ 
+> Here we create a variable named `ORIGIN` which represents our starting position, so we can go to other places, such as our home directory, run a program there, and eventually return to our origin.
+{: .solution}
 
-- `$` dollar sign is used to represent the value of a variable. If the value of the variable NAME is Mike, you can get the value of "Mike" using $NAME.
-- `#` the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with `#` is not executed.
-- `>` Output redirection
-- `<` input redirection
-- `>>` Output redirection (append mode)
+## Alias
+- Shell aliases are used to reference a command. 
+- They can be used to avoid typing long commands or to correct incorrect input. 
+- It can reduce keystrokes for common patterns and increase efficiency. 
+- Consider using it for complex commands with frequently used options, or even simple commands with commonly used options.
+- The format is simple and this is a good opertunity to share with you some cool examples of using ls 
+
+~~~
+alias ls='ls -h --color'
+alias ll="ls -lv --group-directories-first"
+alias lm='ll | more' # Pipe through 'more'
+alias lr='ll -R' # Recursive ls.
+alias la='ll -A' # Show hidden files.
+alias lx='ll -XB' # Sort by extension.
+alias lk='ll -Sr | sr' # Sort by size, biggest first.
+alias lt='ll -tr | sr' # Sort by date, most recent first.
+alias # list all current aliases
+~~~
+{: .language-bash}
+
+
+## creating content in the terminal (Old-school)
+In the last section for this episode we will cover different ways to generate files via the terminal. 
+
+## `echo`
+
+- Prints text to the terminal window
+- The most basic process in any programming language is the ability to output information.
+- The `echo` command prints text to the terminal window and is typically used in shell scripts and batch files to output
+status text to the screen or a computer file.
+- Echo is also particularly useful for showing the values of environmental variables, which tell the shell how to behave
+as a user works at the command line or in scripts.
+
+~~~
+cd ~/sandbox/My_first_project/Report 
+echo $ORIGIN
+echo $HOME
+echo $PWD
+~~~
+{: .language-bash}
+
+> ### Examples for `echo` 
+> ~~~
+> cd ~/sandbox
+> echo Some text to print out
+> # any string after the command will be printed
+> echo *
+> # Will Print all the files/folder using echo command
+> echo *.jpeg
+> # Will Print all the files of a specific kind
+> echo "Some text to add to a file" > file
+> # Use redirect operator > to store output to file
+> echo "Some other text to add to a file" >> file
+> # Use redirect append operator >> to add output to file
+> ~~~
+{: .keypoints}
+
+
+## `cat` — Read a file, create a file, and concatenate files
+A close relative of `echo` is `cat` (short for “concatenate“) one of the more versatile commands and serves three main functions:
+
+- Displaying files
+- Combining multiple files
+- Creating new files.
+
+
+> ### Examples for `cat` 
+> ~~~
+> cat file
+> # Displaying Contents of a File
+> cat > file_2
+> # Allows to write text interactively
+> cat file_2 > file
+> # It is possible to redirect > to output like echo
+> # However the above command overwrites the file contents
+> cat file file_1 file_2
+> # We can also view contents of multiple files
+> cat file_1 >> file
+> # file_1 content will be appended at the end of file
+> ~~~
+{: .keypoints}
+
+
+## `tee` — Often we would like to write multi line files
+This command reads the contents of standard input, emits them to standard output, and makes a copy of them into the specified file(s) or variables.
+The purpose of this example is to create a `.bash_aliases` file containing all of your aliases and learn how to use the `tee` command. 
+We understand what aliases are. However, it's vital to comprehend that the aliases you create will only remain as long as the shell is open.
+Hence, it is useful to keep all aliases in one file.
+
+<!-- tee -a ~/.ssh/config << END
+Host localhost
+  ForwardAgent yes
+END -->
+
+> ### Example for using `tee` 
+> ~~~
+> tee -a ~/.bash_aliases << END
+> alias ls='ls -h --color'
+> alias ll="ls -lv --group-directories-first"
+> alias lm='ll | more' # Pipe through 'more'
+> alias lr='ll -R' # Recursive ls.
+> alias la='ll -A' # Show hidden files.
+> alias lx='ll -XB' # Sort by extension.
+> alias lk='ll -Sr | sr' # Sort by size, biggest first.
+> alias lt='ll -tr | sr' # Sort by date, most recent first.
+> END
+> ~~~
+{: .keypoints}
+
+
 {% include links.md %}
 
 mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Background/{pdf,pptx},Presentation}}
