@@ -428,6 +428,11 @@ Sometimes you need to write free text in a terminal, `nano` is the simplest and 
 > > nano ~/.profile
 > > ~~~
 > {: .language-bash}
+> > ### In `nano`
+> > ~~~
+> > echo "running my .profile"
+> > ~~~
+> {: .language-bash}
 {: .solution}
 {% include links.md %}
 
