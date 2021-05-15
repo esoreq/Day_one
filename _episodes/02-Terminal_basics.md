@@ -176,7 +176,7 @@ cd sandbox/My_first_project/Data
 ## Hash tag - add comments to you code 
 - `#` the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with `#` is not executed.
 
-> ### Examples for `cd` and `#`
+> ### Examples using `cd` and `#`
 > ~~~
 > cd / # change directory to the root directory
 > cd ~ # change directory to your home directory
@@ -185,7 +185,7 @@ cd sandbox/My_first_project/Data
 > # if for some reason you created a folder name with spaces
 > # (DONT!!!) this is how you call it
 > ~~~
-{: .keypoints}
+{: .output}
 
 ## Knowing where you are 
 Another important thing is knowing where you are. The print working directory `pwd` will show you where you are currently located. Try it... 
@@ -325,7 +325,7 @@ echo $PWD
 ~~~
 {: .language-bash}
 
-> ### Examples for `echo` 
+> ### Examples using `echo` 
 > ~~~
 > cd ~/sandbox
 > echo Some text to print out
@@ -339,7 +339,7 @@ echo $PWD
 > echo "Some other text to add to a file" >> file
 > # Use redirect append operator >> to add output to file
 > ~~~
-{: .keypoints}
+{: .output}
 
 
 ## `cat` — Read a file, create a file, and concatenate files
@@ -350,7 +350,7 @@ A close relative of `echo` is `cat` (short for “concatenate“) one of the mor
 - Creating new files.
 
 
-> ### Examples for `cat` 
+> ### Examples using `cat` 
 > ~~~
 > cat file
 > # Displaying Contents of a File
@@ -364,7 +364,7 @@ A close relative of `echo` is `cat` (short for “concatenate“) one of the mor
 > cat file_1 >> file
 > # file_1 content will be appended at the end of file
 > ~~~
-{: .keypoints}
+{: .output}
 
 
 ## `tee` — Often we would like to write multi line files
@@ -373,12 +373,7 @@ The purpose of this example is to create a `.bash_aliases` file containing all o
 We understand what aliases are. However, it's vital to comprehend that the aliases you create will only remain as long as the shell is open.
 Hence, it is useful to keep all aliases in one file.
 
-<!-- tee -a ~/.ssh/config << END
-Host localhost
-  ForwardAgent yes
-END -->
-
-> ### Example for using `tee` 
+> ### Example using `tee` 
 > ~~~
 > tee -a ~/.bash_aliases << END
 > alias ls='ls -h --color'
@@ -391,9 +386,10 @@ END -->
 > alias lt='ll -tr | sr' # Sort by date, most recent first.
 > END
 > ~~~
-{: .keypoints}
+{: .output}
+
+You can see we are using the -a option, which appends the content between the two END statements into the filename. What might happen if we won’t use that option?
 
 
 {% include links.md %}
 
-mkdir -p sandbox/My_first_project/{Data/{pkl,csv,zip},Notebooks,Code,Tmp,Report/{Tables,Figures,Background/{pdf,pptx},Presentation}}
