@@ -434,5 +434,14 @@ Sometimes you need to write free text in a terminal, `nano` is the simplest and 
 > > ~~~
 > {: .language-bash}
 {: .solution}
+
+## Links to expand your understanding 
+
+While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that: 
+
+- [introduction-to-shell](https://learn.datacamp.com/courses/introduction-to-shell)
+- [Introduction to Bash Scripting](https://learn.datacamp.com/courses/introduction-to-bash-scripting)
+
+
 {% include links.md %}
 

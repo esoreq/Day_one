@@ -64,20 +64,37 @@ There are four kinds of notebooks you would want to create:
 
 ## EDIT mode useful shortcuts
 
-When in EDIT mode, there are key commands that you should force yourself to use until it becomes natural.  
+When in EDIT mode, there are several key commands it is good to know.  
+You should practice using these commands until they become second nature. 
 
 
-| Mac  | Key | Function | 
-| :--  | :-- | :--      |
-|<kbd>Tab</kbd>| TAB | code completion/indent |
-|<kbd>Shift+Tab</kbd>| SHIFT+TAB | function help |
-|<kbd>Cmd + /</kbd>| CMD + / | comment/uncomment |
-|<kbd>Ctrl+Enter</kbd>| CTRL + ENTER | run current cell |
-|<kbd>Shift+Enter</kbd>| SHIFT + ENTER | run current cell + select below|
-|<kbd>Alt+Enter</kbd>| ALT + ENTER | run current cell + insert below|
-|<kbd>Ctrl+Shift+-</kbd>| CTRL + SHIFT + MINUS  |  Split cell at cursor |
-|<kbd>Cmd+s</kbd>| CMD + s  |  Save notebook |
-|<kbd>D+D</kbd>| D + D (press the key twice)  |  Delete selected cells |
+| Mac  |  Function | 
+| :--  |  :--      |
+|<kbd>Tab</kbd>|  code completion/indent |
+|<kbd>Shift+Tab</kbd>|  function help |
+|<kbd>Cmd + /</kbd>|  comment/uncomment |
+|<kbd>Ctrl+Enter</kbd>| run current cell |
+|<kbd>Shift+Enter</kbd>|  run current cell + select below|
+|<kbd>Alt+Enter</kbd>|  run current cell + insert below|
+|<kbd>Ctrl+Shift+-</kbd>|  Split cell at cursor |
+|<kbd>Cmd+s</kbd>|   Save notebook |
+|<kbd>D+D</kbd>|   Delete selected cells |
+
+
+
+# COMMAND mode useful shortcuts
+
+The same goes to COMMAND shortcuts.  
+  
+| Key | Function | 
+| :-- | :-- |
+| <kbd>Y</kbd> | Change cell to code type |
+| <kbd>M</kbd> | Change cell to markdown type |
+| <kbd>SHIFT + M</kbd> | merge selected cells |
+| <kbd>SHIFT + j</kbd> | select cells |
+| <kbd>c</kbd> | copy selected cells |
+| <kbd>x</kbd> | cut selected cells |
+| <kbd>v</kbd> | paste selected cells |
 
 {% include links.md %}
 
