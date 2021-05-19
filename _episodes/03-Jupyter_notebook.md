@@ -18,6 +18,9 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+
 ## What is Jupyter notebook?
 
 - Jupyter notebook is a modern web-based open-source tool specifically designed to support data science projects. 
