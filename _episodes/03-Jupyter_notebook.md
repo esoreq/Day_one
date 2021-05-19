@@ -299,7 +299,11 @@ $P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$.
 $
 P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}
 $. 
-
+$$
+\begin{equation}
+P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}
+\end{equation}
+$$
 
 # display equations 
 
