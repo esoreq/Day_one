@@ -291,7 +291,9 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 $P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$. 
 ```
 
-- Which will look like this : $P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$. 
+- Which will look like this : 
+
+$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$. 
 
 
 # display equations 
@@ -303,6 +305,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 ```
 
 - Which will look like this
+
 $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 
 # If you want to learn more  
