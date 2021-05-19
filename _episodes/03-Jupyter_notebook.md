@@ -250,9 +250,11 @@ To create a circular bullet point, simply use either `-`, `*` or `*` followed wi
 # Finally, I am a sucker for to-do lists that start my notebooks. 
 
 - To start a checklist, use `- [ ]` followed by space, for example:
-- [ ]  this is not checked
+
 - Creating checked boxes simply replaces the space with x - like this `- [x]`
-- [x] but this is checked
+
+[ ]  this is not checked
+[x]  but this is checked
 
 
 ## Hyperlinks and references 
@@ -291,19 +293,16 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 - For example, consider the inline form of the Gaussian Normal Distribution
 
 ```
-$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$. 
+$P(x) = 1/{\sigma \sqrt {2\pi}}e^{-(x-\mu)^2/2 \sigma^2}$. 
 ```
 
 - Which will look like this : 
 
 $$
-f(x) = \int_{-\infty}^\infty
-    \hat f(\xi)\,e^{2 \pi i \xi x}
-    \,d\xi
+P(x) = 1/{\sigma \sqrt {2\pi}}e^{-(x-\mu)^2/2 \sigma^2}
 $$
 
 
-$$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 
 # display equations 
 
