@@ -302,14 +302,8 @@ f(x) = \int_{-\infty}^\infty
     \,d\xi
 $$
 
-$
-P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}
-$. 
-$$
-\begin{equation}
-P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}
-\end{equation}
-$$
+
+$$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 
 # display equations 
 
