@@ -287,7 +287,7 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 
 
 # inline equations 
-- You can write inline formulas, enclosing the formula with \\$ signs. 
+- You can write inline formulas, enclosing the formula with \\$$ signs. 
 - For example, consider the inline form of the Gaussian Normal Distribution
 
 ```
@@ -307,7 +307,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 
 # display equations 
 
-- You can also write them in display mode by using two \\$ signs, for example.
+- You can also write them in display mode by using two \\$$ signs, for example.
 
 ```
 $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$. 
@@ -342,12 +342,12 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 ```
 | latex | <div style="width:100px">rendering</div> | context | 
 | --- | --- | --- | 
-| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$  | Mean Squared Error | 
+| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$  | Mean Squared Error | 
 ```
 
 | latex | <div style="width:100px">rendering</div> | context |
 | --- | --- | --- |
-| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$ | Mean Squared Error |
+| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ | Mean Squared Error |
 
 
 # use HTML instead
@@ -366,7 +366,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
     <!-- td = table data  -->
     <td style="font-size:2vmin">
         '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' </td>
-    <td>$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$ </td>
+    <td>$$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ </td>
     <td> Mean Squared Error</td>
  </tr>
 </table>
@@ -383,7 +383,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
     <tr>
         <!-- td = table data  -->
         <td style="font-size:2vmin">'\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' </td>
-        <td>$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$ </td>
+        <td>$$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ </td>
         <td> Mean Squared Error</td>
     </tr>
 </table>
@@ -421,23 +421,23 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$
 ```
 | latex  | rendering | context |
 | ---: | :---: |  :--- |
-| `$x_1$`  | $x_1$     | Subscripts    |
-| `$x^1$`     | $x^1$     | Superscripts      |
-| `$x_1^y$`     | $x_1^y$     | both      |
-| `$x_{1^y}$`     | $x_{1^y}$     | nested below     |
-| `$x^{y_1}$`     | $x^{y_1}$    | nested above      |
-| `$x^{CRTX}$`     | $x^{CRTX}$     | long words      |
+| `$x_1$`  | $$x_1$$     | Subscripts    |
+| `$x^1$`     | $$x^1$$     | Superscripts      |
+| `$x_1^y$`     | $$x_1^y$$     | both      |
+| `$x_{1^y}$`     | $$x_{1^y}$$     | nested below     |
+| `$x^{y_1}$`     | $$x^{y_1}$$    | nested above      |
+| `$x^{CRTX}$`     | $$x^{CRTX}$$     | long words      |
 ```
 
 
 | latex  | rendering | context |
 | ---: | :---: |  :--- |
-|  x_1  | $x_1$ | Subscripts |
-|  x^1  | $x^1$ | Superscripts |
-|  x_1^y  | $x_1^y$ | both |
-|  x_{1^y}  | $x_{1^y}$ | nested below |
-|  x^{y_1}  | $x^{y_1}$ | nested above |
-|  x^{CRTX}  | $x^{CRTX}$ | long words |
+|  x_1  | $$x_1$$ | Subscripts |
+|  x^1  | $$x^1$$ | Superscripts |
+|  x_1^y  | $$x_1^y$$ | both |
+|  x_{1^y}  | $$x_{1^y}$$ | nested below |
+|  x^{y_1}  | $$x^{y_1}$$ | nested above |
+|  x^{CRTX}  | $$x^{CRTX}$$ | long words |
 
 
 {% include links.md %}
