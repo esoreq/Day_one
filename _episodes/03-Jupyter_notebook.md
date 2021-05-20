@@ -314,7 +314,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 
 - Which will look like this
 
-sgdfsgsdfgdfsgsdfgsdfgsdfg sfgsdfgsdfgsdfg $P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$ sfsfdgsdfgssdf sfgsgfdsdgsdfg
+sgdfsgsdfgdfsgsdfgsdfgsdfg sfgsdfgsdfgsdfg \\(P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2})\\ sfsfdgsdfgssdf sfgsgfdsdgsdfg
 
 
 $$
