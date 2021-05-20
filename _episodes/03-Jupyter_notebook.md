@@ -253,8 +253,8 @@ To create a circular bullet point, simply use either `-`, `*` or `*` followed wi
 
 - Creating checked boxes simply replaces the space with x - like this `- [x]`
 
-[ ]  this is not checked
-[x]  but this is checked
+- [ ]  this is not checked
+- [x]  but this is checked
 
 
 ## Hyperlinks and references 
