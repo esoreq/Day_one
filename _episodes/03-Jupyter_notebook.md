@@ -289,7 +289,7 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 
 
 # inline equations 
-- You can write inline formulas, enclosing the formula with \\$$ signs. 
+- You can write inline formulas, enclosing the formula with `$` signs. 
 - For example, consider the inline form of the Gaussian Normal Distribution
 
 ```
@@ -314,8 +314,11 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 
 - Which will look like this
 
-sgdfsgsdfgdfsgsdfgsdfgsdfg sfgsdfgsdfgsdfg \\\(P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}\\\) sfsfdgsdfgssdf sfgsgfdsdgsdfg
-
+$$
+\begin{math}
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\end{math}
+$$
 
 $$
 \begin{equation*}
