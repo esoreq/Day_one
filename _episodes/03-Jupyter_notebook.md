@@ -212,11 +212,6 @@ Just copy the following and run it using <kbd>Shift+Enter</kbd>
 tar -xf ~/temp/$FSL_TAR -C ~/ &
 ~~~
 
-~~~output
-[1] <some integer>
-~~~
-
-
 ## Unpack the command 
 
 - Let's unpack the tar command line from right to left
@@ -235,6 +230,12 @@ tar -xf ~/temp/$FSL_TAR -C ~/ &
 | | |
 
 ## What does the output mean ? 
+
+~~~
+[1] <some integer>
+~~~
+{: .output}
+
 
 In most Unix and Unix-like operating systems, the `ps` program displays the currently-running processes. 
 A process has a unique ID, and by using the ps command you can see which ones are currently running.
@@ -273,8 +274,7 @@ FSL requires you to define variables, we want to do this setup once and in the p
 > > ~~~bash
 > > cat ~/.profile 
 > > ~~~
-> {: .solution}
-{: .challenge}
+{: .solution}
 
 {% include links.md %}
 
