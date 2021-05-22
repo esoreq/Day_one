@@ -290,7 +290,9 @@ export PATH=$PATH:$FSLDIR/bin
 export FSLOUTPUTTYPE=NIFTI_GZ
 ~~~
 
-> ## Try to print out the ~.profile contents 
+Use what we learned in the previous session to solve this.
+
+> ## Solution
 > > ~~~bash
 > > tee -a ~/.profile << END
 > > export FSLDIR=\$HOME/fsl
