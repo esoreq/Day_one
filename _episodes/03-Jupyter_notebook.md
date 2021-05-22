@@ -278,7 +278,7 @@ FSL requires you to define variables, we want to do this setup once and in the p
 > > echo "running my .profile"
 > > source /home/jovyan/.bash_aliases
 > > ~~~
-> {: .output}
+> > {: .output}
 {: .solution}
 
 ## Add to our profile file some additional variables 
@@ -312,7 +312,7 @@ Use what we learned in the previous session to solve this.
 > > export PATH=$PATH:$FSLDIR/bin
 > > export FSLOUTPUTTYPE=NIFTI_GZ
 > > ~~~
-> {: .output}
+> > {: .output}
 {: .solution}
 
 
