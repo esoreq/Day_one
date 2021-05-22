@@ -237,31 +237,44 @@ tar -xf ~/temp/$FSL_TAR -C ~/ &
 ## What does the output mean ? 
 
 In most Unix and Unix-like operating systems, the `ps` program displays the currently-running processes. 
-To understand the output from our previous command we will go over it's output.
+A process has a unique ID, and by using the ps command you can see which ones are currently running.
+if we run the following: 
 
 ~~~bash
-ps aux
+ps a
 ~~~
 
-> ~~~bash
-> USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-> jovyan       1  0.0  0.0   2500   528 ?        Ss   08:28   0:00 tini -g -- star
-> jovyan       7  0.4  0.3 414928 117072 ?       Sl   08:28   0:37 /opt/conda/bin/
-> jovyan    1530  0.5  0.1 440540 47492 ?        Rsl  10:46   0:00 /opt/conda/bin/
-> jovyan    1543  0.2  0.0   7680  4388 pts/1    Ss   10:46   0:00 /opt/conda/bin/
-> jovyan    2012  1.3  0.0   6940  2984 pts/1    D    10:47   0:00 tar -xf /home/j
-> jovyan    2013  0.0  0.0   3392  1388 pts/1    S    10:47   0:00 gzip -d
-> jovyan    2014  0.0  0.0   8900  3268 pts/1    R+   10:47   0:00 ps aux
-> ~~~
+We should get an output similar to this: 
+
+~~~
+PID TTY      STAT   TIME COMMAND
+1543 pts/1    Ss     0:00 /opt/conda/bin/bash --rcfile /opt/conda/lib/python3.8
+2012 pts/1    D      0:24 tar -xf /home/jovyan/temp/fsl-6.0.4-centos7_64.tar.gz
+2013 pts/1    S      0:38 gzip -d
+2017 pts/1    R+     0:00 ps a
+~~~
 {: .output}
 
+## Let's unpack the output
 
-> ## Create `~/temp` and `~/fsl`
+|  |  |
+| :-- | :-- |
+| `PID` | Unique process ID |
+| `TTY` | The terminal the command is running in |
+| `STAT` | Process states that indicate what state the program is in |
+| `TIME` | How long this program has been running for (H:MM) |
+| `COMMAND` | The actual command  |
+| | |
+
+## Configuring your shell environment
+FSL requires you to define variables, we want to do this setup once and in the process give you some foundations that will be useful when you wish to set up a similar setup in more complex environments than our jupyter sandbox.
+
+> ## Try to print out the ~.profile contents 
 > > ~~~bash
-> > mkdir -p ~/{temp,fsl}
+> > cat ~/.profile 
 > > ~~~
-{: .solution}
-
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}
 
