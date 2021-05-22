@@ -212,10 +212,10 @@ Just copy the following and run it using <kbd>Shift+Enter</kbd>
 tar -xf ~/temp/$FSL_TAR -C ~/ &
 ~~~
 
-> ~~~bash
-> [1] <some integer>
-> ~~~
-{: .output}
+~~~output
+[1] <some integer>
+~~~
+
 
 ## Unpack the command 
 
