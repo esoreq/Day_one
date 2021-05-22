@@ -274,7 +274,48 @@ FSL requires you to define variables, we want to do this setup once and in the p
 > > ~~~bash
 > > cat ~/.profile 
 > > ~~~
+> > ~~~
+> > echo "running my .profile"
+> > source /home/jovyan/.bash_aliases
+> > ~~~
+> {: .output}
 {: .solution}
+
+## Add to our profile file some additional variables 
+We need to add to our `.profile` file the following lines: 
+
+~~~bash
+export FSLDIR=$HOME/fsl
+export PATH=$PATH:$FSLDIR/bin
+export FSLOUTPUTTYPE=NIFTI_GZ
+~~~
+
+> ## Try to print out the ~.profile contents 
+> > ~~~bash
+> > tee -a ~/.profile << END
+> > export FSLDIR=\$HOME/fsl
+> > export PATH=\$PATH:\$FSLDIR/bin
+> > export FSLOUTPUTTYPE=NIFTI_GZ
+> > END
+> > ~~~
+> > Important - If a variable is included in a script, the $ sign must be "escaped" to tell bash not to interpret it.
+> > ## Test if worked 
+> > ~~~bash
+> > cat  ~/.profile
+> > ~~~
+> > ~~~
+> > echo "running my .profile"
+> > source /home/jovyan/.bash_aliases
+> > export FSLDIR=$HOME/fsl
+> > export PATH=$PATH:$FSLDIR/bin
+> > export FSLOUTPUTTYPE=NIFTI_GZ
+> > ~~~
+> {: .output}
+{: .solution}
+
+
+
+
 
 {% include links.md %}
 
