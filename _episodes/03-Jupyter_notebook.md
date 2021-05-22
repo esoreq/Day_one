@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Jupyter notebook"
+title: "Introduction to Bash Jupyter notebook"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
