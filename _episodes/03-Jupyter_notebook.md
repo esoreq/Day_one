@@ -207,13 +207,51 @@ We will use the tar command to unpack the file we just downloaded in our home di
 Due to the length of this operation, we will use the run in background option (to continue working while the unpacking is in progress).
 Just copy the following and run it using <kbd>Shift+Enter</kbd>
 
+
 ~~~bash
-tar -xf ~/temp/fsl-6.0.4-centos7_64.tar.gz -C ~/ &
+tar -xf ~/temp/$FSL_TAR -C ~/ &
 ~~~
 
+> ~~~bash
+> [1] <some integer>
+> ~~~
+{: .output}
+
+## Unpack the command 
+
+- Let's unpack the tar command line from right to left
+
+|  |  |
+| :-- | :-- |
+| `tar` | call the tar program |
+| `-` | Add options to the program |
+| `x` | extract a archive file |
+| `f` | include target archive file |
+| `~/temp/` | Where the target file is located |
+| `$FSL_TAR` | our targer filename variable |
+| `-C` | create extraction in a location  |
+| `~/` | the target location is our home folder |
+| `&` | Run in the background |
+| | |
+
+## What does the output mean ? 
+
+In most Unix and Unix-like operating systems, the `ps` program displays the currently-running processes. 
+To understand the output from our previous command we will go over it's output.
+
+~~~bash
+ps aux
+~~~
 
 > ~~~bash
-> [1] 1025
+> USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+> jovyan       1  0.0  0.0   2500   528 ?        Ss   08:28   0:00 tini -g -- star
+> jovyan       7  0.4  0.3 414928 117072 ?       Sl   08:28   0:37 /opt/conda/bin/
+> jovyan    1530  0.5  0.1 440540 47492 ?        Rsl  10:46   0:00 /opt/conda/bin/
+> jovyan    1543  0.2  0.0   7680  4388 pts/1    Ss   10:46   0:00 /opt/conda/bin/
+> jovyan    2012  1.3  0.0   6940  2984 pts/1    D    10:47   0:00 tar -xf /home/j
+> jovyan    2013  0.0  0.0   3392  1388 pts/1    S    10:47   0:00 gzip -d
+> jovyan    2014  0.0  0.0   8900  3268 pts/1    R+   10:47   0:00 ps aux
 > ~~~
 {: .output}
 
