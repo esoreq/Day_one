@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Jupyter notebook"
+title: "Introduction to Markdown"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
@@ -15,7 +15,7 @@ keypoints:
 <!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> -->
 
 
-## What is Markdown
+## More advanced Markdown
 
 - Markdown is the formating codes for creating publishable data science report using Jupyter. 
 - In this section, we will go over all the different ways to create a structured document using the Markdown syntax supported by Jupyter Notebook.

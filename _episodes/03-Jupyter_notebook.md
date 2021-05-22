@@ -7,7 +7,7 @@ exercises: 10
 questions:
 - What is Jupyter Notebook?
 - What is a Kernel? 
-- How to use a notebook to run bash code script 
+- How to use a notebook to run bash code snippets.
 objectives:
 - List the components and functionality of Jupyter Notebook.
 - Launch and navigate the Jupyter Notebook dashboard.
@@ -136,6 +136,93 @@ One of the advantages of bash is that it has the capability to work asynchronous
 - Using a double '&&' groups commands with an `AND` dependency chain .
 - Using a double vertical line '||' groups commands with an `OR` dependency chain.
 - Using a single and '&' runs the last command in the background.
+
+## Let's create a pipline to setup FSL
+In order to illustrate this, let's install and configure FSL, which is a neuroimaging software package which includes many functions useful for preprocessing and analysis of structural and functional fMRI.
+
+
+## Step 1. 
+Start by creating at your home folder two new folders named `fsl` and `temp`
+
+> ## Create `~/temp` and `~/fsl`
+> > ~~~
+> > mkdir -p ~/{temp,fsl}
+> > ~~~
+> {: .language-bash}
+{: .solution}
+
+## Step 2. 
+Goto [FSL home page](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/)
+If you are involved in neuroimaging related projects and have very little or no background in neuroimaging, it would be helpful to bookmark this page.
+
+## Step 3. 
+We are going to use a bash software called `wget` that is used to download file from internet links using the command line. 
+Start by copying and running the following code in your notebook 
+
+~~~bash
+FSL_TAR=fsl-6.0.4-centos7_64.tar.gz
+wget -O ~/temp/$FSL_TAR https://fsl.fmrib.ox.ac.uk/fsldownloads/$FSL_TAR
+~~~
+
+### What does this mean
+- We start by creating a variable that holds the target zip file 
+- Then we use the `wget` command with the `-O` option to direct the download to a specific location  
+
+
+> ## Discussion
+> Why is it beneficial to separate the file name from the command?
+{: .discussion}
+
+
+### You should get the following output:
+~~~
+--2021-05-22 09:29:57--  https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-6.0.4-centos7_64.tar.gz
+Resolving fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)... 129.67.248.65
+Connecting to fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)|129.67.248.65|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4080459725 (3.8G) [application/x-gzip]
+Saving to: ‘/home/jovyan/temp/fsl-6.0.4-centos7_64.tar.gz’
+~~~
+{: .output}
+
+### This will update after around 80-130s to this 
+~~~
+--2021-05-22 09:29:57--  https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-6.0.4-centos7_64.tar.gz
+Resolving fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)... 129.67.248.65
+Connecting to fsl.fmrib.ox.ac.uk (fsl.fmrib.ox.ac.uk)|129.67.248.65|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4080459725 (3.8G) [application/x-gzip]
+Saving to: ‘/home/jovyan/temp/fsl-6.0.4-centos7_64.tar.gz’
+
+/home/jovyan/temp/f 100%[===================>]   3.80G  45.3MB/s    in 85s     
+
+2021-05-22 09:31:22 (46.1 MB/s) - ‘/home/jovyan/temp/fsl-6.0.4-centos7_64.tar.gz’ saved [4080459725/4080459725]
+~~~
+{: .output}
+
+
+## Step 4. 
+
+We will use the tar command to unpack the file we just downloaded in our home directory. 
+Due to the length of this operation, we will use the run in background option (to continue working while the unpacking is in progress).
+Just copy the following and run it using <kbd>Shift+Enter</kbd>
+
+~~~bash
+tar -xf ~/temp/fsl-6.0.4-centos7_64.tar.gz -C ~/ &
+~~~
+
+
+> ~~~bash
+> [1] 1025
+> ~~~
+{: .output}
+
+
+> ## Create `~/temp` and `~/fsl`
+> > ~~~bash
+> > mkdir -p ~/{temp,fsl}
+> > ~~~
+{: .solution}
 
 
 {% include links.md %}
