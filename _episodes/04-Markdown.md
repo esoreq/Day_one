@@ -247,19 +247,29 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 
 ## Horizontal rules
 
-* * *
+Adding 
 
-***
-
-*****
-
-- - -
-
----------------------------------------
-
-## Images and content embedding 
+## Images and 
 
 ![](https://res.cloudinary.com/practicaldev/image/fetch/s--ord3VrxV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/262q2x7kzw1nz1jsmmwb.png)
+
+
+Markdown uses an image syntax that is intended to resemble the syntax for links.  
+- Start with an exclamation mark: `!`   
+- Followed by a set of square brackets, containing the alt attribute text for the image;
+- followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.
+
+~~~markdown
+![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg "Optional title")
+~~~
+
+
+## Content embedding 
+<iframe src="https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia" title="Complete list of github markdown emoji markup"></iframe>
+
+
+
 
 
 # Mathematical equations and LaTeX
@@ -351,7 +361,7 @@ Try to replicate the following section in your notebook using a combination of w
 > > ## Solution
 > > ~~~markdown
 > > ### Timothy Leary
-> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
+> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg#left)
 > > ###### American psychologist
 > > **Born**: October 22, 1920, Springfield, Massachusetts, United States  
 > > **Died**: May 31, 1996, Beverly Hills, California, United States
