@@ -104,7 +104,7 @@ If you follow the following structure for the final project for this course, you
 - They are defined using the pound sign `#` before the text 
 - The number of symbols `##` = h2 corresponds with the heading level 
 
-<div class="datatable-begin"></div>
+<div>
 
 
 | Markdown | HTML | render   | 
@@ -116,7 +116,7 @@ If you follow the following structure for the final project for this course, you
 | `##### H5` | `<H5> H5 </H5>` | <h5> H5 </h5>|
 | `####### H6` | `<H6> H6 </H6>` | <h6> H6 </h6>|
 
-<div class="datatable-end"></div>
+</div>
 
 
 > ## Add a new markdown cell and create all the different heading sizes 
