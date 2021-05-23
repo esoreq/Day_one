@@ -134,14 +134,29 @@ If you follow the following structure for the final project for this course, you
 - Two tildas `~~` before and after text create the ~~strikethrough effect~~
 - ***Important text*** can be emphsised using three stars `***` 
 
+> ## Add a new markdown cell and create all the different heading sizes 
+> Try to create this yourself 
+> > ## Solution
+> > ~~~markdown
+> > ## Cell headers come in six sizes 
+> > They are defined using the pound sign `#` before the text 
+> > # Here is an example starting from H1 the largest heading  
+> > ## H2
+> > ### H3
+> > #### H4
+> > ##### H5
+> > ###### H6 is the smallest heading 
+> > ~~~
+> {: .solution}
+{: .challenge}
+
 
 # Styling text - *indented quotes*
 
-Indenting can be initialized using Greater than and space `> ` before the text
 
-> There is no scientific study more vital to man than the study of his brain. Our entire view of the universe depends on it.
-
->> **Francis Crick (1916-2004)**
+> Indenting can be initialized using Greater than and space `> ` before the text
+> > The text will move two indents with two greater signs
+> > > We can continue like this for as long as we want
 
 
 # HTML tags 
@@ -149,15 +164,13 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - HTML tags are special words or letters surrounded by angle brackets, < and >. 
 - Jupyter relies on HTML to render everything, and as a byproduct, we can use native HTML components  
 - Styling text with tags is easy, you declare a region with a `<tag>` and close it like this `</tag>` 
-- For example Marked <mark>text</mark> is defined using `<mark>` tag. 
+- For example Marked <mark>text</mark> is defined using `<mark>` tag.
+- <u>Underline text</u> is almost never used but is defined using `<u>` tag. 
 - Adding css attributes such as <mark style="background-color:blue;color:white"> background-color or font color</mark> within the enclosed area is also an option. 
 - This is achieved using the inline css style attribute changing the tag to look like this `<mark style="background-color:blue;color:white">`. 
 - In a similiar way text can be <small>small</small>, <ins>inserted</ins> using `<small>` and `<ins>`. 
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
 - This opens a whole world of options, that to be honest you will rarely use, but can be fun &#128528;&#128521;. 
-
-
-
 
 # Preformatted Text 
 
@@ -198,7 +211,13 @@ Or `~~~html`
 
 # Creating Markdown numbered lists 
 
-- To create a numbered list, enter 1. followed by a space, for example:
+1. To create a numbered list, enter `1.` followed by a space
+    1. To construct sub levels just press TAB to before a bullet. 
+    1. You don't need to number your lists markdown will do that for you  
+    Adding text just requires  
+    ending each line  
+    with 2 spaces `  `
+    1. Numbers will continue once you add aline
 
 ~~~markdown 
 1. Numbered item 1
@@ -285,66 +304,6 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 - This tag created an HTML divider with CSS controlling the cell width
 - However the lines are long and hard to read
 
-~~~markdown 
-| latex | <div style="width:100px">rendering</div> | context | 
-| --- | --- | --- | 
-| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$  | Mean Squared Error | 
-~~~
-
-| latex | <div style="width:100px">rendering</div> | context |
-| --- | --- | --- |
-| '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ | Mean Squared Error |
-
-
-# use HTML instead
-
-- So we can use all the things we learned up until now to create an HTML table instead of the markdown table
-
-
-~~~html
-<table>
- <tr> <!-- tr = table row  -->
-    <th>latex</th> <!-- th = table header  -->
-    <th style="width:150px">rendering</th>
-    <th>context</th>
-</tr>
- <tr>
-    <!-- td = table data  -->
-    <td style="font-size:2vmin">
-        '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' </td>
-    <td>$$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ </td>
-    <td> Mean Squared Error</td>
- </tr>
-</table>
-~~~
-
-
-# Simple table with inline formatting 
-
-- markdown formattings will render within the table 
-- As will HTML tags 
-
-
-| language | code | render   | 
-| --- | --- | --- |
-|  Markdown | `**bold**`  | **bold** |
-| ^^ | `*itealic*`  | *itealic* |
-| ^^ | `~~deleted~~`  | ~~deleted~~ |
-| *** | *** | *** |
-|  HTML | `<b>bold</b>`  | <b>bold</b> |
-| ^^ | `<i>itealics</i>`  | <i>itealics</i> |
-| ^^ | `<del>deleted</del>`  | <del>deleted</del> |
-
-
-
-# multi line within table cell
-
-| Format | Tag example |
-| -------- | ----------- |
-| Headings | =heading1=<br>==heading2==<br>===heading3=== |
-| New paragraph | A blank line starts a new paragraph |
-| Source code block | // all on one line<br> {{{ if (foo) bar else   baz }}} |
-
 
 # Table content can be aligned 
 
@@ -353,7 +312,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
     - Left :--- of the hyphens
     - Or using colons in both sides :---: will centre the content 
 
-```
+~~~markdown
 | latex  | rendering | context |
 | ---: | :---: |  :--- |
 | `$x_1$`  | $$x_1$$     | Subscripts    |
@@ -362,7 +321,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 | `$x_{1^y}$`     | $$x_{1^y}$$     | nested below     |
 | `$x^{y_1}$`     | $$x^{y_1}$$    | nested above      |
 | `$x^{CRTX}$`     | $$x^{CRTX}$$     | long words      |
-```
+~~~
 
 
 | latex  | rendering | context |
@@ -373,6 +332,33 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 |  x_{1^y}  | $$x_{1^y}$$ | nested below |
 |  x^{y_1}  | $$x^{y_1}$$ | nested above |
 |  x^{CRTX}  | $$x^{CRTX}$$ | long words |
+
+
+## challenge
+Try to replicate the following section in your notebook using a combination of what you learned so far.
+### Timothy Leary
+![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
+###### American psychologist
+**Born**: October 22, 1920, Springfield, Massachusetts, United States  
+**Died**: May 31, 1996, Beverly Hills, California, United States
+
+> *“The language of God is not English or Latin; the language of God is cellular and molecular.”*
+> ###### ***As quoted in "Leary calls LSD 'sacrament'" in The Tech (8 November 1966), p. 6***
+{: .challenge}
+
+> > ## Solution
+> > ~~~markdown
+> > ### Timothy Leary
+> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
+> > ###### American psychologist
+> > **Born**: October 22, 1920, Springfield, Massachusetts, United States  
+> > **Died**: May 31, 1996, Beverly Hills, California, United States
+> >
+> > > *“The language of God is not English or Latin; the language of God is cellular and molecular.”*
+> > > ###### ***As quoted in "Leary calls LSD 'sacrament'" in The Tech (8 November 1966), p. 6***
+> > ~~~
+> {: .solution}
+
 
 
 {% include links.md %}
