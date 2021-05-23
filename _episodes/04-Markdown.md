@@ -251,16 +251,20 @@ Adding some horizontal lines can be as simpple as just writting `---`
 
 ----
 
-++++
+## Sourcing local video content 
 
-====
+We can run loal video files using relative paths and an html tag
 
-<video controls src="../files/Reproducibility and Replicability in Science.mp4">animation</video>
+~~~html
+<video controls src="../files/some video.mp4">Title</video>
+~~~
+
+<video controls src="../files/Reproducibility and Replicability in Science.mp4"></video>
 
 
 ## Images and 
 
-To insert images to your markdown file, use the markup ![Alt text](/path/image.ext). The path can either be relative to the website, or a full URL for an external image. The supported formats are .png, .jpg, .gif. You might be able to use some .svg files too, depending on its structure.
+To insert images to your markdown file, use the markup `![Alt text](/path/image.ext)`. The path can either be relative to the website, or a full URL for an external image. The supported formats are .png, .jpg, .gif. You might be able to use some .svg files too, depending on its structure.
 
 Markdown uses an image syntax that is intended to resemble the syntax for links.  
 - Start with an exclamation mark: `!`   
@@ -268,6 +272,8 @@ Markdown uses an image syntax that is intended to resemble the syntax for links.
 - followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.
 
 For clickable images, simply wrap the image markup into a link markup
+
+![](http://www.scottbot.net/HIAL/wp-content/uploads/2012/01/Last-line-of-defense-statistics.gif)
 
 ~~~markdown
 ![Semantic description of image](/images/path/to/folder/image.png)
