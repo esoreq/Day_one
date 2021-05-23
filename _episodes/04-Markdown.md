@@ -11,13 +11,13 @@ questions:
 objectives:
 - Explain what the Markdown format is.
 - Describe the role of Markdown for documentation of data science workflows.
- - Use Markdown syntax in Jupyter Notebook to design a report.
+- Use Markdown syntax in Jupyter Notebook to design a lab template.
+- Use Markdown syntax in Jupyter Notebook to design a report template.
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-
-## What is Markdown?
+# What is Markdown?
 Markdown is the formating codes for creating publishable data science report using Jupyter. 
 The Markdown formatting process requires you to use syntax to apply various formatting, such as **bold text** or *italics*.
 In this section, we will go over all the different ways to create a structured document using the Markdown syntax supported by Jupyter Notebook.
@@ -36,8 +36,32 @@ In this section, we will go over all the different ways to create a structured d
 
 1. Include a meaningful introduction (H1 header) that describes the notebooks purpose and content.
 1. Make your notebook's headings and documentation in markdown cells clear and concise. Tell people about your workflow steps and consider how it might benefit you in the future.
-1. Refactor and outsource code into modules. Every time you copy and paste a piece of code, you should consider replacing it with a function. This will not only make your notebook more readable, but also make fixing errors easier.
+<!-- 1. Refactor and outsource code into modules. Every time you copy and paste a piece of code, you should consider replacing it with a function. This will not only make your notebook more readable, but also make fixing errors easier. -->
 
+
+## Markdown Syntax guide
+
+- The underlying machinery that supports Jupyter rendering is HTML 
+- However, the main idea is not to use it for sophisticated web design but rather to speed up and simplify the processes of analytical investigation. 
+- As such Markdown syntax is minimal and sufficient
+- If (or when) you feel like you want to create something that isn't supported by the existing syntax you should probably use different software. 
+- The current setup supports, creating sophisticated formatting for your text and code with simple to remember the syntax. 
+
+
+> ## Create a new notebook with a lab structure
+> Select the top cell using your mouse 
+> Press <kbd>Esc +  M</kbd>
+> Write the following in that cell 
+> ~~~markdown
+> # Lab Template 
+> This notebook covers the different ways to use markdown to create an effective data science document.
+> ~~~
+> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell
+> Save the notebook as `1_Lab_template_ES_YYYY-MM-DD.ipynb` using the following shortcut <kbd>Shift+Cmd+s</kbd> or just by renaming the notebook
+{: .challenge}
+
+
+<!-- 
 ## Creating a report structure
 **The report** is a polished version of your study and is intended for collaboration and review. Making a habit of aggregating useful discoveries into a single report notebook used for communication with colleagues can save you a lot of time!
 If you follow the following structure for the final project for this course, you can easily convert your report into an article.
@@ -71,17 +95,35 @@ If you follow the following structure for the final project for this course, you
     - What are the limitations of your study? 
     - Do you believe you did an adequate job of answering the questions stated in the introduction in light of the limitations? 
     - Lastly, what suggestions do you have for future research?
+ -->
 
+ ## Cell Headers
 
-## Jupyter Notebook Markdown syntax
+- Cell headers come in six sizes 
+# H1 Is the largest heading 
+## H2
+### H3
+#### H4
+##### H5
+###### H6 is the smallest heading 
+- They are defined using the pound sign `#` before the text 
+- The number of symbols `##` = h2 corresponds with the heading level 
 
-- The underlying machinery that supports Jupyter rendering is HTML 
-- However, the main idea is not to use it for sophisticated web design but rather to speed up and simplify the processes of analytical investigation. 
-- As such Markdown syntax is minimal and sufficient
-- If (or when) you feel like you want to create something that isn't supported by the existing syntax you should probably use different software. 
-- The current setup supports, creating sophisticated formatting for your text and code with simple to remember the syntax. 
- 
-
+> ## Add a new markdown cell and create all the different heading sizes 
+> > ## Solution
+> > ~~~
+> > ## Cell headers come in six sizes 
+> > They are defined using the pound sign `#` before the text 
+> > # H1 Is the largest heading 
+> > ## H2
+> > ### H3
+> > #### H4
+> > ##### H5
+> > ###### H6 is the smallest heading 
+> {: .solution}
+> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell
+> Save the notebook as `1_Lab_template_ES_YYYY-MM-DD.ipynb` using the following shortcut <kbd>Shift+Cmd+s</kbd> or just by renaming the notebook
+{: .challenge}
 
 ## Cell Headers
 
