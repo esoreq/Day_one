@@ -102,6 +102,8 @@ If you follow the following structure for the final project for this course, you
 - Cell headers come in six sizes 
 - They are defined using the pound sign `#` before the text 
 - The number of symbols `##` = h2 corresponds with the heading level 
+
+
 | Markdown | HTML | render   | 
 | --- | --- | --- |
 | `# H1` | `<H1> H1 </H1>` | <H1> H1 </H1> |
@@ -110,8 +112,6 @@ If you follow the following structure for the final project for this course, you
 | `#### H4` | `<H4> H4 </H4>` | <H4> H4 </H4>|
 | `##### H5` | `<H5> H5 </H5>` | <H5> H5 </H5>|
 | `####### H6` | `<H6> H6 </H6>` | <H6> H6 </H6>|
-
-
 
 
 > ## Add a new markdown cell and create all the different heading sizes 
