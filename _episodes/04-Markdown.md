@@ -247,30 +247,32 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 
 ## Horizontal rules
 
-Adding 
+Adding some horizontal lines can be as simpple as just writting `---`
+
+----
+
+++++
+
+====
 
 ## Images and 
 
-![](https://res.cloudinary.com/practicaldev/image/fetch/s--ord3VrxV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/262q2x7kzw1nz1jsmmwb.png)
-
+To insert images to your markdown file, use the markup ![Alt text](/path/image.ext). The path can either be relative to the website, or a full URL for an external image. The supported formats are .png, .jpg, .gif. You might be able to use some .svg files too, depending on its structure.
 
 Markdown uses an image syntax that is intended to resemble the syntax for links.  
 - Start with an exclamation mark: `!`   
 - Followed by a set of square brackets, containing the alt attribute text for the image;
 - followed by a set of parentheses, containing the URL or path to the image, and an optional title attribute enclosed in double or single quotes.
 
+For clickable images, simply wrap the image markup into a link markup
+
 ~~~markdown
-![Alt text](/path/to/img.jpg)
-![Alt text](/path/to/img.jpg "Optional title")
+![Semantic description of image](/images/path/to/folder/image.png)
+
+![Semantic description of image](/images/path/to/folder/image.png)] <br> we can also add some captions
+
+[![Semantic description of image](/images/path/to/folder/image.png)]](path to click)
 ~~~
-
-
-## Content embedding 
-<iframe src="https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia" title="Complete list of github markdown emoji markup"></iframe>
-
-
-
-
 
 # Mathematical equations and LaTeX
 
