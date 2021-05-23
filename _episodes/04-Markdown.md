@@ -157,17 +157,22 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
 
 <style>
-td {
-  font-size: 50px
-}
+table { margin-left: auto;margin-right: auto;width: 50%;}
+td {font-size: 50px; text-align: center; }
 </style>
 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+
 |&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
+
+
+<style>
+table { margin-left: auto;margin-right: auto;width: 80%;}
+td {font-size: 20px; text-align: center; }
+</style>
 
 
 # Preformatted Text 
