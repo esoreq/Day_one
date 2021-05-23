@@ -156,15 +156,13 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
 - This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
 
-<div>
-<table border: 1px solid black;width: 50%;>
-<tr><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><tr>
-<tr><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><tr>
-<tr><td>&#128528;</td><td>&#128528;</td><td>&#128521;</td><td>&#128528;</td><td>&#128528;</td><tr>
-<tr><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><tr>
-<tr><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><td>&#128528;</td><tr>
-</table>
-</div>
+| | | | | | | 
+|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
+|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
+|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
+|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
+|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
+
 
 # Preformatted Text 
 
