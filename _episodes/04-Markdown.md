@@ -115,8 +115,9 @@ If you follow the following structure for the final project for this course, you
 
 
 > ## Add a new markdown cell and create all the different heading sizes 
+> Try to create this yourself using either the markdown or the HTML syntax 
 > > ## Solution
-> > ~~~
+> > ~~~markdown
 > > ## Cell headers come in six sizes 
 > > They are defined using the pound sign `#` before the text 
 > > # H1 Is the largest heading 
@@ -125,9 +126,8 @@ If you follow the following structure for the final project for this course, you
 > > #### H4
 > > ##### H5
 > > ###### H6 is the smallest heading 
+> > ~~~
 > {: .solution}
-> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell
-> Save the notebook as `1_Lab_template_ES_YYYY-MM-DD.ipynb` using the following shortcut <kbd>Shift+Cmd+s</kbd> or just by renaming the notebook
 {: .challenge}
 
 ## Cell Headers
