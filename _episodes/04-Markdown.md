@@ -244,12 +244,12 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 
 | language | code | render   | 
 | --- | --- | --- |
-| : Markdown :| `**bold**`  | **bold** |
-| | `*itealic*`  | *itealic* |
-| | `~~deleted~~`  | ~~deleted~~ |
-| : HTML :| `<b>bold</b>`  | <b>bold</b> |
-| | `<i>itealics</i>`  | <i>itealics</i> |
-| | `<del>deleted</del>`  | <del>deleted</del> |
+|  Markdown | `**bold**`  | **bold** |
+| ^^ | `*itealic*`  | *itealic* |
+| ^^ | `~~deleted~~`  | ~~deleted~~ |
+|  HTML | `<b>bold</b>`  | <b>bold</b> |
+| ^^ | `<i>itealics</i>`  | <i>itealics</i> |
+| ^^ | `<del>deleted</del>`  | <del>deleted</del> |
 
 
 
