@@ -154,25 +154,9 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - This is achieved using the inline css style attribute changing the tag to look like this `<mark style="background-color:blue;color:white">`. 
 - In a similiar way text can be <small>small</small>, <ins>inserted</ins> using `<small>` and `<ins>`. 
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
-- This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
-
-<style>
-table { margin-left: auto;margin-right: auto;width: 50%;}
-td {font-size: 50px; text-align: center; }
-</style>
+- This opens a whole world of options, that to be honest you will rarely use, but can be fun &#128528;&#128521;. 
 
 
-|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
-|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
-|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
-|&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
-|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
-
-
-<style>
-table { margin-left: auto;margin-right: auto;width: 80%;}
-td {font-size: 20px; text-align: center; }
-</style>
 
 
 # Preformatted Text 
@@ -183,11 +167,12 @@ td {font-size: 20px; text-align: center; }
 - Alternatively, you can make a code block using 3 or more tildes (~) or backticks (`) on a line before and after the text.
 
 
-# code blocks and code highlighting
+# Code blocks and code highlighting
 
 - When you declare a code block, you can also add the type of language to enable syntax highlighting 
 
 For example `~~~python` 
+
 ~~~python 
 def f(x):
     #Returns the square root of x
@@ -201,7 +186,9 @@ Or `~~~html`
 
 # Creating Markdown bullet lists 
 
-To create a circular bullet point, simply use either `-`, `*` or `*` followed with either one or two spaces. Each bullet point must be on its line. To construct sub levels just press TAB to before a bullet using one of the methods described here. 
+- To create a circular bullet point, simply use either `-`, `*` or `*` followed with either one or two spaces.  
+    * Each bullet point must be on its line.
+        - To construct sub levels just press TAB to before a bullet using one of the methods described here. 
 
 ~~~markdown 
 - Main bullet point
