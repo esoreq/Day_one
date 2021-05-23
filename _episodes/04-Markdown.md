@@ -108,7 +108,7 @@ If you follow the following structure for the final project for this course, you
 
 | Markdown | HTML | render   | 
 | --- | --- | --- |
-| `# H1` | `<h1> H1 </h1>` | <span style="color:GOLD">H1</span>|
+| `# H1` | `<h1> H1 </h1>` | <span style="color:GOLD"><h1>H1</h1></span>|
 | `## H2` | `<h2> H2 </h2>` | <h2> H2 </h2>|
 | `### H3` | `<h3> H3 </h3>` | <h3> H3 </h3>|
 | `#### H4` | `<h4> H4 </h4>` | <h4> H4 </h4>|
