@@ -134,23 +134,6 @@ If you follow the following structure for the final project for this course, you
 - Two tildas `~~` before and after text create the ~~strikethrough effect~~
 - ***Important text*** can be emphsised using three stars `***` 
 
-> ## Add a new markdown cell and create all the different heading sizes 
-> Try to create this yourself 
-> > ## Solution
-> > ~~~markdown
-> > ## Cell headers come in six sizes 
-> > They are defined using the pound sign `#` before the text 
-> > # Here is an example starting from H1 the largest heading  
-> > ## H2
-> > ### H3
-> > #### H4
-> > ##### H5
-> > ###### H6 is the smallest heading 
-> > ~~~
-> {: .solution}
-{: .challenge}
-
-
 # Styling text - *indented quotes*
 
 
@@ -237,6 +220,7 @@ Or `~~~html`
 - [x]  but this is checked
 ~~~
 
+
 ## Hyperlinks and references 
 
 There are four different ways of adding a hyperlink in a cell. 
@@ -260,6 +244,23 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 ```html
 <a href="https://en.wikipedia.org/wiki/Hyperlink">Hyperlink</a>
 ```
+
+## Horizontal rules
+
+* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+
+## Images and content embedding 
+
+![](https://res.cloudinary.com/practicaldev/image/fetch/s--ord3VrxV--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/262q2x7kzw1nz1jsmmwb.png)
+
 
 # Mathematical equations and LaTeX
 
@@ -323,6 +324,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 | `$x^{CRTX}$`     | $$x^{CRTX}$$     | long words      |
 ~~~
 
+- Which will look like this 
 
 | latex  | rendering | context |
 | ---: | :---: |  :--- |
@@ -334,7 +336,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 |  x^{CRTX}  | $$x^{CRTX}$$ | long words |
 
 
-## challenge
+## Challenge
 Try to replicate the following section in your notebook using a combination of what you learned so far.
 ### Timothy Leary
 ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
@@ -359,7 +361,12 @@ Try to replicate the following section in your notebook using a combination of w
 > > ~~~
 > {: .solution}
 
+## Links to expand your understanding 
 
+For those interested in using FSL, you might find the following tutorials useful.
+
+- [Markdown in Jupyter Notebook](https://www.datacamp.com/community/tutorials/markdown-in-jupyter-notebook)
+- [Markdown Cells basics](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html)
 
 {% include links.md %}
 
