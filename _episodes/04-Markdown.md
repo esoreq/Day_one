@@ -104,27 +104,20 @@ If you follow the following structure for the final project for this course, you
 - They are defined using the pound sign `#` before the text 
 - The number of symbols `##` = h2 corresponds with the heading level 
 
-
-
-| Markdown | HTML | render   | 
-| --- | --- | --- |
-| `# H1` | `<h1> H1 </h1>` | <span style="color:GOLD"><h1>H1</h1></span>|
-| `## H2` | `<h2> H2 </h2>` | <h2> H2 </h2>|
-| `### H3` | `<h3> H3 </h3>` | <h3> H3 </h3>|
-| `#### H4` | `<h4> H4 </h4>` | <h4> H4 </h4>|
-| `##### H5` | `<h5> H5 </h5>` | <h5> H5 </h5>|
-| `####### H6` | `<h6> H6 </h6>` | <h6> H6 </h6>|
-
-
-
+# Here is an example starting from H1 the largest heading 
+## H2
+### H3
+#### H4
+##### H5
+###### H6 is the smallest heading 
 
 > ## Add a new markdown cell and create all the different heading sizes 
-> Try to create this yourself using either the markdown or the HTML syntax 
+> Try to create this yourself 
 > > ## Solution
 > > ~~~markdown
 > > ## Cell headers come in six sizes 
 > > They are defined using the pound sign `#` before the text 
-> > # H1 Is the largest heading 
+> > # Here is an example starting from H1 the largest heading  
 > > ## H2
 > > ### H3
 > > #### H4
@@ -134,28 +127,12 @@ If you follow the following structure for the final project for this course, you
 > {: .solution}
 {: .challenge}
 
-## Cell Headers
-
-- Cell headers come in six sizes form h1-h6
-- They are defined using the pound sign # before the text 
-- The number of ## = h2 corresponds with the heading level 
-
-~~~
-# H1 The largest heading looks like this 
-## And this is H2 The second-largest heading
-###### Finally the smallest heading is H6
-~~~
-{: .language-markdown}
-
-
-# Styling text - **bold** *italic* and ~~strikethrough~~
+# Styling text 
  
-- Bold text is defined by either using two stars /*/* **before and after the text** 
-- Or by using the opening HTML tag `<b>` <b>and closeing tag</b> `</b>`
-- Italic uses one star \* before and after the *emphasized text*
-- Or by using `<i>` _HTML tag_ `</i>`
+- Bold text is defined by either using two stars `**` **before and after the text** 
+- Italic uses one star `*` before and after the *emphasized text*
 - Two tildas `~~` before and after text create the ~~strikethrough effect~~
-- Or by using `<del>` <del>HTML tag</del>`</del>`
+- ***Important text*** can be emphsised using three stars `***` 
 
 
 # Styling text - *indented quotes*
