@@ -6,18 +6,25 @@ teaching: 30
 exercises: 10
 questions:
 - What is Jupyter Notebook?
+- What are key benefits of the Jupyter Notebook
 - What is a Kernel? 
-- How to use a notebook to run bash code snippets.
-- How to setup FSL to be usable in the notebook
+- What is FSL? 
+- What is the `.profile` good for?
 objectives:
 - List the components and functionality of Jupyter Notebook.
 - Launch and navigate the Jupyter Notebook dashboard.
 - Open, create and save Jupyter Notebook files.
-- setup FSL to be usable in a Jupyter notebook
-- 
+- Learn how to setup FSL to be usable in a Jupyter notebook
+- Learn how to setup and use Bash environment variables in the `.profile` file
+- Learn how to use a notebook to run bash code snippets.
 
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- Jupyter notebook is a tool designed to simplify and improve data science projects
+- Jupyter notebooks are Human readable way to document any complex process that relies on a mixture of code and text 
+- In a notebook, kernels are programs that run and inspect the code section. They are not specific to one language
+- FSL is a set of programs designed to support the analysis of neuroimaging data
+- In the `.profile` file we can store a set of variables that our operating system will need when it runs certain programs.
+
 ---
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
@@ -269,6 +276,18 @@ PID TTY      STAT   TIME COMMAND
 | `COMMAND` | The actual command  |
 | | |
 
+## What we can do now 
+Once untar is running in the background, we can move on to other things that I wish to teach you, and hopefully by the end of this session the unpacking will be complete, and we can evaluate some of FSL's capabilities.
+
+## How to test if the PID is still running? 
+
+
+
+~~~bash
+ps a
+~~~
+
+
 ## Configuring your shell environment
 FSL requires you to define variables, we want to do this setup once and in the process give you some foundations that will be useful when you wish to set up a similar setup in more complex environments than our jupyter sandbox.
 
@@ -394,6 +413,14 @@ file_type	NIFTI-1+
 {: .output}
 
 Congratulations on setting up your notebook to run FSL programs natively.
+
+
+## Links to expand your understanding 
+
+While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that: 
+
+- [introduction-to-shell-fsl-style](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ)
+
 
 
 {% include links.md %}
