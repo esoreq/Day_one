@@ -156,11 +156,16 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
 - This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
 
-<span style="font-size:30px">&#128528&#128528&#128528&#128528&#128528<br>
+
+<!-- &#128528&#128528&#128528&#128528&#128528<br>
                              &#128528&#128528&#128528&#128528&#128528<br>
                              &#128528&#128528&#128521&#128528&#128528<br>
                              &#128528&#128528&#128528&#128528&#128528<br>
-                             &#128528&#128528&#128528&#128528&#128528<br>;</span>
+                             &#128528&#128528&#128528&#128528&#128528<br>; -->
+
+<span style="font-size:30px"><table>
+<tr><td>&#128528;</td><tr>
+</table></span>
 
 
 # Preformatted Text 
