@@ -27,8 +27,6 @@ keypoints:
 
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 
 ## What is Jupyter notebook?
 
@@ -79,6 +77,17 @@ press <kbd>Shift + CMD + L</kbd> to open a new launcher (or open the file menu a
 - to enter command mode you press the  <kbd>Esc</kbd>  button. 
 - Pressing <kbd>Enter</kbd> will transfer you to EDIT mode where you can interact with each cell in your notebook. 
 
+> ## Change top cell to markdown mode
+> Select the top cell using your mouse 
+> Press <kbd>Esc +  M</kbd>
+> Write the following in that cell 
+> ~~~markdown
+> # FSL setup 
+> Learning how to setup FSL in jupyter-cloud.gwdg.de
+> ~~~
+> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell
+> 
+{: .challenge}
 
 
 # COMMAND mode useful shortcuts
@@ -121,20 +130,45 @@ You should practice using these commands until they become second nature.
 Our last task in the previous episode was to create a file called `.profile`. We will now use this file to set up our environment.
 At the top cell in your open notebook copy the follwoing code and run the cell using <kbd>Shift+Enter</kbd>:  
 
-~~~
-echo source ~/.bash_aliases >> ~/.profile
-source ~/.profile
-~~~
-{: .language-bash}
-
-~~~
-running my .profile
-~~~
-{: .output}
+> # Copy and run the following code
+> ~~~
+> echo source ~/.bash_aliases >> ~/.profile
+> source ~/.profile
+> ~~~
+> {: .language-bash}
+> This time use <kbd>Ctrl+Enter</kbd> to run the new code cell 
+> ~~~
+> running my .profile
+> ~~~
+> {: .output}
+{: .challenge}
 
 ## What did we just do? 
 In sourcing the file, we are executing any commands inside - therefore all the aliases we added to the `.bash_aliases` file will be available in the notebook.
 This means that this `.profile` is one stop place to place any settings required by any shell related software, as you will see soon. 
+
+
+## Document this code using markdown
+A key difference between the two shortcuts is that the first moves to the next cell and creates it if it does not exist, while the other simply runs the cell.
+This shortcut <kbd>Ctrl+Shift+-</kbd> makes it easy to create a new cell, as well as a convenient way to divide a cell that contains multiple commands into independent cells so you can add comments explaining what they do.
+
+> # Challenge
+> Divide the single cell into two and add a markdown cell in front of each, and add text comments describing each command.
+> 1. Go to the end of the first line and press <kbd>Ctrl+Shift+-</kbd>
+> 1. Now go the begining of each of the commands and press <kbd>Ctrl+Shift+-</kbd> again 
+> 1. Convert each of the new empty code cells to Markdown using <kbd>Esc +  M</kbd>
+> 1. On the top empty markdown cell write the following text
+> ~~~markdown
+> ## Appending line to file using echo 
+> The line `source ~/.bash_aliases` is added into the file `~/.profile` using `echo` and the append `>>` symbol
+> ~~~
+> 1. On the middle empty markdown cell write the following text
+> ~~~markdown
+> ## Sourcing `~/.profile` file apply the new edits  
+> With the source (you can also use a dot `.` instead) command, commands are read from a specified file and executed in the current shell environment.
+> ~~~
+{: .challenge}
+
 
 ## Different ways of excuting programs 
 It is possible to use conditional variables in shell to control how successive commands are treated.
@@ -146,7 +180,7 @@ One of the advantages of bash is that it has the capability to work asynchronous
 - Using a double vertical line '||' groups commands with an `OR` dependency chain.
 - Using a single and '&' runs the last command in the background.
 
-## Let's create a pipline to setup FSL
+## Let's create a notebook to setup FSL on your home 
 In order to illustrate this, let's install and configure FSL, which is a neuroimaging software package which includes many functions useful for preprocessing and analysis of structural and functional fMRI.
 
 
@@ -417,10 +451,10 @@ Congratulations on setting up your notebook to run FSL programs natively.
 
 ## Links to expand your understanding 
 
-While pursuing a PhD, you should always strive to refresh, clarify, and expand your knowledge. Here are some links to support you in that: 
+For those interested in using FSL, you might find the following tutorials useful.
 
 - [introduction-to-shell-fsl-style](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ)
-
+- [FSL Tutorial: Part 1 (of many)](http://andysbrainblog.blogspot.com/2012/07/fsl-tutorial-part-1-of-many.html)
 
 
 {% include links.md %}

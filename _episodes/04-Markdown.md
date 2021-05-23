@@ -6,6 +6,8 @@ teaching: 30
 exercises: 10
 questions:
 - What is Markdown?
+- How is markdown related to HTML?
+- 
 objectives:
 - Understand the Markdown syntax and render Markdown text.
 keypoints:
@@ -59,9 +61,9 @@ keypoints:
 
 Indenting can be initialized using Greater than and space `> ` before the text
 
->There is no scientific study more vital to man than the study of his brain. Our entire view of the universe depends on it.
+> There is no scientific study more vital to man than the study of his brain. Our entire view of the universe depends on it.
 
-> **Francis Crick (1916-2004)**
+>> **Francis Crick (1916-2004)**
 
 
 # HTML tags 
@@ -104,40 +106,34 @@ Or `~~~html`
 # Creating Markdown bullet lists 
 
 To create a circular bullet point, simply use either `-`, `*` or `*` followed with either one or two spaces. Each bullet point must be on its line. To construct sub levels just press TAB to before a bullet using one of the methods described here. 
-- Main bullet point
-    * Sub bullet point
-        - Subsub bullet point
 
-```
+~~~markdown 
 - Main bullet point
     * Sub bullet point
         - Subsub bullet point
-```
+~~~
 
 # Creating Markdown numbered lists 
 
 - To create a numbered list, enter 1. followed by a space, for example:
+
+~~~markdown 
 1. Numbered item 1
 1. Numbered item 2
     1. Numbered item A
         1. Numbered item a
-        
-```
-1. Numbered item 1
-1. Numbered item 2
-    1. Numbered item A
-        1. Numbered item a
-```
+~~~        
+
 
 # Finally, I am a sucker for to-do lists that start my notebooks. 
 
 - To start a checklist, use `- [ ]` followed by space, for example:
-
 - Creating checked boxes simply replaces the space with x - like this `- [x]`
 
+~~~markdown 
 - [ ]  this is not checked
 - [x]  but this is checked
-
+~~~
 
 ## Hyperlinks and references 
 
@@ -174,39 +170,15 @@ Finally you can always use HTML tags to define a <a href="https://en.wikipedia.o
 - You can write inline formulas, enclosing the formula with `$` signs. 
 - For example, consider the inline form of the Gaussian Normal Distribution
 
-```
+~~~markdown 
 $P(x) = \frac{1}{\sigma \sqrt {2\pi}}e^{-(x-\mu)^2/2 \sigma^2}$. 
-```
-
-- Which will look like this : 
-
-$$
-f(x) = \frac{1}{\sigma \sqrt {2\pi}} e^{-1/2(\frac{x-\mu}{\sigma})^2}
-$$
-
-
-
-# display equations 
+~~~
 
 - You can also write them in display mode by using two \\$$ signs, for example.
 
-```
+~~~markdown 
 $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$. 
-```
-
-- Which will look like this
-
-$$
-
-$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$
-
-$$
-
-$$
-\begin{equation*}
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-\end{equation*}
-$$
+~~~
 
 # If you want to learn more  
 
@@ -230,11 +202,11 @@ $$
 - This tag created an HTML divider with CSS controlling the cell width
 - However the lines are long and hard to read
 
-```
+~~~markdown 
 | latex | <div style="width:100px">rendering</div> | context | 
 | --- | --- | --- | 
 | '\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' | $$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$  | Mean Squared Error | 
-```
+~~~
 
 | latex | <div style="width:100px">rendering</div> | context |
 | --- | --- | --- |
@@ -246,7 +218,7 @@ $$
 - So we can use all the things we learned up until now to create an HTML table instead of the markdown table
 
 
-```html
+~~~html
 <table>
  <tr> <!-- tr = table row  -->
     <th>latex</th> <!-- th = table header  -->
@@ -261,23 +233,7 @@ $$
     <td> Mean Squared Error</td>
  </tr>
 </table>
-```
-
-
-<table>
-    <tr>
-        <!-- tr = table row  -->
-        <th>latex</th> <!-- th = table header  -->
-        <th style="width:150px">rendering</th>
-        <th>context</th>
-    </tr>
-    <tr>
-        <!-- td = table data  -->
-        <td style="font-size:2vmin">'\sum^n_{i=1}\frac{(w^Tx(i)-y(i))^2}{n}' </td>
-        <td>$$\frac{1}{n}\sum^n_{i=1}(w^Tx(i)-y(i))^2$$ </td>
-        <td> Mean Squared Error</td>
-    </tr>
-</table>
+~~~
 
 
 # Simple table with inline formatting 
@@ -285,13 +241,17 @@ $$
 - markdown formattings will render within the table 
 - As will HTML tags 
 
-```
-| markdown | html   |
-| --- | --- |
-| **bold**   | <b>bold</b> |
-| *itealic*  | <i>itealics</i>  |
-| ~~deleted~~  | <del>deleted</del>  |
-```
+
+| language | code | render   | 
+| --- | --- | --- |
+| : Markdown :| `**bold**`  | **bold** |
+| | `*itealic*`  | *itealic* |
+| | `~~deleted~~`  | ~~deleted~~ |
+| : HTML :| `<b>bold</b>`  | <b>bold</b> |
+| | `<i>itealics</i>`  | <i>itealics</i> |
+| | `<del>deleted</del>`  | <del>deleted</del> |
+
+
 
 # multi line within table cell
 
