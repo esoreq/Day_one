@@ -8,11 +8,13 @@ questions:
 - What is Jupyter Notebook?
 - What is a Kernel? 
 - How to use a notebook to run bash code snippets.
+- How to setup FSL to be usable in the notebook
 objectives:
 - List the components and functionality of Jupyter Notebook.
 - Launch and navigate the Jupyter Notebook dashboard.
 - Open, create and save Jupyter Notebook files.
-- Create, run and delete Markdown and Code cells.  
+- setup FSL to be usable in a Jupyter notebook
+- 
 
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
@@ -335,16 +337,16 @@ export FSLOUTPUTTYPE=NIFTI_GZ
 ## Step 5. 
 
 We will try to use one of the fsl programs just to make sure we did everything correctly. 
-Let's start by calling a program called `slicer` 
+To begin, let's call a program called `fslinfo` and confirm that it is accessible.
 
 ~~~bash
-slicer
+fslinfo
 ~~~
 
 Which should produce the following error: 
 
 ~~~
-bash: slicer: command not found
+bash: fslinfo: command not found
 : 127
 ~~~
 {: .output}
@@ -354,36 +356,44 @@ bash: slicer: command not found
 > 
 > In order to make these programs we need to source our updated `.profile` file.  Here I am sourcing the `.profile` file and calling slicer after it. 
 > ~~~bash
-> source ~/.profile && slicer
+> source ~/.profile && fslinfo
 > ~~~
 > ### This should output the following: 
 >  ~~~ 
 >  running my .profile
-> 
->  Usage: slicer <input> [input2] [main options] [output options - any number of these]
-> 
->  Main options: [-L] [-l <lut>] [-s <scale>] [-i <intensitymin> <intensitymax>] [-e <thr>] [-t] [-n] [-u]
->  These must be before output options.
->  -L       : Label slices with slice number.
->  -l <lut> : use a different colour map from that specified in the header.
->  -i <min> <max> : specify intensity min and max for display range.
->  -e <thr> : use the specified threshold for edges (if >0 use this proportion of max-min, if <0, use the absolute value) 
->  -t       : produce semi-transparent (dithered) edges.
->  -n       : use nearest-neighbour interpolation for output.
->  -u       : do not put left-right labels in output.
->  
->  -c       : add a red dot marker to top right of imageOutput options:
->  [-x/y/z <slice> <filename>]      : output sagittal, coronal or axial slice
->   (if <slice> >0 it is a fraction of image dimension, if <0, it is an absolute slice number)
->  [-a <filename>]                  : output mid-sagittal, -coronal and -axial slices into one image
->  [-A <width> <filename>]          : output _all_ axial slices into one image of _max_ width <width>
->  [-S <sample> <width> <filename>] : as -A but only include every <sample>'th slice
+> Usage: /home/jovyan/fsl/bin/fslinfo <filename>
 > ~~~
 > {: .output}
 {: .solution}
 
+## Step 6. 
+Let's conclude this session by using fslinfo to make sure we can do more than just print the help output.
+Run the following line in your notebook.
 
+~~~bash
+fslinfo ~/fsl/data/standard/MNI152_T1_1mm_brain.nii.gz
+~~~ 
 
+The output should be as follows:
+
+~~~
+data_type	INT16
+dim1		182
+dim2		218
+dim3		182
+dim4		1
+datatype	4
+pixdim1		1.000000
+pixdim2		1.000000
+pixdim3		1.000000
+pixdim4		1.000000
+cal_max		8000.000000
+cal_min		3000.000000
+file_type	NIFTI-1+
+~~~
+{: .output}
+
+Congratulations on setting up your notebook to run FSL programs natively.
 
 
 {% include links.md %}
