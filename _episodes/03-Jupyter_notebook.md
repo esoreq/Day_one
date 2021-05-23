@@ -282,7 +282,24 @@ FSL requires you to define variables, we want to do this setup once and in the p
 {: .solution}
 
 ## Add to our profile file some additional variables 
-We need to add to our `.profile` file the following lines: 
+
+To instruct the computer where to find fsl, we need to tell the computer where the bin fsl folder is located. 
+Bin files are executable code for your application or library, and are stored in the bin folder. Basically, the bin folder contains files that allow you to use some kind of program. 
+The `$PATH` variable specifies which directories on the machine contain executable programs that can be run without knowing the full path on the command line.
+If you run `echo $PATH`, you should get the following output:  
+
+~~~
+/opt/conda/bin:/opt/conda/condabin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+~~~
+{: .output}
+
+We have different folder paths separated by colons (`:`) we need to add the fsl bin path to that line.
+We will do that by creating an environment variable named `FSLDIR` pointing to the new fsl folder we just created.
+Then we add `$FSLDIR/bin` to the path, which gives us (and all fsl functions) access to all the entire package.
+We also need to configure the FSL default output type to be NIFTI_GZ, which means that MRI volumes will be stored using the [NIfTI](https://nifti.nimh.nih.gov/)
+data format with [gzip](https://www.gzip.org/) compression.
+
+To do all that we just need to add to our `.profile` file the following lines: 
 
 ~~~bash
 export FSLDIR=$HOME/fsl
