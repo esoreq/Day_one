@@ -255,6 +255,9 @@ Adding some horizontal lines can be as simpple as just writting `---`
 
 ====
 
+<video controls src="https://www.youtube.com/watch?v=Y6hhJvIZhls">animation</video>
+
+
 ## Images and 
 
 To insert images to your markdown file, use the markup ![Alt text](/path/image.ext). The path can either be relative to the website, or a full URL for an external image. The supported formats are .png, .jpg, .gif. You might be able to use some .svg files too, depending on its structure.
