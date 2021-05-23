@@ -154,7 +154,13 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - This is achieved using the inline css style attribute changing the tag to look like this `<mark style="background-color:blue;color:white">`. 
 - In a similiar way text can be <small>small</small>, <ins>inserted</ins> using `<small>` and `<ins>`. 
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
-- This opens a whole world of options, that to be honest you will rarely use <span style="font-size:30px">&#128521;</span>, but can be fun. 
+- This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
+
+<span style="font-size:30px">&#128528&#128528&#128528&#128528&#128528<br>
+                             &#128528&#128528&#128528&#128528&#128528<br>
+                             &#128528&#128528&#128521&#128528&#128528<br>
+                             &#128528&#128528&#128528&#128528&#128528<br>
+                             &#128528&#128528&#128528&#128528&#128528<br>;</span>
 
 
 # Preformatted Text 
