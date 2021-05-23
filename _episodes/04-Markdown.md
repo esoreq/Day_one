@@ -255,7 +255,7 @@ Adding some horizontal lines can be as simpple as just writting `---`
 
 ====
 
-<video controls src="https://www.youtube.com/watch?v=Y6hhJvIZhls">animation</video>
+<video controls src="../files/Reproducibility and Replicability in Science.mp4">animation</video>
 
 
 ## Images and 
@@ -369,7 +369,9 @@ Try to replicate the following section in your notebook using a combination of w
 > > ## Solution
 > > ~~~markdown
 > > ### Timothy Leary
-> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg){: style="float:left"}
+> >
+> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
+> >
 > > ###### American psychologist
 > > **Born**: October 22, 1920, Springfield, Massachusetts, United States  
 > > **Died**: May 31, 1996, Beverly Hills, California, United States
