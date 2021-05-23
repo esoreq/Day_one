@@ -156,7 +156,13 @@ Indenting can be initialized using Greater than and space `> ` before the text
 - It can be subscript<sub>text</sub> or Superscript<sup>text</sup> using `<sub>` and `<sup>`
 - This opens a whole world of options, that to be honest you will rarely use, but can be fun. 
 
-| | | | | | | 
+<style>
+td {
+  font-size: 50px
+}
+</style>
+
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 |&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
 |&#128528;|&#128528;|&#128528;|&#128521;|&#128521;|&#128528;|&#128528;|&#128528;|
