@@ -108,12 +108,12 @@ If you follow the following structure for the final project for this course, you
 
 | Markdown | HTML | render   | 
 | --- | --- | --- |
-| `# H1` | `<H1> H1 </H1>` | <div><h1> H1 </h1> </div>|
-| `## H2` | `<H2> H2 </H2>` | <h2> H2 </h2>|
-| `### H3` | `<H3> H3 </H3>` | <h3> H3 </h3>|
-| `#### H4` | `<H4> H4 </H4>` | <h4> H4 </h4>|
-| `##### H5` | `<H5> H5 </H5>` | <h5> H5 </h5>|
-| `####### H6` | `<H6> H6 </H6>` | <h6> H6 </h6>|
+| `# H1` | `<h1> H1 </h1>` | <span style="color:GOLD">H1</span>|
+| `## H2` | `<h2> H2 </h2>` | <h2> H2 </h2>|
+| `### H3` | `<h3> H3 </h3>` | <h3> H3 </h3>|
+| `#### H4` | `<h4> H4 </h4>` | <h4> H4 </h4>|
+| `##### H5` | `<h5> H5 </h5>` | <h5> H5 </h5>|
+| `####### H6` | `<h6> H6 </h6>` | <h6> H6 </h6>|
 
 
 
