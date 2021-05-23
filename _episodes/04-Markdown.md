@@ -56,8 +56,9 @@ In this section, we will go over all the different ways to create a structured d
 > # Lab Template 
 > This notebook covers the different ways to use markdown to create an effective data science document.
 > ~~~
-> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell
-> Save the notebook as `1_Lab_template_ES_YYYY-MM-DD.ipynb` using the following shortcut <kbd>Shift+Cmd+s</kbd> or just by renaming the notebook
+> Now press <kbd>Shift+Enter</kbd> to render the Markdown cell  
+> Use the following shortcut <kbd>Shift+Cmd+s</kbd> or just use the GUI to rename the open notebook  
+> Use a name that follows the rules we just covered e.g. `1_Lab_template_ES_YYYY-MM-DD.ipynb`  
 {: .challenge}
 
 
@@ -106,8 +107,8 @@ If you follow the following structure for the final project for this course, you
 
 | Markdown | HTML | render   | 
 | --- | --- | --- |
-| `# H1` | `<H1> H1 </H1>` | <H1> H1 </H1> |
-| `## H2` | `<H2> H2 </H2>` | <H2> H2 </H2>|
+| `# H1` | `<H1> H1 </H1>` | <h1> H1 </h1> |
+| `## H2` | `<H2> H2 </H2>` | <h2> H2 </h2>|
 | `### H3` | `<H3> H3 </H3>` | <H3> H3 </H3>|
 | `#### H4` | `<H4> H4 </H4>` | <H4> H4 </H4>|
 | `##### H5` | `<H5> H5 </H5>` | <H5> H5 </H5>|
