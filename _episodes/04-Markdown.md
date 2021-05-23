@@ -349,7 +349,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 ## Challenge
 Try to replicate the following section in your notebook using a combination of what you learned so far.
 ### Timothy Leary
-![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg)
+![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg){: style="float:left"}
 ###### American psychologist
 **Born**: October 22, 1920, Springfield, Massachusetts, United States  
 **Died**: May 31, 1996, Beverly Hills, California, United States
@@ -361,7 +361,7 @@ Try to replicate the following section in your notebook using a combination of w
 > > ## Solution
 > > ~~~markdown
 > > ### Timothy Leary
-> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg#left)
+> > ![](https://cdn-60080014c1ac18031c64f892.closte.com/wp-content/uploads/2017/08/leary-750x420.jpg){: style="float:left"}
 > > ###### American psychologist
 > > **Born**: October 22, 1920, Springfield, Massachusetts, United States  
 > > **Died**: May 31, 1996, Beverly Hills, California, United States
