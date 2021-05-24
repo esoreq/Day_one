@@ -154,10 +154,61 @@ base                  *  /opt/conda
 ~~~
 {: .output}  
 
-By default, an environment called base is created when installing and intializing Conda.  
+By default, an environment called `base` is created when installing and intializing Conda.  
 `base` contains a number of standard Python packages that may or may not be useful.
 
+### View installed kernels  
+Remember that a kernel is just a program that runs and inspects your code: it provides computation and communication with frontend UIs, like  notebooks.  
+The Jupyter Notebook Application has three main kernels: the IPython (python3), IRkernel (ir) and IJulia (julia-1.6) kernels.  
+XPython and bash are two additional kernels in our gwdg cloud.  
+XPython is primarily used for debugging python code, and we have been using the bash kernel since we began the course and it provides direct access to bash.
 
+~~~bash
+jupyter kernelspec list
+~~~
+
+Should look like this:
+
+~~~
+  bash            /opt/conda/share/jupyter/kernels/bash
+  ir              /opt/conda/share/jupyter/kernels/ir
+  julia-1.6       /opt/conda/share/jupyter/kernels/julia-1.6
+  python3         /opt/conda/share/jupyter/kernels/python3
+  xpython         /opt/conda/share/jupyter/kernels/xpython
+~~~
+{: .output}  
+
+
+## How do we create a new environment in anaconda
+
+1. In Anaconda, you can create an environment by typing the following: `conda create --name myenv`, where myenv is the name of your environment.
+1. This creates an empty environment named myenv in `$HOME/env/`. 
+1. To create an environment with a particular version of Python, simply type in `conda create --name myenv python=3.8` Keep in mind that this will create a very large folder, so be careful.
+1. To create an environment with specific packages, simply list the packages you wish to include:  `conda create --name myenv numpy pandas matplotlib`
+1. To specify the location of an environment (i.e. in a place different to the default location) use the `--prefix` option as follows :   `conda create --prefix ~/some_path/myenv`
+1. To remove an environment, in your terminal run: `conda remove --name myenv --all`
+
+<!-- ## Creating an environment from an environment.yml file  add tomorrow -->
+
+
+## Let's create a new environment 
+
+We will call this environment `bash_sandbox` and we will call `conda env list` only if we were successful in creating our new environment.
+
+~~~bash
+conda create --name bash_sandbox && conda env list
+~~~
+
+~~~
+# conda environments:
+#
+bash_sandbox             /home/jovyan/env/bash_sandbox
+xeus-python              /home/jovyan/env/xeus-python
+base                  *  /opt/conda
+~~~
+{: .output}  
+
+{"argv": ["/opt/conda/bin/python", "-m", "bash_kernel", "-f", "{connection_file}"], "codemirror_mode": "shell", "display_name": "Bash", "env": {"PS1": "$"}, "language": "bash"}
 ### Change .profile to auto load conda base
 Because we altered the code in our ~/.bashrc, the base environment isn't loaded automatically when we log into the shell. This can help speed up tasks if you don't need to use anything in the environment but, if we do need to use something in the environment, we'll need to activate the environment first. We'll start with the base environment.
 
@@ -551,6 +602,9 @@ For those interested in learning more...
 
 - [Conda Essentials](https://learn.datacamp.com/courses/conda-essentials)
 - [Building and Distributing Packages with Conda](https://learn.datacamp.com/courses/building-and-distributing-packages-with-conda)
+- [Some background on ipython and jupyter](https://www.datacamp.com/community/blog/ipython-jupyter)
+- [Jupyter Notebook Tutorial: The Definitive Guide](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)
+
 
 {% include links.md %}
 
