@@ -390,6 +390,18 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 |  x^{CRTX}  | $$x^{CRTX}$$ | long words |
 
 
++----+----------+
+|    | animal   |
++====+==========+
+|  0 | elk      |
++----+----------+
+|  1 | pig      |
++----+----------+
+|  2 | dog      |
++----+----------+
+|  3 | quetzal  |
++----+----------+
+
 ## Challenge
 Try to replicate the following section in your notebook using a combination of what you learned so far.
 ### Timothy Leary

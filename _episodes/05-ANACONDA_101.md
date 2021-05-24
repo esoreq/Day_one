@@ -8,7 +8,7 @@ questions:
 - What is Conda?
 - Why should I use a package and environment management system as part of my research workflow?
 - What is an environment? 
-- How do I creare an environment in the gwdg jupyter cloud 
+- How do I create my own environment in the gwdg jupyter cloud 
 objectives:
 - Understand what Conda is and how it can simplify analysis pipelines.
 - Learn how to install and configure Conda on any system.
@@ -60,13 +60,71 @@ Using Conda as part of analysis workflows has a lot of advantages:
 1. Operating systems aren't really an issue (it runs on Mac, Windows, Linux). However, not every package is available for every OS.
 1. We can replicate and share environments, so our analysis is more accurate.
 
-## Conda in Practice
+## Conda in Practice over the gwdg
+1. One thing we ultimately want is having full control over the environment
+1. The following is true to your local computer as well as the cluster
+1. Anaconda gives us this power exactly
 
-### Make sure conda is there (terminal)
 
-### Run conda init 
+## Our first job extending our profile 
 
+Our *.profile* is the place where all our settings are kept, so it will come as no surprise that we will also use it to configure Anaconda.
+We will open terminal instance in the jupyter cloud and append `source /opt/conda/etc/profile.d/conda.sh` to the end of our `.profile` file. 
+Remember that we must source the `.profile` file for any changes we make to take  effect.
 
+> # Copy and run the following code 
+> ~~~bash
+> echo source /opt/conda/etc/profile.d/conda.sh >> ~/.profile
+> source ~/.profile
+> ~~~
+> 
+> ~~~
+> running my .profile
+> ~~~
+> {: .output}
+{: .challenge}
+
+## Test conda
+
+Run the following code to verify conda is running and configured correctly
+
+~~~bash
+conda info
+~~~
+
+## You should get an output that resembles this.
+
+~~~
+     active environment : base
+    active env location : /opt/conda
+            shell level : 1
+       user config file : /home/jovyan/.condarc
+ populated config files : /opt/conda/.condarc
+                          /home/jovyan/.condarc
+          conda version : 4.10.0
+    conda-build version : not installed
+         python version : 3.8.8.final.0
+       virtual packages : __linux=4.15.0=0
+                          __glibc=2.31=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /opt/conda  (writable)
+      conda av data dir : /opt/conda/etc/conda
+  conda av metadata url : https://repo.anaconda.com/pkgs/main
+           channel URLs : https://conda.anaconda.org/conda-forge/linux-64
+                          https://conda.anaconda.org/conda-forge/noarch
+          package cache : /opt/conda/pkgs
+                          /home/jovyan/.conda/pkgs
+       envs directories : /home/jovyan/env
+                          /opt/conda/envs
+                          /home/jovyan/.conda/envs
+               platform : linux-64
+             user-agent : conda/4.10.0 requests/2.25.1 CPython/3.8.8 Linux/4.15.0-140-generic ubuntu/20.04.2 glibc/2.31
+                UID:GID : 1000:100
+             netrc file : None
+           offline mode : False
+~~~
+{: .output}           
 
 
 ## Creating and Managing Environments
@@ -76,15 +134,28 @@ Using Conda as part of analysis workflows has a lot of advantages:
 Now that we've made sure Conda is working, we're ready to start learning how to use it as an environment-based package manager.   
 Environments are an integral part of Conda-based workflows.   
 They are customizable, reproducible, and shareable modules that contain the resources for a specific task or set of tasks.   
-Environments also help avoid "dependency hell" where required programs are incompatible with previously installed programs or program versions.
+Environments also help avoid "dependency hell" where required programs are incompatible with previously installed programs or program versions.  
+
 
 ### View installed enviorments 
 
-To start with, let's see what environments we currently have set up. This will list all of the environments available for us to use along with their locations.
+To start with, let's see what environments we currently have set up.  
+This will list all of the environments available for us to use along with their locations.
 
-`conda env list`
+~~~bash
+conda env list
+~~~
 
-By default, an environment called base is created when installing and intializing Conda. base contains a number of standard Python packages that may or may not be useful.
+Should look like this:
+
+~~~
+xeus-python              /home/jovyan/env/xeus-python
+base                  *  /opt/conda
+~~~
+{: .output}  
+
+By default, an environment called base is created when installing and intializing Conda.  
+`base` contains a number of standard Python packages that may or may not be useful.
 
 
 ### Change .profile to auto load conda base
@@ -476,10 +547,10 @@ Try to replicate the following section in your notebook using a combination of w
 
 ## Links to expand your understanding 
 
-For those interested in using FSL, you might find the following tutorials useful.
+For those interested in learning more...
 
-- [Markdown in Jupyter Notebook](https://www.datacamp.com/community/tutorials/markdown-in-jupyter-notebook)
-- [Markdown Cells basics](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html)
+- [Conda Essentials](https://learn.datacamp.com/courses/conda-essentials)
+- [Building and Distributing Packages with Conda](https://learn.datacamp.com/courses/building-and-distributing-packages-with-conda)
 
 {% include links.md %}
 
