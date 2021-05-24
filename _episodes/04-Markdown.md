@@ -322,10 +322,9 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 - You must include a blank line before your table for it to correctly render.
 
 > ## Create a table
-> Try to recreate the following table that investigates the structure of the follwoing quote 
+> Try to recreate the following table that investigates the structure of the following quote 
 > > *I gave my cat a bath the other day… they love it.*  
 > > *He sat there, he enjoyed it, and it was fun for me too.*
-> > *The fur would stick to my tongue, but other than that…*
 > > *(Steve Martin)*
 > 
 >  | Information about | Type of Knowledge | Information |  
@@ -337,7 +336,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 >  | How | Implicit | “He put the cat in the bath”| 
 > 
 > 
-> > ## Solution
+> > ## Broken Assumptions
 > > ~~~markdown
 > >  | Information about | Type of Knowledge | Information |  
 > >  | Who |  Explicit | 'I' |
@@ -346,6 +345,11 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 > >  | When | Explicit | the other day|
 > >  | Why | Implicit | “the cat was dirty”| 
 > >  | How | Implicit | “He put the cat in the bath”| 
+> > 
+> > The punchline of this joke break one of our implicit assumptions  
+> > *The fur would stick to my tongue, but other than that…*
+> > *(Steve Martin)*
+> > Taken from Jared Volle, M.S. CreativeStandUp.com
 > > ~~~
 > {: .solution}
 {: .challenge}
