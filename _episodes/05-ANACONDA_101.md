@@ -149,7 +149,6 @@ conda env list
 Should look like this:
 
 ~~~
-xeus-python              /home/jovyan/env/xeus-python
 base                  *  /opt/conda
 ~~~
 {: .output}  
@@ -203,12 +202,91 @@ conda create --name bash_sandbox && conda env list
 # conda environments:
 #
 bash_sandbox             /home/jovyan/env/bash_sandbox
-xeus-python              /home/jovyan/env/xeus-python
 base                  *  /opt/conda
 ~~~
 {: .output}  
 
-{"argv": ["/opt/conda/bin/python", "-m", "bash_kernel", "-f", "{connection_file}"], "codemirror_mode": "shell", "display_name": "Bash", "env": {"PS1": "$"}, "language": "bash"}
+## We need to register our environment to Jupyter KernelSpec
+We do that using a software called `ipykernel` which is a powerful interactive Python shell and a Jupyter kernel to work with Python code in Jupyter notebooks and other interactive frontends.
+The following code registers the new environment we created and creates a folder in your hidden `.local` folder that stores the information needed to run that kernel. 
+
+~~~bash
+python -m ipykernel install --user --name=bash_sandbox
+~~~
+
+~~~
+Installed kernelspec bash_sandbox in /home/jovyan/.local/share/jupyter/kernels/bash_sandbox
+~~~
+{: .output} 
+
+## Look under the hood 
+
+If we list the files in the new kenrel folder we should find three files  
+
+~~~ bash 
+ls /home/jovyan/.local/share/jupyter/kernels/bash_sandbox
+~~~
+
+~~~
+kernel.json  logo-32x32.png  logo-64x64.png
+~~~
+{: .output} 
+
+The two images are two sizes of the Python logo, and that is the image Jupyter will use as an icon.  
+The more intresting file is the `kernel.json` it contains all the information about the kernel.  
+If we `cat` it's contents we get the following info :
+
+~~~bash
+cat ~/.local/share/jupyter/kernels/bash_sandbox/kernel.json
+~~~
+
+~~~
+{
+ "argv": [
+  "/opt/conda/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "bash_sandbox",
+ "language": "python"
+}
+~~~
+{: .output} 
+
+The parameters need to be changed to point to a bash kernel rather than a  `ipykernel_launcher`. 
+
+We can either open the file using `nano` in a terminal or alternatively use `tee` to overwrite the file as follows:
+
+~~~bash
+tee ~/.local/share/jupyter/kernels/bash_sandbox/kernel.json << END
+{
+ "argv": [
+  "/opt/conda/bin/python",
+  "-m",
+  "bash_kernel",
+  "-f",
+  "{connection_file}"
+ ],
+ "codemirror_mode": "shell",
+ "display_name": "bash_sandbox",
+ "env": {
+     "PS1": "$",
+     "FSLDIR":"$HOME/fsl",
+     "PATH":"$PATH:$FSLDIR/bin",
+     "FSLOUTPUTTYPE":"NIFTI_GZ"
+},
+ "language": "bash"
+}
+END
+~~~
+
+> # What are we doing here? 
+> What information are we changing and adding here and how will this  affect the new kernel?
+{: .discussion}
+
+
 ### Change .profile to auto load conda base
 Because we altered the code in our ~/.bashrc, the base environment isn't loaded automatically when we log into the shell. This can help speed up tasks if you don't need to use anything in the environment but, if we do need to use something in the environment, we'll need to activate the environment first. We'll start with the base environment.
 
