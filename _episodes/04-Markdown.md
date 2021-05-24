@@ -328,31 +328,32 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 > > *(Steve Martin)*
 > 
 >  | Information about | Type of Knowledge | Information |  
->  | Who |  Explicit | 'I' |
->  | What | Explicit | 'gave my cat a bath' | 
->  | Where |Implicit | “the bathroom” |
->  | When | Explicit | the other day|
->  | Why | Implicit | “the cat was dirty”| 
->  | How | Implicit | “He put the cat in the bath”| 
+>  | Who |  <mark style="background-color:green;color:white"> Explicit</mark> | 'I' |
+>  | What | <mark style="background-color:green;color:white"> Explicit</mark> | 'gave my cat a bath' | 
+>  | Where |<mark style="background-color:red;color:white"> Implicit</mark> | “the bathroom” |
+>  | When | <mark style="background-color:green;color:white"> Explicit</mark> | the other day|
+>  | Why | <mark style="background-color:red;color:white"> Implicit</mark>  | “the cat was dirty”| 
+>  | How | <mark style="background-color:red;color:white"> Implicit</mark>  | “He put the cat in the bath”| 
 > 
 > 
 > > ## Broken Assumptions
 > > Here is how to recreate 
 > > ~~~markdown
 > >  | Information about | Type of Knowledge | Information |  
-> >  | Who |  Explicit | 'I' |
-> >  | What | Explicit | 'gave my cat a bath' | 
-> >  | Where |Implicit | “the bathroom” |
-> >  | When | Explicit | the other day|
-> >  | Why | Implicit | “the cat was dirty”| 
-> >  | How | Implicit | “He put the cat in the bath”| 
+> >  | Who |  Explicit | `I` |
+> >  | What | Explicit | `gave my cat a bath` | 
+> >  | Where |Implicit | `the bathroom` |
+> >  | When | Explicit | `the other day`|
+> >  | Why | Implicit | `the cat was dirty`| 
+> >  | How | Implicit | `He put the cat in the bath`| 
 > > ~~~
 > > Here is the original joke, which has some relevance to our course 
 > > > *I gave my cat a bath the other day… they love it.*  
 > > > *He sat there, he enjoyed it, and it was fun for me too.*
 > > > *The fur would stick to my tongue, but other than that…*
 > > > *(Steve Martin)*
-> > > Taken from Jared Volle, M.S. CreativeStandUp.com
+> > > Taken from Jared Volle, M.S. CreativeStandUp.com  
+> > >
 > > Jared Volle argues that the punchline works because it violates one of the implicit assumptions we made based on the knowledge we had. 
 > > Call me crazy but I see a really great cognitive study here.  
 > {: .solution}
