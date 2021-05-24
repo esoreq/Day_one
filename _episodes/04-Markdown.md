@@ -317,17 +317,38 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 # Creating tables 
 
 - While you could use latex to create your tables, Markdown simplifies this. 
-- Tables are created using pipes | and hyphens -. 
+- Tables are created using pipes `|` and hyphens `-`. 
 - Hyphens are used to create each column's header, while pipes separate each column. 
 - You must include a blank line before your table for it to correctly render.
 
-
-# Simple table with heading long lines?
-
-- So we can use all the things we learned up until now to control this table 
-- This means we can use inline latex and HTML tags
-- This tag created an HTML divider with CSS controlling the cell width
-- However the lines are long and hard to read
+> ## Create a table
+> Try to recreate the following table that investigates the structure of the follwoing quote 
+> > *I gave my cat a bath the other day… they love it.*  
+> > *He sat there, he enjoyed it, and it was fun for me too.*
+> > *The fur would stick to my tongue, but other than that…*
+> > *(Steve Martin)*
+> 
+>  | Information about | Type of Knowledge | Information |  
+>  | Who |  Explicit | 'I' |
+>  | What | Explicit | 'gave my cat a bath' | 
+>  | Where |Implicit | “the bathroom” |
+>  | When | Explicit | the other day|
+>  | Why | Implicit | “the cat was dirty”| 
+>  | How | Implicit | “He put the cat in the bath”| 
+> 
+> 
+> > ## Solution
+> > ~~~markdown
+> >  | Information about | Type of Knowledge | Information |  
+> >  | Who |  Explicit | 'I' |
+> >  | What | Explicit | 'gave my cat a bath' | 
+> >  | Where |Implicit | “the bathroom” |
+> >  | When | Explicit | the other day|
+> >  | Why | Implicit | “the cat was dirty”| 
+> >  | How | Implicit | “He put the cat in the bath”| 
+> > ~~~
+> {: .solution}
+{: .challenge}
 
 
 # Table content can be aligned 
