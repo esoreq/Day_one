@@ -337,6 +337,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 > 
 > 
 > > ## Broken Assumptions
+> > Here is how to recreate 
 > > ~~~markdown
 > >  | Information about | Type of Knowledge | Information |  
 > >  | Who |  Explicit | 'I' |
@@ -345,12 +346,15 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 > >  | When | Explicit | the other day|
 > >  | Why | Implicit | “the cat was dirty”| 
 > >  | How | Implicit | “He put the cat in the bath”| 
-> > 
-> > The punchline of this joke break one of our implicit assumptions  
-> > *The fur would stick to my tongue, but other than that…*
-> > *(Steve Martin)*
-> > Taken from Jared Volle, M.S. CreativeStandUp.com
 > > ~~~
+> > Here is the original joke, which has some relevance to our course 
+> > > *I gave my cat a bath the other day… they love it.*  
+> > > *He sat there, he enjoyed it, and it was fun for me too.*
+> > > *The fur would stick to my tongue, but other than that…*
+> > > *(Steve Martin)*
+> > > Taken from Jared Volle, M.S. CreativeStandUp.com
+> > Jared Volle argues that the punchline works because it violates one of the implicit assumptions we made based on the knowledge we had. 
+> > Call me crazy but I see a really great cognitive study here.  
 > {: .solution}
 {: .challenge}
 
