@@ -1,32 +1,116 @@
 ---
-title: "Introduction to Markdown"
+title: "ANACONDA 101"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
-teaching: 30
-exercises: 10
+teaching: 20
+exercises: 20
 questions:
-- What is Markdown?
-- How is markdown related to HTML?
-- Why is markdown useful? 
-
+- What is Conda?
+- Why should I use a package and environment management system as part of my research workflow?
+- What is an environment? 
+- How do I creare an environment in the gwdg jupyter cloud 
 objectives:
-- Explain what the Markdown format is.
-- Describe the role of Markdown for documentation of data science workflows.
-- Use Markdown syntax in Jupyter Notebook to design a lab template.
+- Understand what Conda is and how it can simplify analysis pipelines.
+- Learn how to install and configure Conda on any system.
+- Be able to create reproducible computing environments for (almost) any task.
+
 
 keypoints:
-- Markdown allows you to include rich design and coding together
-- Markdown is a text-to-HTML conversion tool for writers.
-- Markdown gives us the ability to integrate together code and context 
+- Conda is a Python-based environment and package manager
+- It enables us to use 
 ---
 
-# What is Markdown?
-Markdown is the formating codes for creating publishable data science report using Jupyter. 
-The Markdown formatting process requires you to use syntax to apply various formatting, such as **bold text** or *italics*.
-In this section, we will go over all the different ways to create a structured document using the Markdown syntax supported by Jupyter Notebook.
+# Conda in Theory?
 
-## **The lab notebook** 
-**The lab notebook** is where you try out ideas for your study and is intended for you and in special cases someone you are working with (can and will be messy). 
+## What is Conda?
+Conta is a package and environment manager based on Python. It assists in the development of reproducible analysis pipelines using crowd-sourced and version-controlled packages. It might be a bit confusing for an individual who is new to this type of approach. In order to make sure we all understand each other, let's establish some quick vocabulary:
+
+## What is an environment?
+
+In a computing environment, people use an assortment of programs, language libraries, etc. to operate a computer.  
+Depending on the context, the word environment can have many different meanings, like a generalized term for an ecological ecosystem that can refer to anything from a puddle to a continent.  
+As far as we're concerned, an environment is simply a set of tools that are put together to assist us in exploring data-driven questions in a reproducible manner.
+
+## What is an package?
+As the name implies, a package is a collection of software, including things like programs  (e.g. Python), programming libraries (e.g. Bash), or other useful tools.  
+Using the Conda package management system, you can combine packages and make complex environments.  
+It can be summed up like this: Conda creates self-contained modules that contain all of the necessary programs, etc, in order to complete a specific task of computing.
+
+
+## What is dependency hell
+The term dependency hell refers to the problems that users generally face when they rely on many interdependent packages.  
+The main source of complications or bugs in dependency hell are changes made to third-party packages that are no longer compatible with one another.
+
+
+## How does Conda manage dependencies
+Conda helps manage dependencies in two primary ways:
+Allows the creation of environments that isolate each project, thereby preventing dependency conflicts between projects.  
+Provides identification of dependency conflicts at time of package installation, thereby preventing conflicts within projects/environments.
+
+## What is version control 
+Version control is what, exactly? Version control tools allow you to keep track of the changes you make to your work over time.  
+This feature is a little like "track changes" in Google Docs, but with the difference that you can save changes across several files, not just within one.
+
+## Why is Conda useful?
+
+Using Conda as part of analysis workflows has a lot of advantages:
+
+1. It helps keep your computing environment organized so you're less likely to end up in "dependency hell".
+1. Since packages are version-controlled, you can easily switch versions if one doesn't work.
+1. Operating systems aren't really an issue (it runs on Mac, Windows, Linux). However, not every package is available for every OS.
+1. We can replicate and share environments, so our analysis is more accurate.
+
+## Conda in Practice
+
+### Make sure conda is there (terminal)
+
+### Run conda init 
+
+
+
+
+## Creating and Managing Environments
+
+### Environments 101
+
+Now that we've made sure Conda is working, we're ready to start learning how to use it as an environment-based package manager.   
+Environments are an integral part of Conda-based workflows.   
+They are customizable, reproducible, and shareable modules that contain the resources for a specific task or set of tasks.   
+Environments also help avoid "dependency hell" where required programs are incompatible with previously installed programs or program versions.
+
+### View installed enviorments 
+
+To start with, let's see what environments we currently have set up. This will list all of the environments available for us to use along with their locations.
+
+`conda env list`
+
+By default, an environment called base is created when installing and intializing Conda. base contains a number of standard Python packages that may or may not be useful.
+
+
+### Change .profile to auto load conda base
+Because we altered the code in our ~/.bashrc, the base environment isn't loaded automatically when we log into the shell. This can help speed up tasks if you don't need to use anything in the environment but, if we do need to use something in the environment, we'll need to activate the environment first. We'll start with the base environment.
+
+# Sanity check 
+
+You should now see that the word base is in your prompt showing that we've loaded the base environment. Another way to check which environment you have active is to look at the $CONDA_PREFIX shell variable. If you don't have any environment loaded, the output will be blank.
+
+echo $CONDA_PREFIX
+
+## list installed programs 
+Now that we have the base environment loaded, let's see which programs it contains for us to use.
+
+`conda list`
+
+The output from this command lists all of the programs, their versions, the build number, and the channel they came from if outside of the defaults channels.
+
+## Check $PATH
+We can check to make sure we are using the programs from our environment by using which to print the executable path or by checking our shell $PATH variable. The $PATH variable lists the order of folders from first to last that the shell will look through to find executables. The shell will execute the first binary it finds and ignore the rest so it's important our $PATH is in the correct order.
+
+`echo $PATH`
+
+## Creating Task-Specific Environments
+
+In a typical workflow, it's good practice to create environments for each task or script being executed to keep the environment running as fast as possible, reduce the likelihood of conflicting programs/versions, and assist in debugging when things don't work out. Let's create a new environment for analyzing 16S bacterial sequencing data with mothur.
 
 ## Here are some best practices that work for me
 
