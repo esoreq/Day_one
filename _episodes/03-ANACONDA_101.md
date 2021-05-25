@@ -1,5 +1,5 @@
 ---
-title: "ANACONDA 101"
+title: "Anaconda environment 101"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 20
@@ -192,12 +192,15 @@ Should look like this:
 
 
 ## Let's create a new environment 
+Armed with this information we will now create our first environment.
+We will call this environment `FSL_sandbox` for reason i will explain in our next session.
 
-We will call this environment `FSL_sandbox` and we will call `conda env list` only if we were successful in creating our new environment.
 
 ~~~bash
 conda create --name bash_sandbox && conda env list
 ~~~
+
+Recall that using a double `&` symbol means that the next command is only executed if the first one was successful.
 
 ~~~
 # conda environments:
@@ -209,7 +212,9 @@ base                  *  /opt/conda
 
 ## We need to register our environment to Jupyter KernelSpec
 
-We do that using a software called `ipykernel` which is a powerful interactive Python shell and a Jupyter kernel to work with Python code in Jupyter notebooks and other interactive frontends.
+It is the *KernelSpec* that determines what kernels are available on our Jupyter portal.  
+If we create a new environment and want it to be available we need to install it which in essence simply means adding it in a list somewhere.  
+We do that using a software called `ipykernel` which is a powerful interactive Python shell and a Jupyter kernel to work with Python code in Jupyter notebooks and other interactive frontends.  
 The following code registers the new environment we created and creates a folder in your hidden `.local` folder that stores the information needed to run that kernel. 
 
 ~~~bash
@@ -234,7 +239,7 @@ kernel.json  logo-32x32.png  logo-64x64.png
 ~~~
 {: .output} 
 
-The two images are two sizes of the Python logo, and that is the image Jupyter will use as an icon.  
+The two images are two sizes of the Python logo, and that is the image Jupyter will use as an icon (Changing it, however, is not easy).  
 The more intresting file is the `kernel.json` it contains all the information about the kernel.  
 If we `cat` it's contents we get the following info :
 
@@ -273,12 +278,7 @@ tee ~/.local/share/jupyter/kernels/FSL_sandbox/kernel.json << END
  ],
  "codemirror_mode": "shell",
  "display_name": "FSL_sandbox",
- "env": {
-     "PS1": "$",
-     "FSLDIR":"$HOME/fsl",
-     "PATH":"$PATH:$FSLDIR/bin",
-     "FSLOUTPUTTYPE":"NIFTI_GZ"
-},
+ "env": {"PS1": "$"},
  "language": "bash"
 }
 END
@@ -307,7 +307,11 @@ conda deactivate
 
 ## Open the launcher and open a new FSL_sandbox notebook 
 
-If everything worked we should now be able to create an FSL_sandbox bash notebook 
+If everything worked we should now be able to create an FSL_sandbox bash notebook. 
+
+Something we will do just after a short break of 10 minutes (for coffee).   
+ 
+
 
 ## Links to expand your understanding 
 

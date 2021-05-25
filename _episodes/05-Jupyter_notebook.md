@@ -3,12 +3,11 @@ title: "Introduction to Bash Jupyter notebook"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
-exercises: 10
+exercises: 20
 questions:
 - What is Jupyter Notebook?
 - What are key benefits of the Jupyter Notebook
-- What is a Kernel? 
-- What is FSL? 
+- What is FSL and how can we make our notebook run FSL commands? 
 - What is the `.profile` good for?
 objectives:
 - List the components and functionality of Jupyter Notebook.
@@ -446,7 +445,68 @@ file_type	NIFTI-1+
 ~~~
 {: .output}
 
+
+
+
+## Step 7. 
+
+The current setup requires us to run `.profile` every time we use the notebook (or even every time we restart the kernel), a better solution would be to embed the environment variables into the kernel.json. The following code implements that.
+
+~~~bash
+tee ~/.local/share/jupyter/kernels/FSL_sandbox/kernel.json << END
+{
+ "argv": [
+  "/opt/conda/bin/python",
+  "-m",
+  "bash_kernel",
+  "-f",
+  "{connection_file}"
+ ],
+ "codemirror_mode": "shell",
+ "display_name": "FSL_sandbox",
+ "env": {
+     "PS1": "$",
+     "FSLDIR":"$HOME/fsl",
+     "PATH":"$PATH:$FSLDIR/bin",
+     "FSLOUTPUTTYPE":"NIFTI_GZ"
+},
+ "language": "bash"
+}
+END
+~~~
+
+## Test that your FSL_sandbox has access to fsl comands even 
+
+Open the kernel menu and select `Restart Kernel and Clear All Outputs...`
+Now add a new cell and write `slicer` and run the cell
+If everything worked as planned you should have the following output
+
+~~~
+Usage: slicer <input> [input2] [main options] [output options - any number of these]
+
+Main options: [-L] [-l <lut>] [-s <scale>] [-i <intensitymin> <intensitymax>] [-e <thr>] [-t] [-n] [-u]
+These must be before output options.
+-L       : Label slices with slice number.
+-l <lut> : use a different colour map from that specified in the header.
+-i <min> <max> : specify intensity min and max for display range.
+-e <thr> : use the specified threshold for edges (if >0 use this proportion of max-min, if <0, use the absolute value) 
+-t       : produce semi-transparent (dithered) edges.
+-n       : use nearest-neighbour interpolation for output.
+-u       : do not put left-right labels in output.
+
+-c       : add a red dot marker to top right of imageOutput options:
+[-x/y/z <slice> <filename>]      : output sagittal, coronal or axial slice
+     (if <slice> >0 it is a fraction of image dimension, if <0, it is an absolute slice number)
+[-a <filename>]                  : output mid-sagittal, -coronal and -axial slices into one image
+[-A <width> <filename>]          : output _all_ axial slices into one image of _max_ width <width>
+[-S <sample> <width> <filename>] : as -A but only include every <sample>'th slice
+~~~
+{: .output}
+
+# Done 
+
 Congratulations on setting up your notebook to run FSL programs natively.
+Now we need to learn how to include comments to document your learning experience
 
 
 ## Links to expand your understanding 
