@@ -1,9 +1,10 @@
 ---
-title: "ANACONDA 101"
+title: "Python overview"
 author: "Dr. Eyal Soreq" 
+start: true
 date: "05/03/2021"
-teaching: 20
-exercises: 20
+teaching: 15
+exercises: 0
 questions:
 - What is Conda?
 - Why should I use a package and environment management system as part of my research workflow?
