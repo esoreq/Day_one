@@ -314,12 +314,13 @@ Once untar is running in the background, we can move on to other things that I w
 
 ## How to test if the PID is still running? 
 
-
+Global regular expression print (grep) is used to search for a specific pattern in some input. 
+The veritcal line that is called pipe just passes the standard output right to the grep command searching for our pid. 
+If the pattern is found the process is still running. 
 
 ~~~bash
-ps a
+ps a | grep pid
 ~~~
-
 
 ## Configuring your shell environment
 FSL requires you to define variables, we want to do this setup once and in the process give you some foundations that will be useful when you wish to set up a similar setup in more complex environments than our jupyter sandbox.
