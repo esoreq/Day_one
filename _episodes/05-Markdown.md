@@ -3,7 +3,7 @@ title: "Introduction to Markdown"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
-exercises: 10
+exercises: 20
 questions:
 - What is Markdown?
 - How is markdown related to HTML?

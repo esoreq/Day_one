@@ -173,7 +173,7 @@ cd sandbox/My_first_project/Data
 ~~~
 {: .language-bash}
 
-## Hash tag - add comments to you code 
+## Hash tag - add comments to your code 
 - `#` the hash sign is used as the beginning of the comment in the script. In each line of the statement, the part starting with `#` is not executed.
 
 > ### Examples using `cd` and `#`

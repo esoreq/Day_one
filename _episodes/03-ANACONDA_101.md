@@ -294,7 +294,7 @@ END
 To do that we use the following code: 
 
 ~~~ bash 
-conda activate bash_sandbox
+conda activate FSL_sandbox
 ~~~
 
 ## We can also deactivate our environment
@@ -307,7 +307,7 @@ conda deactivate
 
 ## Open the launcher and open a new FSL_sandbox notebook 
 
-If everything worked we should be able to do the following 
+If everything worked we should now be able to create an FSL_sandbox bash notebook 
 
 ## Links to expand your understanding 
 
