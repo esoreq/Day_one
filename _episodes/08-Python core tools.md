@@ -358,13 +358,14 @@ print(f"X={x},Y={y},Z={z}")
 
 
 > ~~~
-<class 'NoneType'>
-<class 'bool'>
-<class 'str'>
-<class 'int'>
-<class 'float'>
-<class 'complex'>
-~~~
+> <class 'NoneType'>
+> <class 'bool'>
+> <class 'str'>
+> <class 'int'>
+> <class 'float'>
+> <class 'complex'>
+> ~~~
+> {: .output}
 {: .solution}
 
 # Basic Arithmetic operations on complex numbers
