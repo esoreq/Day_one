@@ -389,6 +389,13 @@ x,y = 1+1j, 2-2j
 print(f"Real Parts (x={x.real},y={y.real}) | Imaginary Parts = (x={x.imag},y={y.imag})") 
 ~~~
 
+> ## Output
+> > ~~~
+> > Real Parts (x=1.0,y=2.0) | Imaginary Parts = (x=1.0,y=-2.0)
+> > ~~~
+> > {: .output}
+{: .solution}
+
 # Basic Arithmetic operations on strings (SAY WHAT!?)
 
 - In general, you cannot perform mathematical operations on strings, even if the strings look like numbers.
@@ -401,6 +408,16 @@ print(f"* Multiplication :                       {x}*{3}={x*3}")
 print(f"Combinations :                           {x}*{3}+{y}={x*3+y}")
 print(f"() Use parentheses to specify order:     {x}+(({x}+{y})*{2})={x+((x+y)*2)}")
 ~~~
+
+> ## Output
+> > ~~~
+> >+ Addition :                             cere+bellum=cerebellum
+> >* Multiplication :                       cere*3=cerecerecere
+> >Combinations :                           cere*3+bellum=cerecerecerebellum
+> >() Use parentheses to specify order:     cere+((cere+bellum)*2)=cerecerebellumcerebellum
+> > ~~~
+> > {: .output}
+{: .solution}
 
 
 # Basic Numeric Comparison Operators
@@ -417,10 +434,111 @@ print(f" isGreaterOrEqual(>=) {x}>={y} is {x>=y}")
 print(f" isSmallerOrEqual(<=) {x}<={y} is {x<=y}")
 ~~~
 
-
+> ## Output
+> > ~~~
+> > isEqual(==)          5==4 is False
+> > notEqual(!=)         5!=4 is True
+> > isGreater(>)         5>4  is True
+> > isSmaller(<)         5<4  is False
+> > isGreaterOrEqual(>=) 5>=4 is True
+> > isSmallerOrEqual(<=) 5<=4 is False> > ~~~
+> > {: .output}
+{: .solution}
 
 
 # Basic Numeric Assignment Operators
+
+- Assignment operators are used to assigning values to variables
+
+~~~python
+y = 3
+x = y ;print(f" x = y   \t| y is assigned to x\t| x={y}")
+x = 19 ;print(f" x = y  \t| 17 is assigned to x\t| x={x}")
+x += y ;print(f" x += y \t| y is added to x\t| x={x}")
+x -= y ;print(f" x -= y \t| y subtracted from x\t| x={x}")
+x *= y ;print(f" x *= y \t| x multiplied by y\t| x={x}")
+x /= y ;print(f" x /= y \t| x divided by y\t| x={x}")
+x %= y ;print(f" x %= y \t| x%y is assigned to x\t| x={x}")
+x **= y;print(f" x **= y\t| x**y is Added to x\t| x={x}")
+x //= y;print(f" x //= y\t| x//y is assigned to x\t| x={x}")
+~~~
+
+> ## Output
+> > ~~~
+> > x = y   	| y is assigned to x	| x=3
+> > x = y  	| 17 is assigned to x	| x=19
+> > x += y 	| y is added to x	| x=22
+> > x -= y 	| y subtracted from x	| x=19
+> > x *= y 	| x multiplied by y	| x=57
+> > x /= y 	| x divided by y	| x=19.0
+> > x %= y 	| x%y is assigned to x	| x=1.0
+> > x **= y	| x**y is Added to x	| x=1.0
+> > x //= y	| x//y is assigned to x	| x=0.0
+> > {: .output}
+{: .solution}
+
+
+# Basic Logical Operators
+
+- Logical operators in Python are used for conditional statements are true or false. 
+- Logical operators in Python are **and**, **or** and **not**. 
+- For logical operators, the following condition are applied.
+- AND operator returns True if both the operands (right side and left side) are True
+- OR operator returns True if either of the operand (right side or left side) is True
+- NOT operator returns True if the operand is False
+
+~~~python
+x,y = True,False
+print(f" When x is {x} and y is {y}")
+print(f" {'='*35}")
+print(f" x and y                 is {x and y}")
+print(f" x or y                  is {x or y}")
+print(f" not x and y             is {not x or y}")
+print(f" x and not y             is {x or not y}")
+print(f" {'~'*35}\n")
+x,y = 10,20
+print(f" When x is {x} and y is {y}")
+print(f" {'='*35}")
+print(f" x<y<y**2 and not y<x    is {x<y<y**2 and not y<x }")
+~~~
+
+> ## Output
+> > ~~~
+> > When x is True and y is False
+> > ===================================
+> > x and y                 is False
+> > x or y                  is True
+> > not x and y             is False
+> > x and not y             is True
+> > ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> >
+> > When x is 10 and y is 20
+> > ===================================
+> > x<y<y**2 and not y<x    is True
+> > {: .output}
+{: .solution}
+
+# Basic Comparison operations on strings
+
+~~~python
+x,y = 'small','small'
+print(f" isEqual(==)          {x}=={y}={x==y}")
+print(f" notEqual(!=)         {x.upper()}!={y}={x.upper()!=y}")
+x,y = 'small','SMALL'
+print(f" {'='*40}")
+print(f" isEqual(==)          {x}=={y}={x==y}") 
+print(f" notEqual(!=)         {x}!={y.lower()}={x!=y.lower()}")
+~~~
+
+> ## Output
+> > ~~~
+        isEqual(==)          small==small=True
+        notEqual(!=)         SMALL!=small=True
+        ========================================
+        isEqual(==)          small==SMALL=False
+        notEqual(!=)         small!=small=False
+> > {: .output}
+{: .solution}
 
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
 
