@@ -2,7 +2,7 @@
 title: "Python Overview"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
-teaching: 15
+teaching: 45
 exercises: 0
 questions:
 - How can I store data in programs?
@@ -299,6 +299,7 @@ print(id(some_var))
 # Basic Data Types
 
 We can use type to examine the different classes these variables are instances of 
+
 ~~~python
 print(f'{type(my_none_variable)}')
 print(f'{type(my_bool_variable)}')
@@ -307,7 +308,6 @@ print(f'{type(my_int_variable)}')
 print(f'{type(my_float_variable)}')
 print(f'{type(my_complex_variable)}')
 ~~~
-
 
 ~~~
 <class 'NoneType'>
@@ -318,6 +318,97 @@ print(f'{type(my_complex_variable)}')
 <class 'complex'>
 ~~~
 {: .output}
+
+# Immutable vs Mutable Objects
+
+- In Python, there are two types of objects:
+    - Immutable objects can't be changed
+    - Mutable objects can be changed
+    
+- All the basic data types are immutable!!!  
+
+
+# Basic Arithmetic operations on integers (whole numbers)
+
+- As we already saw, Python has various "types" of numbers (numeric literals).
+- It also has many different operators. 
+- Arithmetic Operators perform various arithmetic calculations on these.
+- Run these following examples in your own notebook:
+
+~~~python
+x,y = 5,4
+print(f"+ Addition :\t{x}+{y}={x+y}") 
+print(f"- Substraction :\t {x}-{y}={x-y}")
+print(f"* Multiplication :\t {x}*{y}={x*y}")
+print(f"/ Division :\t {x}/{y}={x/y}")
+print(f"% Modulus :\t {x}%{y}={x%y}")
+print(f"** Exponent :\t {x}^{y}={x**y}")
+print(f"// Floor Division :\t {x}/{y}={x//y}")
+print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y)}")
+~~~
+
+# Basic Arithmetic operations on floats 
+
+- Floating point numbers have a decimal point and/or use an exponential (e) to define the number.
+
+~~~python
+x,y,z = 5e-3,2e2,0.56e4
+print(f"X={x},Y={y},Z={z}")
+~~~
+
+> # Output
+> ~~~
+<class 'NoneType'>
+ <class 'bool'>
+ <class 'str'>
+ <class 'int'>
+ <class 'float'>
+ <class 'complex'>
+~~~
+{: .solution}
+
+# Basic Arithmetic operations on complex numbers
+
+- Python complex numbers are of type complex.
+- Every complex number contains one real part and one imaginary part.
+
+~~~python
+x,y = 1+1j, 2-2j
+print(f"Real Parts (x={x.real},y={y.real}) | Imaginary Parts = (x={x.imag},y={y.imag})") 
+~~~
+
+# Basic Arithmetic operations on strings (SAY WHAT!?)
+
+- In general, you cannot perform mathematical operations on strings, even if the strings look like numbers.
+- However, some arithmetic operators do work on strings and open up some nice options. Let's explore this. 
+
+~~~python
+x,y = 'cere','bellum'
+print(f"+ Addition :                             {x}+{y}={x+y}") 
+print(f"* Multiplication :                       {x}*{3}={x*3}") 
+print(f"Combinations :                           {x}*{3}+{y}={x*3+y}")
+print(f"() Use parentheses to specify order:     {x}+(({x}+{y})*{2})={x+((x+y)*2)}")
+~~~
+
+
+# Basic Numeric Comparison Operators
+
+- Comparison operators are used to comparing two values
+
+~~~python
+x,y = 5,4
+print(f" isEqual(==)          {x}=={y} is {x==y}")
+print(f" notEqual(!=)         {x}!={y} is {x!=y}")
+print(f" isGreater(>)         {x}>{y}  is {x>y}")
+print(f" isSmaller(<)         {x}<{y}  is {x<y}")
+print(f" isGreaterOrEqual(>=) {x}>={y} is {x>=y}")
+print(f" isSmallerOrEqual(<=) {x}<={y} is {x<=y}")
+~~~
+
+
+
+
+# Basic Numeric Assignment Operators
 
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
 
