@@ -408,6 +408,62 @@ print(mixed_dict)
 {: .solution}
 
 
+# nesting Dictionaries
+- Hierarchies can be nested in complex ways
+- And extract their values if we know how 
+
+~~~python
+nested_dict = {"1":{"1.1":{"1.1.1":"Tada!!!"}}}
+nested_dict["1"]["1.1"]["1.1.1"]
+~~~
+
+> ## Output
+> > ~~~
+'Tada!!!'
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# And as you guessed Dictionaries have some basic methods
+
+~~~python
+lobes = {1:'frontal', 2:'parietal', 3:'temporal', 4:'occipital',5:'insula'}
+print(f"lobes keys :{lobes.keys()}") 
+print(f"lobes values :{lobes.values()}") 
+print(f"lobes items :{lobes.items()}")
+print(f"lobes length :{len(lobes)}")
+~~~
+
+> ## Output
+> > ~~~
+lobes keys :dict_keys([1, 2, 3, 4, 5])
+lobes values :dict_values(['frontal', 'parietal', 'temporal', 'occipital', 'insula'])
+lobes items :dict_items([(1, 'frontal'), (2, 'parietal'), (3, 'temporal'), (4, 'occipital'), (5, 'insula')])
+lobes length :5
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# Assigning an existing dictionary to a variable passes a reference
+
+- That means that changes in either the source or the target variable will affect both
+- To break this chain, we use the copy function 
+
+~~~python
+lobes_reference = lobes 
+~~~
+
+> ## Output
+> > ~~~
+lobes keys :dict_keys([1, 2, 3, 4, 5])
+lobes values :dict_values(['frontal', 'parietal', 'temporal', 'occipital', 'insula'])
+lobes items :dict_items([(1, 'frontal'), (2, 'parietal'), (3, 'temporal'), (4, 'occipital'), (5, 'insula')])
+lobes length :5
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
