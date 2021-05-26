@@ -542,18 +542,6 @@ print(f" notEqual(!=)         {x}!={y.lower()}={x!=y.lower()}")
 {: .solution}
 
 
-> ## Output
-> > ~~~
-isEqual(==)          small==small=True
-notEqual(!=)         SMALL!=small=True
-========================================
-isEqual(==)          small==SMALL=False
-notEqual(!=)         small!=small=False
-> > ~~~
-> > {: .output}
-{: .solution}
-
-
 # Lets expand on strings 
 
 - Every string in Python is an object containing a sequence of characters. 
@@ -583,10 +571,105 @@ same_phrash = 'Did you know that "cultivar" is synonymous with "clone"?'
 print(f"British style\t: {some_phrash}")
 print(f"American style \t: {same_phrash}")
 > > ~~~
+> > ~~~
+    British style    : Did you know that 'cultivar' is synonymous with 'clone'?
+    American style     : Did you know that "cultivar" is synonymous with "clone"?
+> > ~~~
+> > {: .output}
 {: .solution}
 
 
+# What about using both?
 
+What do we do when we want both single `'` and double `"` quotes in the same string? 
+For example, try to print the following sentence using python 
+
+>" 'The Green Hills of Earth' is one of my favourite stories," my teacher said.
+
+> ## Solution 
+> > 
+- Luckily we have Escape Sequences in Python 
+- An escape sequence is defined using a backslash (\\) followed by any protected word.
+> > ~~~python
+mixed_quote_phrash = '" \'The Green Hills of Earth\' is one of my favourite stories," my teacher said.'
+print(f"We can escape the single: \n{mixed_quote_phrash}")
+mixed_quote_phrash = "\" 'The Green Hills of Earth' is one of my favourite stories,\" my teacher said."
+print(f"Or the double: \n{mixed_quote_phrash}")
+> > ~~~
+> > ~~~
+We can escape the single: 
+" 'The Green Hills of Earth' is one of my favourite stories," my teacher said.
+Or the double: 
+" 'The Green Hills of Earth' is one of my favourite stories," my teacher said.
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# Escaping the Escape Sequences
+
+- If we need to add a backslash, we will simply use a double \\\ 
+- This will print out only one backslash
+
+# useful Escape sequence characters (ESC)
+
+| ESC | Description |
+| :-- | :-- | 
+| \\\ | Prints Backslash | 
+| \\'  | Prints single-quote | 
+| \\"  | Prints double quote |
+| \\n  | Print line break | 
+| \\t  | print tab | 
+| \\uxxxx | Use 16-bit hex Unicode char | 
+| \\Uxxxxxxxx | Use 32-bit hex Unicode char | 
+| | |
+
+
+# Everything in Python is an object
+
+- String class is an object as well.
+- Every time you create a string, it comes with many functions
+- After initializing a string object, all the possible functions can be accessed using dot notation
+
+~~~python
+print((" This is center ").center(40,'~'))
+print((" This is upper ").upper())
+print((" and this is chaining of both ").upper().center(40,'~'))
+print((" can be also useful ").title().center(40,'~'))
+~~~
+
+> ## Output
+> > ~~~
+~~~~~~~~~~~~ This is center ~~~~~~~~~~~~
+    THIS IS UPPER 
+~~~~~ AND THIS IS CHAINING OF BOTH ~~~~~
+~~~~~~~~~~ Can Be Also Useful ~~~~~~~~~~
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# More than style 
+
+- By definition, we would expect string functions to be associated with style
+- But there are also more general ones 
+- The string count() method returns the number of occurrences of a substring in the given string.
+- The find() method returns the index of the first occurrence of the substring (if found). If not found, it returns -1.
+
+
+~~~python
+print((" This is center ").count("is"))
+print(("some_file_name.zip").endswith("zip"))
+print(("some times we want to find where some word is").find("we"))
+~~~
+
+> ## Output
+> > ~~~
+2
+True
+11
+> > ~~~
+> > {: .output}
+{: .solution}
 
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
 
