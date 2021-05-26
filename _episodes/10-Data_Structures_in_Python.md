@@ -125,6 +125,31 @@ some_list + mixed_list length is 	:10
 > > {: .output}
 {: .solution}
 
+
+# lists can be generated 
+
+
+~~~python
+letter_list = list('frontal')
+print(f"Int lists can be created using range\t:{list(range(5))}")
+print(f"This is quite flexible \t\t\t:{list(range(45,49))}")
+print(f"And allows even steps \t\t\t:{list(range(56,69,3))}")
+print(f"Also in reverse \t\t\t:{list(range(-56,-69,-3))}")
+print(f"String can create Letters lists \t:{letter_list}")
+~~~
+
+> ## Output
+> > ~~~
+Int lists can be created using range	:[0, 1, 2, 3, 4]
+This is quite flexible 			        :[45, 46, 47, 48]
+And allows even steps 			        :[56, 59, 62, 65, 68]
+Also in reverse 			            :[-56, -59, -62, -65, -68]
+String can create Letters lists 	    :['f', 'r', 'o', 'n', 't', 'a', 'l']
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
