@@ -357,7 +357,7 @@ print(f"X={x},Y={y},Z={z}")
 ~~~
 
 
-~~~
+> ~~~
 <class 'NoneType'>
 <class 'bool'>
 <class 'str'>
