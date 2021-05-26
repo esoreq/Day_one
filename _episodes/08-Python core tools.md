@@ -3,7 +3,7 @@ title: "Python Overview"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 45
-exercises: 0
+exercises: 15
 questions:
 - How can I store data in programs?
 - What types of Data can I store? 
@@ -544,11 +544,11 @@ print(f" notEqual(!=)         {x}!={y.lower()}={x!=y.lower()}")
 
 > ## Output
 > > ~~~
-        isEqual(==)          small==small=True
-        notEqual(!=)         SMALL!=small=True
-        ========================================
-        isEqual(==)          small==SMALL=False
-        notEqual(!=)         small!=small=False
+isEqual(==)          small==small=True
+notEqual(!=)         SMALL!=small=True
+========================================
+isEqual(==)          small==SMALL=False
+notEqual(!=)         small!=small=False
 > > ~~~
 > > {: .output}
 {: .solution}
