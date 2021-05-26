@@ -1,0 +1,49 @@
+Q1,   Rate your knowledge/proficiency in programming skills.
+Q2,   Rate your knowledge/proficiency in Jupyter notebook.
+Q3,   Rate your knowledge/proficiency in Markdown.
+Q4,   Rate your knowledge/proficiency in Python.
+Q5,   Rate your knowledge/proficiency in Pandas.
+Q6,   Rate your knowledge/proficiency in Matplotlib.
+Q7,   Rate your knowledge/proficiency in Numpy. 
+Q8,   Rate your knowledge/proficiency in Sklearn. 
+Q9,   Rate your knowledge/proficiency in Seaborn.
+Q10,  Rate your knowledge/proficiency in neuropsychological testing.
+Q10a, Please list all the neuropsychological tests you used or know of.
+Q11,  Rate your knowledge/proficiency in cognitive testing.
+Q11a, Please list all the cognitive tests you used or know of
+Q12,  Rate your knowledge/proficiency in neuroimaging metrics.
+Q12a, Please list all the neuroimaging metrics you used or know of
+Q13,  Rate your knowledge/proficiency in univariate testing.
+Q13a, Please list all the univariate methods you used or know of
+Q14,  Rate your knowledge/proficiency in multivariate testing.
+Q14a, Please list all the multivariate methods you used or know of
+Q15,  Rate your knowledge/proficiency in statistical distributions.
+Q15a, please give all the distributions you used or know of.
+Q16,  Rate your knowledge/proficiency in non-parametric testing.
+Q16a, please give all the non-parametric methods you used or know of.
+Q17,  Rate your knowledge/proficiency in pattern analysis.
+Q17a, Please list all the pattern detection methods you used or know of.
+Q18,  Rate your knowledge/proficiency in survival analysis.
+Q18a, Please give specific examples of how and where you used these.
+Q19,  Rate your knowledge/proficiency in supervised learning.
+Q19a, Please give specific examples of supervised methods you used before.
+Q20,  Rate your knowledge/proficiency in unsupervised learning.
+Q20a, please give specific examples of unsupervised methods you used before.
+Q21,  Rate your knowledge/proficiency in semi-supervised learning.
+Q22,  Rate your knowledge/proficiency in deep learning.
+Q23,  Rate your knowledge/proficiency in reinforcement learning.
+Q24,  Rate your knowledge/proficiency in transfer learning.
+Q25,  Rate your knowledge and interest for Electroencephalography.
+Q26,  Rate your knowledge and interest for Magnetoencephalography.
+Q27,  Rate your knowledge and interest for Structural magnetic resonance imaging.
+Q28,  Rate your knowledge and interest for Functional magnetic resonance imaging.
+Q29,  Rate your knowledge and interest for Diffusion-weighted imaging.
+Q30,  Rate your knowledge and interest for Positron-emission tomography.
+Q31,  Rate your knowledge and interest for Near-infrared spectroscopy.
+Q32,  Rate your knowledge and interest for Transcranial magnetic stimulation.
+Q33,  Rate your knowledge and interest for Transcranial electric stimulation.
+Q34,  Please briefly mention your knowledge and interest for other neuroscientific methods
+Q35,  Rate your proficiency in preprocessing data acquired by Electroencephalography.
+Q36,  Rate your proficiency in preprocessing data acquired by Magnetoencephalography.
+Q37,  Rate your proficiency in preprocessing data acquired by Structural magnetic resonance imaging.
+Q38,  Rate your proficiency in preprocessing data acquired by Functional magnetic resonance imaging.
