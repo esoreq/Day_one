@@ -149,6 +149,48 @@ String can create Letters lists 	    :['f', 'r', 'o', 'n', 't', 'a', 'l']
 > > {: .output}
 {: .solution}
 
+# Items can be Appended or Inserted to lists
+
+~~~python
+letter_list = list('frontal')
+letter_list.insert(5, 'o');
+print(f"Insert a number at index\t:{letter_list}")
+letter_list.pop(6);letter_list.pop(-1)
+print(f"remove a letter at index\t:{letter_list}")
+letter_list.extend('parietal')
+print(f"remove a letter at index\t:{letter_list}")
+~~~
+
+> ## Output
+> > ~~~
+    Insert a number at index    :['f', 'r', 'o', 'n', 't', 'o', 'a', 'l']
+    remove a letter at index    :['f', 'r', 'o', 'n', 't', 'o']
+    remove a letter at index    :['f', 'r', 'o', 'n', 't', 'o', 'p', 'a', 'r', 'i', 'e', 't', 'a', 'l']
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# lists can be sorted or reversed
+
+~~~python
+letter_list.reverse()
+print(f"In both directions\t:{letter_list}")
+letter_list.sort()
+print(f"lists can be sorted\t:{letter_list}")
+letter_list.sort(reverse=True)
+print(f"In both directions\t:{letter_list}")
+~~~
+
+> ## Output
+> > ~~~
+    In both directions    :['l', 'a', 't', 'e', 'i', 'r', 'a', 'p', 'o', 't', 'n', 'o', 'r', 'f']
+    lists can be sorted    :['a', 'a', 'e', 'f', 'i', 'l', 'n', 'o', 'o', 'p', 'r', 'r', 't', 't']
+    In both directions    :['t', 't', 'r', 'r', 'p', 'o', 'o', 'n', 'l', 'i', 'f', 'e', 'a', 'a']
+> > ~~~
+> > {: .output}
+{: .solution}
+
 
 ## Links to expand your understanding 
 
