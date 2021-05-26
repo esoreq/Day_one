@@ -347,6 +347,21 @@ print(f"// Floor Division :\t {x}/{y}={x//y}")
 print(f"() Use parentheses to specify order:\t {x}*({x}/{y}-{y})={x*(x/y-y)}")
 ~~~
 
+> ## Output
+> > ~~~
+>>+ Addition :	5+4=9
+>>- Substraction :	 5-4=1
+>>* Multiplication :	 5*4=20
+>>/ Division :	 5/4=1.25
+>>% Modulus :	 5%4=1
+>>** Exponent :	 5^4=625
+>>// Floor Division :	 5/4=1
+>>() Use parentheses to specify order:	 5*(5/4-4)=-13.75
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
 # Basic Arithmetic operations on floats 
 
 - Floating point numbers have a decimal point and/or use an exponential (e) to define the number.
@@ -356,17 +371,13 @@ x,y,z = 5e-3,2e2,0.56e4
 print(f"X={x},Y={y},Z={z}")
 ~~~
 
-
-> ~~~
-> <class 'NoneType'>
-> <class 'bool'>
-> <class 'str'>
-> <class 'int'>
-> <class 'float'>
-> <class 'complex'>
-> ~~~
-> {: .output}
+> ## Output
+> > ~~~
+> > X=0.005,Y=200.0,Z=5600.0
+> > ~~~
+> > {: .output}
 {: .solution}
+
 
 # Basic Arithmetic operations on complex numbers
 
