@@ -192,6 +192,34 @@ print(f"In both directions\t:{letter_list}")
 {: .solution}
 
 
+# lists items can be removed, changed, added, inserted and extended 
+
+~~~python
+letter_list = list('frontal')
+letter_list[2:-1] = []
+print(f"We can remove everything from index 2 till -1 :{letter_list}")
+letter_list[2] = 'T'
+print(f"We can change an item if it exists \t:{letter_list}")
+letter_list.append('R') 
+print(f"We can also add an item to the end \t:{letter_list}")
+letter_list.insert(2,'B') 
+print(f"We can insert and item before an item \t:{letter_list}")
+letter_list.extend(some_list[::-1]) 
+print(f"Or extend the list with another one \t:{letter_list}")
+~~~
+
+> ## Output
+> > ~~~
+We can remove everything from index 2 till -1 :['f', 'r', 'l']
+We can change an item if it exists 	:['f', 'r', 'T']
+We can also add an item to the end 	:['f', 'r', 'T', 'R']
+We can insert and item before an item 	:['f', 'r', 'B', 'T', 'R']
+Or extend the list with another one 	:['f', 'r', 'B', 'T', 'R', 'occipital', 'temporal', 'parietal', 'frontal']
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
