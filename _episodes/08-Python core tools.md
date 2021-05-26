@@ -235,7 +235,89 @@ A variable implies change and is a way of referring to some space in your comput
 - Boolean Type (True or False)
 - Strings (strings in Python are arrays of bytes representing unicode characters)
 - Integers $$\pm\mathbb{Z}$$
+- Floats $$\pm\mathbb{R}$$
+- Complex $$\pm\mathbb{C}$$
 
+~~~python
+my_none_variable = None 
+my_bool_variable = True 
+my_string_variable = 'STRING'
+my_int_variable = 1
+my_float_variable = 1.1
+my_complex_variable = 1.1+1j
+~~~
+
+# Variables Naming Styles
+
+1. lowercase/UPPERCASE
+    - single letter - b/B
+    - single name - var/VAR
+    - lower_with_underscores/UPPER_WITH_UNDERSCORES
+1. mixed cases
+    - CamelCase - capitalize all the starting letters
+    - mixedCase - initial lowercase character
+
+
+
+# Introspective functions 
+
+- Introspection is the ability to interrogate objects at runtime.
+- Everything in python is an object. 
+- Every object in Python may have attributes and methods. 
+- By using introspection, we can dynamically examine python objects. 
+
+~~~python
+type(None) # This function returns the type of an object.
+dir(None) # This function return list of methods and attributes associated with that object.
+id(None) # This function returns a special id of an object representing a specific location in memory.
+help(None) # This function is used to find what other functions do
+print(None) # prints the specified message to the screen, or other standard output devices.
+~~~
+
+
+# Variables are just skins to a place in memory
+
+- The id of a variable returns a unique integer representing the identity of an object
+- This is also the address of the object in memory
+- When you change the variable, you are creating a new object 
+
+
+~~~python
+some_var = None
+print(id(some_var))
+some_var = 'some different data'
+print(id(some_var))
+~~~
+
+~~~
+4305322280
+4397182208
+~~~
+{: .output}
+
+
+# Basic Data Types
+
+We can use type to examine the different classes these variables are instances of 
+~~~python
+print(f'{type(my_none_variable)}')
+print(f'{type(my_bool_variable)}')
+print(f'{type(my_string_variable)}')
+print(f'{type(my_int_variable)}')
+print(f'{type(my_float_variable)}')
+print(f'{type(my_complex_variable)}')
+~~~
+
+
+~~~
+<class 'NoneType'>
+<class 'bool'>
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'complex'>
+~~~
+{: .output}
 
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
 
