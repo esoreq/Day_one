@@ -356,14 +356,14 @@ x,y,z = 5e-3,2e2,0.56e4
 print(f"X={x},Y={y},Z={z}")
 ~~~
 
-> # Output
-> ~~~
+
+~~~
 <class 'NoneType'>
- <class 'bool'>
- <class 'str'>
- <class 'int'>
- <class 'float'>
- <class 'complex'>
+<class 'bool'>
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'complex'>
 ~~~
 {: .solution}
 
