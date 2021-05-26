@@ -575,10 +575,16 @@ Both tests are the same i.e. a=test and b=test and a==b is True
 
 > ## Why do we need both single `'` and double `"` quotes? 
 > > ~~~
-
-Why do we need both? 
+- This simplifies using either single or double quotes within a phrase
+- Consider the following code: 
 > > ~~~
 > > {: .discussion}
+> > ~~~python
+some_phrash = "Did you know that 'cultivar' is synonymous with 'clone'?"
+same_phrash = 'Did you know that "cultivar" is synonymous with "clone"?'
+print(f"British style\t: {some_phrash}")
+print(f"American style \t: {same_phrash}")
+> > ~~~
 {: .solution}
 
 
