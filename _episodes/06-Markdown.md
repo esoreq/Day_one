@@ -353,7 +353,7 @@ $$P(x)=\frac{1}{{\sigma \sqrt {2\pi}}}e^{-(x-\mu)^2/2 \sigma^2}$$.
 > >  | What | <mark style="background-color:green;color:white"> Explicit</mark> | `gave my cat a bath` | 
 > >  | Where ||<mark style="background-color:red;color:white"> Implicit</mark>  | `the bathroom` |
 > >  | When | <mark style="background-color:green;color:white"> Explicit</mark> | `the other day`|
-> >  | Why | |<mark style="background-color:red;color:white"> Implicit</mark>  | `the cat was dirty`| 
+> >  | Why | <mark style="background-color:red;color:white"> Implicit</mark>  | `the cat was dirty`| 
 > >  | How | |<mark style="background-color:red;color:white"> Implicit</mark>  | `He put the cat in the bath`| 
 > > ~~~
 > > Here is the original joke, which has some relevance to our course 

@@ -297,6 +297,116 @@ Get tuple in reverse [::-1]			            = ('c', 'a', 'a', True, (2-2j), 0.0011
 > > {: .output}
 {: .solution}
 
+# However tuple has only two basic Methods
+
+- Use .index to get the index that matches the first occurrence of an item
+- Use .count to get the number of items in a tuple
+- What happens if a match isn't found?
+
+~~~python
+print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('a')}")
+print(f"How many 'a's? \t\tindex= {mixed_tuple.count('a')}")
+print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('l')}")
+~~~
+
+> ## Output
+> > ~~~
+Where is 'a'? 		index= 5
+How many 'a's? 		index= 2
+> > ~~~
+> > {: .output}
+> > ~~~
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-90-19ef4663bbed> in <module>
+      1 print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('a')}")
+      2 print(f"How many 'a's? \t\tindex= {mixed_tuple.count('a')}")
+----> 3 print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('l')}")
+
+ValueError: tuple.index(x): x not in tuple
+> > ~~~
+> > {: .error}
+{: .solution}
+
+# We can combine tuples 
+
+~~~python
+combined_tuple = some_tuple + mixed_tuple
+print(f"How many items are in combined_tuple \tn= {len(combined_tuple)}")
+print(f"{combined_tuple}")
+multiplied_tuple =some_tuple*2 
+print(f"How many items are in multiplied_tuple \tn= {len(multiplied_tuple)}")
+print(f"{multiplied_tuple}")
+~~~
+
+> ## Output
+> > ~~~
+How many items are in combined_tuple 	n= 12
+('frontal', 'parietal', 'temporal', 'occipital', 'frontal', 2.1, 0.00112, (2-2j), True, 'a', 'a', 'c')
+How many items are in multiplied_tuple 	n= 8
+('frontal', 'parietal', 'temporal', 'occipital', 'frontal', 'parietal', 'temporal', 'occipital')
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# What we can't do is change items 
+
+- Tuples are immutable!!! (just like strings)
+
+~~~python
+mixed_tuple[2]= 'a'
+mixed_tuple[2]=[] 
+~~~
+
+> ## Output
+> > ~~~
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-93-ef67584321b7> in <module>
+----> 1 mixed_tuple[2]= 'a'
+
+TypeError: 'tuple' object does not support item assignment
+> > ~~~
+> > {: .error}
+{: .solution}
+
+# What are Dictionaries?
+
+- A dictionary is a data structure that maps keys to values
+- Dictionaries are unordered (i.e. no index)
+- Dictionaries rely on a data structure called hash tables
+- If you don't know what a [hash table](https://www.data-structures-in-practice.com/hash-tables/) and you are dying to find out 
+
+# Important things about Dictionaries
+
+- Each item in a dictionary has a key and a value
+- The key acts as the value index, so no two values can have the same key (i.e. keys are unique).
+- Keys must also be hashable (i.e. can be used as a key by a hash table)
+- Any built-in immutable data type is hashable 
+- immutable data types are int, float, complex, bool, str, tuple, Unicode and even None
+
+# Creating a dictionary
+
+- We create an empty dictionary using braces {}
+- We can use any valid key
+- And we can use any kind of data as a value
+- If we use the same key twice the last value counts
+
+~~~python
+empty_dict = {}
+some_dict = {"SBC":"subcortical","DMN":"default mode network","ECN":"executive control", "ATT":"attentional"}
+mixed_dict = {1:{"SBC":"subcortical"},2:["DMN","default mode network"], 3:("ECN","executive control"),3:{"MD":"Multiple demands"}}
+print(mixed_dict)
+~~~
+
+> ## Output
+> > ~~~
+{1: {'MD': 'Multiple demands'}, 2: ['DMN', 'default mode network'], 3: ('ECN', 'executive control')}
+> > ~~~
+> > {: .output}
+{: .solution}
+
 
 ## Links to expand your understanding 
 
