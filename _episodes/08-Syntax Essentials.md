@@ -193,7 +193,7 @@ def some_function(arg1):
 1. Variable names cannot:
     - Start with a number
     - Contain spaces
-    - Use any of these symbols :'",<>/?|\()!@#$%^&*~-+
+    - Use any of these symbols : `'",<>/?|\()!@#$%^&*~-+`
 1. Avoid using the characters:
     - 'l' (lowercase letter el)
     - 'O' (uppercase letter oh)
@@ -215,6 +215,21 @@ def some_function(arg1):
 
 - Python allows white spaces in assignment 
 - This makes nicer looking code 
+
+# Use white spaces 
+
+- Python allows white spaces in assignment 
+- This makes nicer looking code 
+
+<!-- 
+# Underscore `_` in Python
+
+Python's underscore `_` is a unique character. It can be used for many different purposes.
+During this week we will use some of these cases so for the sake of completeness
+
+
+1. Stores the value of the last expression executed
+1. Leaving out values in different situations (in practice, we just store them on a  temporary variable) -->
 
 
 <!-- # Imports best practice 

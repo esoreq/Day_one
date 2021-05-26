@@ -2,8 +2,8 @@
 title: "Python Overview"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
-teaching: 15
-exercises: 0
+teaching: 30
+exercises: 30
 questions:
 - What is Conda?
 - Why should I use a package and environment management system as part of my research workflow?
@@ -450,19 +450,202 @@ lobes length :5
 - To break this chain, we use the copy function 
 
 ~~~python
-lobes_reference = lobes 
+lobes_reference = lobes # assign the existing dict to a new variable
+lobes_reference[1] = 'Changed on new'
+lobes[3] = 'Changed on old'
+print(f'old dict = {lobes}')
+print(f'new dict = {lobes_reference}')
 ~~~
 
 > ## Output
 > > ~~~
-lobes keys :dict_keys([1, 2, 3, 4, 5])
-lobes values :dict_values(['frontal', 'parietal', 'temporal', 'occipital', 'insula'])
-lobes items :dict_items([(1, 'frontal'), (2, 'parietal'), (3, 'temporal'), (4, 'occipital'), (5, 'insula')])
-lobes length :5
+old dict = {1: 'Changed on new', 2: 'parietal', 3: 'Changed on old', 4: 'occipital', 5: 'insula'}
+new dict = {1: 'Changed on new', 2: 'parietal', 3: 'Changed on old', 4: 'occipital', 5: 'insula'}
 > > ~~~
 > > {: .output}
 {: .solution}
 
+- To break this chain, we use the copy function 
+
+~~~python
+lobes = {1:'frontal', 2:'parietal', 3:'temporal', 4:'occipital',5:'insula'}
+lobes_reference = lobes.copy() # copy the existing dict to a new variable
+lobes_reference[1] = 'Changed on new'
+lobes[3] = 'Changed on old'
+print(f'old dict = {lobes}')
+print(f'new dict = {lobes_reference}')
+~~~
+
+> ## Output
+> > ~~~
+old dict = {1: 'frontal', 2: 'parietal', 3: 'Changed on old', 4: 'occipital', 5: 'insula'}
+new dict = {1: 'Changed on new', 2: 'parietal', 3: 'temporal', 4: 'occipital', 5: 'insula'}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+- We can update items in a dictionary using another dictionary
+
+
+~~~python
+lobes = {1:'frontal', 2:'parietal', 3:'temporal', 4:'occipital',5:'insula'}
+lobes.update({6:'subcortical',7:'brainstem'})
+lobes
+~~~
+
+> ## Output
+> > ~~~
+{1: 'frontal',
+ 2: 'parietal',
+ 3: 'temporal',
+ 4: 'occipital',
+ 5: 'insula',
+ 6: 'subcortical',
+ 7: 'brainstem'}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+- Or we can just add one item at a time 
+
+~~~python
+lobes[8] = 'cerebellum'
+lobes
+~~~
+
+> ## Output
+> > ~~~
+{1: 'frontal',
+ 2: 'parietal',
+ 3: 'temporal',
+ 4: 'occipital',
+ 5: 'insula',
+ 6: 'subcortical',
+ 7: 'brainstem',
+ 8: 'cerebellum'}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# Sets
+
+- Sets are a special data structure that holds **unique** unordered elements
+- In a way, sets are similar to keys in the dictionary 
+- Unsurprisingly, sets can only take hashable data types
+- Sets can be extremely powerful if used right
+
+# What are sets used for 
+
+- The list is endless,
+- From our narrow perspective, we will use them in the context of set theory
+    - This means finding intersections between sets
+    - Getting the union of several sets 
+    - Or even the differences of several sets 
+
+
+# creating sets 
+
+- Sets can be created using a list 
+
+~~~python
+empty_set = set()
+print(f'This is an empty {type(empty_set)}')
+some_set = {'frontal', 'parietal', 'temporal', 'occipital'}
+print(f'This is also a set {type(some_set)}')
+another_set = set([1, 2, 3, 4])
+print(f'We can use lists as constructor for sets {type(another_set)}')
+mixed_set = set(['frontal', 2,'c'])
+print(f'And we can used mixed sets {type(mixed_set)}')
+~~~
+
+> ## Output
+> > ~~~
+This is an empty <class 'set'>
+This is also a set <class 'set'>
+We can use lists as constructor for sets <class 'set'>
+And we can used mixed sets <class 'set'>
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# sets also have some basic methods
+
+~~~python
+print(f'Sets have length {len(mixed_set)}')
+mixed_set.remove('c');print(f'Elements can be removed {mixed_set}')
+print(f'And elements can be removed from a set {mixed_set.pop()}')
+print(f'Until it is empty  {mixed_set.pop()}')
+mixed_set.add('c');print(f'And then added {mixed_set}')
+~~~
+
+> ## Output
+> > ~~~
+Sets have length 3
+Elements can be removed {2, 'frontal'}
+And elements can be removed from a set 2
+Until it is empty  frontal
+And then added {'c'}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# sets also have unique methods
+
+- Consider the following three numeric sets
+
+~~~python
+X = {1, 2, 5, 6, 7, 9}
+Y = {1, 3, 4, 5, 6, 8} 
+Z = {3, 5, 6, 7, 8, 10}
+~~~
+
+# sets can be intersected
+- The intersection of two or more sets is the set of elements which are common to all sets. 
+- For example, the intersection of three sets X, Y and Z is the set of elements that are common to sets X, Y and Z. 
+- It is denoted by X ∩ Y ∩ Z
+
+
+~~~python
+XnY = X.intersection(Y) # X ∩ Y
+YnX = Y.intersection(X) # X ∩ Y
+print(f'Intersection is indifferent to order X ∩ Y == Y ∩ X = {XnY==YnX}')
+XnYnZ = X.intersection(Y,Z) # X ∩ Y ∩ Z
+print(f'Intersection function can take multiple sets X ∩ Y ∩ Z = {XnYnZ}')
+print(f'Intersection can be called using the & operator X & Y & Z = {X & Y & Z}')
+~~~
+
+> ## Output
+> > ~~~
+Intersection is indifferent to order X ∩ Y == Y ∩ X = True
+Intersection function can take multiple sets X ∩ Y ∩ Z = {5, 6}
+Intersection can be called using the & operator X & Y & Z = {5, 6}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# Set Difference
+
+- The (set) difference (aka relative complement) between two sets X and Y is written X∖Y, 
+- This means the set that consists of the elements of X which are not elements of Y
+- The key take-home is that we are after the unique elements of X. 
+- Here order does matter!! 
+- Difference can be called using the difference function or using the - operator
+
+
+
+~~~python
+print(f'X\Y={X-Y} and is not equal to Y\X {Y-X}')
+print(f'The Difference of X\Y\Z={X.difference(Y,Z)}')
+~~~
+
+> ## Output
+> > ~~~
+X\Y={9, 2, 7} and is not equal to Y\X {8, 3, 4}
+The Difference of X\Y\Z={9, 2}
+> > ~~~
+> > {: .output}
+{: .solution}
 
 ## Links to expand your understanding 
 
