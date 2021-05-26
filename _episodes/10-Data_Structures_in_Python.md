@@ -219,6 +219,84 @@ Or extend the list with another one 	:['f', 'r', 'B', 'T', 'R', 'occipital', 'te
 > > {: .output}
 {: .solution}
 
+# Tuples
+
+- In mathematics, a tuple is a finite ordered list of elements
+- And in Python tuples can be viewed as immutable lists 
+- In other words, once a tuple is constructed its elements can't change
+
+
+# Creating Tuples
+
+- Use parentheses () to construct an empty tuple
+- And place items separated by commas to fill it
+
+~~~python
+empty_tuple = ()
+print(empty_tuple)
+some_tuple = ('frontal', 'parietal', 'temporal', 'occipital')
+print(some_tuple)
+another_tuple = (1, 2, 3, 4)
+print(another_tuple)
+mixed_tuple = ('frontal', 2.1, 0.112e-2, 2-2j,True,'a','a','c')
+print(mixed_tuple)
+~~~
+
+> ## Output
+> > ~~~
+()
+('frontal', 'parietal', 'temporal', 'occipital')
+(1, 2, 3, 4)
+('frontal', 2.1, 0.00112, (2-2j), True, 'a', 'a', 'c')
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# Tuples also have a length
+
+~~~python
+print(f"some_tuple length is \t:{len(some_tuple)}")
+print(f"another_tuple length is \t:{len(another_tuple)}")
+print(f"mixed_tuple length is \t:{len(mixed_tuple)}")  
+~~~
+
+> ## Output
+> > ~~~
+some_tuple length is 	    :4
+another_tuple length is 	:4
+mixed_tuple length is 	    :8
+> > ~~~
+> > {: .output}
+{: .solution}
+
+# And we can index the tuple exactly like a list
+
+~~~python
+print(f"Access start index using [0]\t\t\t= {mixed_tuple[0]} \n\
+Access end index using  [-1] \t\t\t= {mixed_tuple[-1]} \n\
+Use the colon [start:end] to perform slicing \t= {mixed_tuple[1:3]} \n\
+Get everything UPTO [:end] \t\t\t= {mixed_tuple[:4]} \n\
+Get everything FROM [start:] \t\t\t= {mixed_tuple[3:]} \n\
+Get everything [:]\t\t\t\t= {mixed_tuple[:]} \n\
+Get every second element [::2] \t\t\t= {mixed_tuple[::2]} \n\
+Get tuple in reverse [::-1]\t\t\t= {mixed_tuple[::-1]}" )
+~~~
+
+> ## Output
+> > ~~~
+Access start index using [0]			        = frontal 
+Access end index using  [-1] 			        = c 
+Use the colon [start:end] to perform slicing 	= (2.1, 0.00112) 
+Get everything UPTO [:end] 			            = ('frontal', 2.1, 0.00112, (2-2j)) 
+Get everything FROM [start:] 			        = ((2-2j), True, 'a', 'a', 'c') 
+Get everything [:]				                = ('frontal', 2.1, 0.00112, (2-2j), True, 'a', 'a', 'c') 
+Get every second element [::2] 			        = ('frontal', 0.00112, True, 'a') 
+Get tuple in reverse [::-1]			            = ('c', 'a', 'a', True, (2-2j), 0.00112, 2.1, 'frontal')
+> > ~~~
+> > {: .output}
+{: .solution}
+
 
 ## Links to expand your understanding 
 
