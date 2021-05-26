@@ -532,11 +532,24 @@ print(f" notEqual(!=)         {x}!={y.lower()}={x!=y.lower()}")
 
 > ## Output
 > > ~~~
+> >isEqual(==)          small==small=True
+> >notEqual(!=)         SMALL!=small=True
+> >========================================
+> >isEqual(==)          small==SMALL=False
+> >notEqual(!=)         small!=small=False
+> >~~~
+> > {: .output}
+{: .solution}
+
+
+> ## Output
+> > ~~~
         isEqual(==)          small==small=True
         notEqual(!=)         SMALL!=small=True
         ========================================
         isEqual(==)          small==SMALL=False
         notEqual(!=)         small!=small=False
+> > ~~~
 > > {: .output}
 {: .solution}
 
