@@ -572,10 +572,15 @@ Both tests are the same i.e. a=test and b=test and a==b is True
 ~~~
 {: .output}
 
-~~~
+
+> ## Why do we need both single `'` and double `"` quotes? 
+> > ~~~
+
 Why do we need both? 
-~~~
-{: .discussion}
+> > ~~~
+> > {: .discussion}
+{: .solution}
+
 
 
 
