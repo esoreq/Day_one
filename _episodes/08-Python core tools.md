@@ -553,6 +553,32 @@ print(f" notEqual(!=)         {x}!={y.lower()}={x!=y.lower()}")
 > > {: .output}
 {: .solution}
 
+
+# Lets expand on strings 
+
+- Every string in Python is an object containing a sequence of characters. 
+- Each letter in a string has a distinct index corresponding to its specific order. 
+- Indices start in 0 and end in the length of the string-1
+- Spaces count as a character
+- Both single and double quotes can be used to define a string
+
+~~~python
+a,b = 'test', "test"
+print(f" Both tests are the same i.e. a={a} and b={b} and a==b is {a==b}") 
+~~~
+
+~~~
+Both tests are the same i.e. a=test and b=test and a==b is True
+~~~
+{: .output}
+
+~~~
+Why do we need both? 
+~~~
+{: .discussion}
+
+
+
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
 
 {% include links.md %}
