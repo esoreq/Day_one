@@ -288,14 +288,14 @@ Get tuple in reverse [::-1]\t\t\t= {mixed_tuple[::-1]}" )
 
 > ## Output
 > > ~~~
-Access start index using [0]			        = frontal 
-Access end index using  [-1] 			        = c 
+Access start index using [0]			= frontal 
+Access end index using  [-1] 			= c 
 Use the colon [start:end] to perform slicing 	= (2.1, 0.00112) 
-Get everything UPTO [:end] 			            = ('frontal', 2.1, 0.00112, (2-2j)) 
-Get everything FROM [start:] 			        = ((2-2j), True, 'a', 'a', 'c') 
-Get everything [:]				                = ('frontal', 2.1, 0.00112, (2-2j), True, 'a', 'a', 'c') 
-Get every second element [::2] 			        = ('frontal', 0.00112, True, 'a') 
-Get tuple in reverse [::-1]			            = ('c', 'a', 'a', True, (2-2j), 0.00112, 2.1, 'frontal')
+Get everything UPTO [:end] 			= ('frontal', 2.1, 0.00112, (2-2j)) 
+Get everything FROM [start:] 			= ((2-2j), True, 'a', 'a', 'c') 
+Get everything [:]				= ('frontal', 2.1, 0.00112, (2-2j), True, 'a', 'a', 'c') 
+Get every second element [::2] 			= ('frontal', 0.00112, True, 'a') 
+Get tuple in reverse [::-1]			= ('c', 'a', 'a', True, (2-2j), 0.00112, 2.1, 'frontal')
 > > ~~~
 > > {: .output}
 {: .solution}
