@@ -11,7 +11,6 @@ questions:
 objectives:
 - Best Practices in Python
 - Syntax Essentials in Python
-- Understand the different expression types and how to use them
 keypoints:
 - Conda is a Python-based environment and package manager
 - It enables us to use 
@@ -38,6 +37,27 @@ This will help you keep your code consistent and hopefully elegant.
     1. Expressions enclosed in brackets i.e. (), [] or {} don't need a backslash
 1. Comments in Python begin with a hash mark (#) and whitespace character and continue to the end of the line. 
 1. Keywords are protected and should not be used as variables
+
+
+# Naming Conventions
+A naming convention is a set of rules for selecting the character sequence that should be used to name different data types and data structures. This can be confusing if you have little background. So without going into what the following are (we will discuss them as we continue) I would like to lay them out for future reflection.
+
+| Identifier  | Example  |  Commonly used for  | 
+| :---: | :---: | :---: | 
+| single lowercase letter | `x` | mathematical notation variables  |  
+| single uppercase letter | `X` | mathematical notation variables |  
+| lowercase sequence | `lowercase` |  variables, modules, functions and package|  
+| uppercase sequence  | `UPPERCASE` | Constants |  
+| Snake lowercase | `lower_case_with_underscores` | Variables and functions|  
+| Snake uppercase | `UPPER_CASE_WITH_UNDERSCORES` | Constants |  
+| Camel case | `CamelCase` | Class |  
+| mixed case | `mixedCase` | ? |  
+| Camel snake case | `Camel_Snake_Case` | ? |  
+| single leading underscore | `_single_leading_underscore` | weak "internal use" indicator. E.g. from M import * does not import objects whose name starts with an underscore. |  
+| single trailing underscore | `single_trailing_underscore_` | Single trailing underscore naming convention is used to avoid conflicts with Python keywords. |  
+| double leading underscore | `__double_leading_underscore` | private variables and methods inside a class |  
+| single trailing underscore | `__double_leading_and_trailing_underscore__` | "magic" objects or attributes that are built in the language (e.g. `__init__`) |  
+
 
 # One statement per line
 
@@ -102,35 +122,25 @@ print(brain_lobes)
 - So you should make sure to use indentations correctly and consistently.
 - This makes code more straightforward to read and ultimately understand 
 - Indentations can be created using either tabs or spaces (usually four spaces) 
-
-# Python Keywords
-
-- Keywords are the reserved words in Python.
-- You cannot use a keyword as a variable name, function name or any other identifier. 
-- These 35 keywords are used to define the syntax and structure of the Python language.
-- To examine them you can run the following code 
-
+- If the indentations are mixed the code will fail to excute 
 
 ~~~python
-import keyword
-print(keyword.kwlist)
+print(brain_lobes[0])
+    print(brain_lobes[0])
 ~~~
 
+    
 ~~~
-['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+  File "<ipython-input-128-dc03b7fa51d4>", line 2
+    print(brain_lobes[0])
+    ^
+IndentationError: unexpected indent
 ~~~
-{: .output}
+{: .error}
 
 
-# Case matters
 
-- Python is case sensitive. 
-- This means the **HELP** is not equal to **help**
-- Most of Python keywords are written with lowercase letters.
-- Notable exceptions to this rule are True and False boolean values and the **None** variable that all use a mixture of cases. 
-
-
-# Use Comments
+# Comments Are Marked by `#`
 
 >"Code is more often read than written."
 >> Guido van Rossum
@@ -183,6 +193,35 @@ def some_function(arg1):
 ~~~
 
 
+# Python Keywords
+
+- Keywords are the reserved words in Python.
+- You cannot use a keyword as a variable name, function name or any other identifier. 
+- These 35 keywords are used to define the syntax and structure of the Python language.
+- To examine them you can run the following code 
+
+
+~~~python
+import keyword
+print(keyword.kwlist)
+~~~
+
+~~~
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+~~~
+{: .output}
+
+
+# Case matters
+
+- Python is case sensitive. 
+- This means the **HELP** is not equal to **help**
+- Most of Python keywords are written with lowercase letters.
+- Notable exceptions to this rule are True and False boolean values and the **None** variable that all use a mixture of cases. 
+
+
+
+
 # Variable Names
 
 > *Code is read much more often than it is written*
@@ -216,10 +255,7 @@ def some_function(arg1):
 - Python allows white spaces in assignment 
 - This makes nicer looking code 
 
-# Use white spaces 
 
-- Python allows white spaces in assignment 
-- This makes nicer looking code 
 
 <!-- 
 # Underscore `_` in Python
@@ -242,8 +278,9 @@ We will go over this in detail next week, but it should be stated.
 - Use **import y as z** only when z is a standard abbreviation (e.g., np for NumPy). -->
 
 
-
-[realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
+[PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+[PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+[The Zen of Python](https://www.python.org/dev/peps/pep-0020)
 
 {% include links.md %}
 

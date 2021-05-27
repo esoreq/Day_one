@@ -5,16 +5,17 @@ date: "05/03/2021"
 teaching: 30
 exercises: 20
 questions:
-- How can I store data in programs?
+- How can I store data in python?
 - What types of Data can I store? 
 - What is a variable in Python?
 objectives:
-- Best Practices in Python
-- Syntax Essentials in Python
-- Understand the different expression types and how to use them
+- Cover the different core data types in python
+- Learn about and how to use introspective functions
+- Understand what variables are 
 keypoints:
-- Conda is a Python-based environment and package manager
-- It enables us to use 
+- So in this section we covered most of the basic data types Python has 
+- We learned how to use data types using variables 
+- We also covered how to combine them using various operators 
 ---
 
 # Variables and Basic Data Types
@@ -691,14 +692,13 @@ print(f"{some_number} in binary is {some_number:>08b}")
 {: .solution}
 
 
-# Summary Basic python 
 
-- So in this section we covered most of the basic data types Python has 
-- We learned how to use them 
-- We also covered how to combine them using various operators 
-- In the next section we will cover Data Structures
+## Links to expand your understanding 
+
+For those interested in learning more...
 
 [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
+[Variables and Types](https://www.learnpython.org/en/Variables_and_Types)
 
 {% include links.md %}
 

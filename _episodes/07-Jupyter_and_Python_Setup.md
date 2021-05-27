@@ -9,10 +9,8 @@ questions:
 - What is Python?
 - Why Python?
 objectives:
-- Understand what are the benefits of using Python as a central tool in your PhD.
+- Understand the benefits of using Python as a central tool in your PhD.
 - Understand Pythons position in the crowded data analytics ecosystem
-- Create a python_sandbox conda environment **ADD**
-
 keypoints:
 - Python is an easy and versatile programming language
 - It has the largest open-source community
