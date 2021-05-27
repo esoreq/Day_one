@@ -468,10 +468,15 @@ Week_25, Week_71, Week_117, Week_163,
 ~~~
 {: .output}
 
-> ## Here is one possible solution
+> ## Here is one possible solution 
+> > ## using for 
 > > ~~~python
 for num in range(25,190,46):
-    print(f'Week_{num}')
+    print(f'Week_{num}',end=', ')
+> > ~~~
+> > ## using list comprehensions
+> > ~~~python
+_ = [print(f'Week_{num}',end=', ') for num in range(25,190,46)]    
 > > ~~~
 {: .solution}
 
