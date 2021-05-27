@@ -3,7 +3,7 @@ title: "Python Overview"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
-exercises: 30
+exercises: 20
 questions:
 - What is Conda?
 - Why should I use a package and environment management system as part of my research workflow?
@@ -646,6 +646,20 @@ The Difference of X\Y\Z={9, 2}
 > > ~~~
 > > {: .output}
 {: .solution}
+
+
+# Sets are a powerful tool 
+
+- But for this course, the above is enough
+
+# Summary 
+ 
+- In this section we covered the different common data structures Python has  
+- We saw how Lists, Tuples, Dictionaries and Sets could be created 
+- We learned about some basic methods they have 
+- And we learned how to index and slice parts of them
+- You deserve a break before heading out to the last Programming section 
+
 
 ## Links to expand your understanding 
 
