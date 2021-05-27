@@ -357,11 +357,6 @@ mixed_tuple[2]=[]
 
 > ## Output
 > > ~~~
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-93-ef67584321b7> in <module>
-----> 1 mixed_tuple[2]= 'a'
-
 TypeError: 'tuple' object does not support item assignment
 > > ~~~
 > > {: .error}
