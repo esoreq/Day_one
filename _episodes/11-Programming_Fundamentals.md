@@ -52,9 +52,9 @@ Rule 1 is True
 {: .output}
 
 
+> ## discussion
 > If we change rule1 to *False*, what will happen?
-{: .Discussion}
-
+{: .discussion}
 
 # Add complexity
 
@@ -422,9 +422,13 @@ list(enumerated_seq)
 {: .output}
 
 ~~~
-Why do we need this? 
-~~~
+
+
+> ## discussion
+> Why do we need this? 
 {: .discussion}
+
+
 
 # lets answer with an example 
 
