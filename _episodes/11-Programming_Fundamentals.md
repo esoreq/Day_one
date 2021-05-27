@@ -2,8 +2,8 @@
 title: "Programming Fundamentals using Python"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
-teaching: 15
-exercises: 0
+teaching: 35
+exercises: 25
 questions:
 - FIXME
 objectives:
