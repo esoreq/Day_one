@@ -355,12 +355,11 @@ mixed_tuple[2]= 'a'
 mixed_tuple[2]=[] 
 ~~~
 
-> ## Output
-> > ~~~
+~~~
 TypeError: 'tuple' object does not support item assignment
-> > ~~~
-> > {: .error}
-{: .solution}
+~~~
+{: .error}
+
 
 # What are Dictionaries?
 
