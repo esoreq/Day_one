@@ -411,7 +411,7 @@ for i in range(3):
 
 1. Using steps of 46 and starting from 25 and ending with 163, print out a sequence of strings that begins with the word Week (e.g. Week_025, … , Week_163) and is on the same line seperated by commas.
 
-> ## Expected output
+## Expected output
 > ~~~
 > Week_25, Week_71, Week_117, Week_163, 
 > ~~~
