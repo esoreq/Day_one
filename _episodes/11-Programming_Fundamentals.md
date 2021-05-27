@@ -407,14 +407,59 @@ for i in range(3):
 
 - This weird beahviour is useful for many things outside the scope of this course but is important to know
 
-# Exercises
+# Using `enumerate()` to keep index 
+- enumerate is a function that returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
 
-1. Using steps of 46 and starting from 25 and ending with 163, print out a sequence of strings that begins with the word Week (e.g. Week_025, … , Week_163) and is on the same line seperated by commas.
+~~~python
+seq = range(5,15,2)
+enumerated_seq = enumerate(seq)
+list(enumerated_seq)
+~~~
 
-> ## Expected output
+~~~
+[(0, 5), (1, 7), (2, 9), (3, 11), (4, 13)]
+~~~
+{: .output}
+
+~~~
+Why do we need this? 
+~~~
+{: .discussion}
+
+# lets answer with an example 
+
+~~~python
+lobe_names = ['frontal','parietal','temporal', 'occipital','insula']
+lobes_mapper = {}
+for index,lobe in enumerate(lobe_names):
+    lobes_mapper[index] = {'abbreviation':lobe[:3].upper(),'name':lobe}
+lobes_mapper
+~~~
+
+> ## Output
 > > ~~~
+{0: {'abbreviation': 'FRO', 'name': 'frontal'},
+ 1: {'abbreviation': 'PAR', 'name': 'parietal'},
+ 2: {'abbreviation': 'TEM', 'name': 'temporal'},
+ 3: {'abbreviation': 'OCC', 'name': 'occipital'},
+ 4: {'abbreviation': 'INS', 'name': 'insula'}}
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+lobes = {1:'frontal', 2:'parietal', 3:'temporal', 4:'occipital',5:'insula'}
+
+# list comprehension  
+
+
+# Exercises for loops 
+
+### E1.  Using steps of 46 and starting from 25 and ending with 163, print out a sequence of strings that begins with the word Week (e.g. Week_025, … , Week_163) and is on the same line seperated by commas.
+
+~~~
 Week_25, Week_71, Week_117, Week_163, 
-> > ~~~
+~~~
 {: .output}
 
 > ## Here is one possible solution
@@ -424,12 +469,11 @@ for num in range(25,190,46):
 > > ~~~
 {: .solution}
 
-1. For all the numbers from 1 to 15 (including) print if they are odd,(O) or even (E).
+### E2. For all the numbers from 1 to 15 (including) print if they are odd,(O) or even (E).
 
-> ## Expected output
-> > ~~~
-> 1-O,2-E,3-O,4-E,5-O,6-E,7-O,8-E,9-O,10-E,11-O,12-E,13-O,14-E,15-O,
-> > ~~~
+~~~
+1-O,2-E,3-O,4-E,5-O,6-E,7-O,8-E,9-O,10-E,11-O,12-E,13-O,14-E,15-O,
+~~~
 {: .output}
 
 > ## Here is one possible solution
@@ -440,19 +484,30 @@ for num in range(1,16):
 {: .solution}
 
 
-1. Using the following sequence `abcdEFGHjd0rG` print out if a single charecter is UPPER or lower case
+### E3. Using the following sequence `abcdEFGHjd0rG` print out if a single charecter is UPPER or lower case
   
-> ## Expected output
-> > ~~~
-> a-l,b-l,c-l,d-l,E-U,F-U,G-U,H-U,j-l,d-l,0-l,r-l,G-U,
-> >~~~
+~~~
+a-l,b-l,c-l,d-l,E-U,F-U,G-U,H-U,j-l,d-l,0-l,r-l,G-U,
+~~~
 {: .output}
 
-1. Using one of the following quotes
+> ## Here is one possible solution
+> > ~~~python
+for char in 'abcdEFGHjd0rG':
+    print(f'{char}-{["l","U"][char.isupper()]}',end=',')
+> > ~~~
+{: .solution}
+
+### E4. Using one of the following quotes
     - "People say nothing is impossible, but I do nothing every day."
     - "The best thing about the future is that it comes one day at a time."
     - "The difference between stupidity and genius is that genius has its limits."
 - And using a for loop print **on the same line** the same sentence with underscores instead of spaces    
+
+~~~
+The_best_thing_about_the_future_is_that_it_comes_one_day_at_a_time.
+~~~
+{: .output}
 
 > ## Here is one possible solution
 > > ~~~python
@@ -461,10 +516,41 @@ for char in "The best thing about the future is that it comes one day at a time.
 > > ~~~
 {: .solution}
 
+### E5. Using the same quote print each word independently stacked
+
+~~~
+The
+best
+thing
+about
+the
+future
+is
+that
+it
+comes
+one
+day
+at
+a
+time.
+~~~
+{: .output}
+
+> ## Here is one possible solution
+> > ~~~python
+for word in "The best thing about the future is that it comes one day at a time.".split():
+    print(f'{word}')
+> > ~~~
+{: .solution}
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
 
-- [FIXME](https://learn.datacamp.com/courses/conda-essentials)
+- [Python Range() Function](https://www.datacamp.com/community/tutorials/python-range-function)
+- [Playing with iterators](https://campus.datacamp.com/courses/python-data-science-toolbox-part-2/using-iterators-in-pythonland)
+
+
 
 {% include links.md %}
