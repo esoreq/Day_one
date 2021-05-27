@@ -5,16 +5,22 @@ date: "05/03/2021"
 teaching: 15
 exercises: 0
 questions:
-- How can I store data in programs?
+- What do we mean when we say syntax
 - What types of Data can I store? 
 - What is a variable in Python?
 objectives:
 - Best Practices in Python
 - Syntax Essentials in Python
 keypoints:
-- Conda is a Python-based environment and package manager
-- It enables us to use 
+- Adapt naming conventions
+- Stick to consistent indentation 
+- Most of the time, simplicity and transparency are more important than performance
+- Try to avoid using more than one statement per line
 ---
+
+# What is a syntax
+
+Syntax is the way words work together to make sentences, clauses, and phrases. "Syntax" means "arrange together," as well as "study of the syntactic properties of a language." The syntax of a computer language is the set of rules that define the combinations of symbols that are considered correct for that language.
 
 # Syntax Essentials and Best Practices
 
@@ -25,16 +31,17 @@ This will help you keep your code consistent and hopefully elegant.
 
 # Syntax Essentials rules
 
+1. A naming convention simplifies collaboration - use them
 1. Code blocks are defined by indentation (can be either space or tab)
-1. One statement per line
+1. Try to avoid using more than one statement per line
 1. Python is case sensitive : $vara \neq  varA$
 1. Path specification uses forward slashes (regardless of OS): `~/user/home`
-1. There is no need to add a command terminator ;
-1. You can combine two executable statements using a semicolon `;` 
-1. String literals can be defined using single <'> double <"> or even triple <'''> quotes 
+1. There is no need to add a command terminator `;`
+1. You can combine two executable statements using a semicolon `;`  (but avoid that if you can)
+1. String literals can be defined using single `'` double `"` or even triple `'''` quotes 
 1. It is considered good conduct to keep lines of code short 
-    1. Backslash \\ can be used to stack lines of code together
-    1. Expressions enclosed in brackets i.e. (), [] or {} don't need a backslash
+1. Backslash \\ can be used to stack lines of code together
+1. Expressions enclosed in brackets i.e. (), [] or {} don't need a backslash
 1. Comments in Python begin with a hash mark (#) and whitespace character and continue to the end of the line. 
 1. Keywords are protected and should not be used as variables
 
@@ -43,7 +50,7 @@ This will help you keep your code consistent and hopefully elegant.
 A naming convention is a set of rules for selecting the character sequence that should be used to name different data types and data structures. This can be confusing if you have little background. So without going into what the following are (we will discuss them as we continue) I would like to lay them out for future reflection.
 
 | Identifier  | Example  |  Commonly used for  | 
-| :---: | :---: | :---: | 
+| :--- | :--- | :--- | 
 | single lowercase letter | `x` | mathematical notation variables  |  
 | single uppercase letter | `X` | mathematical notation variables |  
 | lowercase sequence | `lowercase` |  variables, modules, functions and package|  
@@ -277,10 +284,14 @@ We will go over this in detail next week, but it should be stated.
 - Use **from x import y as z** if two modules named y are to be imported or if y is an inconveniently long name.
 - Use **import y as z** only when z is a standard abbreviation (e.g., np for NumPy). -->
 
+## Links to expand your understanding 
 
-[PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
-[PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
-[The Zen of Python](https://www.python.org/dev/peps/pep-0020)
+For those interested in learning more...
+
+- [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)  
+- [PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)  
+- [The Zen of Python](https://www.python.org/dev/peps/pep-0020)  
+- [PEP-8 Tutorial: Code Standards in Python](https://www.datacamp.com/community/tutorials/pep8-tutorial-python-code?)
 
 {% include links.md %}
 

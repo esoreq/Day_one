@@ -697,8 +697,10 @@ print(f"{some_number} in binary is {some_number:>08b}")
 
 For those interested in learning more...
 
-[realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
-[Variables and Types](https://www.learnpython.org/en/Variables_and_Types)
+- [realpython - Basic Data Types in Python](https://realpython.com/python-data-types/)
+- [Variables and Types](https://www.learnpython.org/en/Variables_and_Types)
+- [Python String Tutorial](https://www.datacamp.com/community/tutorials/python-string-tutorial)
+- [Python For Data Science - A Cheat Sheet For Beginners](https://www.datacamp.com/community/tutorials/python-data-science-cheat-sheet-basics)
 
 {% include links.md %}
 

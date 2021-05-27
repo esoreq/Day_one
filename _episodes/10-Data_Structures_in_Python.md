@@ -1,22 +1,25 @@
 ---
-title: "Python Overview"
+title: "Data structures in Python"
 author: "Dr. Eyal Soreq" 
 date: "05/03/2021"
 teaching: 30
 exercises: 20
 questions:
-- What is Conda?
-- Why should I use a package and environment management system as part of my research workflow?
-- What is an environment? 
-- How do I create my own environment in the gwdg jupyter cloud 
+- What are Data structures?
+- What types of data structures are there?
+- How and when to use the different data structures?
+
 objectives:
-- Understand what Conda is and how it can simplify analysis pipelines.
-- Learn how to install and configure Conda on any system.
-- Be able to create reproducible computing environments for (almost) any task.
+- Understand the differences between Python's data structures
+- Learn how to create and use different data structures
+- Understand the limitations of each data structures
 
 keypoints:
-- Conda is a Python-based environment and package manager
-- It enables us to use 
+- Lists are the basic sequence building block in Python.
+- Tuples are immutable lists 
+- Sets are a stack of unique data types
+- A dictionary key is unique
+- Items in dictionaries consist of key and value pairs
 ---
 
 # What are Data structures?
@@ -665,10 +668,8 @@ The Difference of X\Y\Z={9, 2}
 
 For those interested in learning more...
 
-- [Conda Essentials](https://learn.datacamp.com/courses/conda-essentials)
-- [Building and Distributing Packages with Conda](https://learn.datacamp.com/courses/building-and-distributing-packages-with-conda)
-- [Some background on ipython and jupyter](https://www.datacamp.com/community/blog/ipython-jupyter)
-- [Jupyter Notebook Tutorial: The Definitive Guide](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)
+- [Python Data Structures Tutorial](https://www.datacamp.com/community/tutorials/data-structures-python)
+
 
 
 {% include links.md %}
