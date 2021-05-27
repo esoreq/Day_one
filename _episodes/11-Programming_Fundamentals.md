@@ -411,10 +411,10 @@ for i in range(3):
 
 1. Using steps of 46 and starting from 25 and ending with 163, print out a sequence of strings that begins with the word Week (e.g. Week_025, … , Week_163) and is on the same line seperated by commas.
 
-## Expected output
-> ~~~
-> Week_25, Week_71, Week_117, Week_163, 
-> ~~~
+> ## Expected output
+> > ~~~
+Week_25, Week_71, Week_117, Week_163, 
+> > ~~~
 {: .output}
 
 > ## Here is one possible solution
@@ -427,9 +427,9 @@ for num in range(25,190,46):
 1. For all the numbers from 1 to 15 (including) print if they are odd,(O) or even (E).
 
 > ## Expected output
-> ~~~
+> > ~~~
 > 1-O,2-E,3-O,4-E,5-O,6-E,7-O,8-E,9-O,10-E,11-O,12-E,13-O,14-E,15-O,
-> ~~~
+> > ~~~
 {: .output}
 
 > ## Here is one possible solution
@@ -443,9 +443,9 @@ for num in range(1,16):
 1. Using the following sequence `abcdEFGHjd0rG` print out if a single charecter is UPPER or lower case
   
 > ## Expected output
-> ~~~
+> > ~~~
 > a-l,b-l,c-l,d-l,E-U,F-U,G-U,H-U,j-l,d-l,0-l,r-l,G-U,
-> ~~~
+> >~~~
 {: .output}
 
 1. Using one of the following quotes
