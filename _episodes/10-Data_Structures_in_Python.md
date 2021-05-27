@@ -325,7 +325,6 @@ ValueError                                Traceback (most recent call last)
       1 print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('a')}")
       2 print(f"How many 'a's? \t\tindex= {mixed_tuple.count('a')}")
 ----> 3 print(f"Where is 'a'? \t\tindex= {mixed_tuple.index('l')}")
-
 ValueError: tuple.index(x): x not in tuple
 > > ~~~
 > > {: .error}
