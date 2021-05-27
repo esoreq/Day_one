@@ -7,20 +7,27 @@ exercises: 25
 questions:
 - What are conditional statements? 
 - What are iterators? 
-- What are functions?  
+- What are loops?
+
 objectives:
 - Learn about different conditional statements
 - Learn how to use conditional statements 
+- Learn how to create sequences using loops 
+- Learn how to drive loops using iterators and iteratable objects
+
 keypoints:
-- FIXME
+- Conditional statement allows us to take alternate actions based on a set of rules
+- While loops are useful in situations where you want to complete an operation for an unknown amount of times and can form a conditional break statement
+- For loops are useful in situations where you  want to complete an operation for a known amount of times driven by iteratable object
+
 ---
 
 # Programming Fundamentals
 
 - In this section, we will go over the things that make programming so powerful 
 - We will cover conditional statements 
-- For and while loops 
-- And finally, cover function creation 
+- And finally, cover for and while loops 
+
 
 # Conditional statements
 
@@ -421,16 +428,15 @@ list(enumerated_seq)
 ~~~
 {: .output}
 
-~~~
-
 
 > ## discussion
 > Why do we need this? 
 {: .discussion}
 
 
-
 # lets answer with an example 
+
+- Here we take a list of names and map out a possible abbreviation name pair 
 
 ~~~python
 lobe_names = ['frontal','parietal','temporal', 'occipital','insula']
@@ -450,11 +456,6 @@ lobes_mapper
 > > ~~~
 > > {: .output}
 {: .solution}
-
-
-lobes = {1:'frontal', 2:'parietal', 3:'temporal', 4:'occipital',5:'insula'}
-
-# list comprehension  
 
 
 # Exercises for loops 
