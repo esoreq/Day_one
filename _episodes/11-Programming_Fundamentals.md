@@ -8,17 +8,18 @@ questions:
 - What are conditional statements? 
 - What are iterators? 
 - What are loops?
-
+- What are list comprehensions?
 objectives:
 - Learn about different conditional statements
 - Learn how to use conditional statements 
 - Learn how to create sequences using loops 
 - Learn how to drive loops using iterators and iteratable objects
-
+- Learn how to write list comprehensions
 keypoints:
 - Conditional statement allows us to take alternate actions based on a set of rules
 - While loops are useful in situations where you want to complete an operation for an unknown amount of times and can form a conditional break statement
 - For loops are useful in situations where you  want to complete an operation for a known amount of times driven by iteratable object
+- The use of list comprehensions simplifies and compacts your code
 
 ---
 
