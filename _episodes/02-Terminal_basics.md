@@ -33,7 +33,7 @@ Under the hood, all computers have a command-line interface, or CLI, which disti
 ### The Shell/Terminal
 The shell is a program that serves as a keyboard-driven interface between the user and the operating system. It includes a command-line interpreter that accepts the user input via the keyboard, evaluates it, starts programs if necessary, and returns the output in the form of text output to the user. Each shell has its programming language, which makes it possible to write scripts that automate complex tasks. Each shell runs in a terminal.
 
-### What would I use a Terminal 
+### Why would I use a Terminal 
 In the old days, independent devices, or so-called "hard copy terminals" (printer or screen plus keyboard), were used. Modern computers no longer have those, replaced by terminal emulators - programs that provide users with a graphical window for interacting with the shell. As scientists, we rely on powerful computer clusters to reveal answers to many questions and to perform many tasks automatically. There are many ways to interact with these computers. However, the fastest and most reliable way is the terminal emulators, which is the main focus of today's presentation.
 
 ### What is Bash

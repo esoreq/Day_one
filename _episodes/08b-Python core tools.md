@@ -667,7 +667,7 @@ May 26, 2020 13:30:10
 {: .solution}
 
 
-# Finally f-string can do numeric notations
+# f-string can do numeric notations
 
 - We often would like to use different notations in different occasions
 
