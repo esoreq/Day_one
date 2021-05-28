@@ -15,8 +15,8 @@ objectives:
 - Understand what a class is 
 - Understand how to create a module 
 - Learn how to load a local module 
-- Learn how to install a Packages
-- Create a python_sandbox conda environment 
+- Learn how to install a packages
+- Create a python_sandbox conda environment with a list of packages
 keypoints:
 - FIXME
 ---

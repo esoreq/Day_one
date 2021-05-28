@@ -443,20 +443,30 @@ list(enumerated_seq)
 lobe_names = ['frontal','parietal','temporal', 'occipital','insula']
 lobes_mapper = {}
 for index,lobe in enumerate(lobe_names):
-    lobes_mapper[index] = {'abbreviation':lobe[:3].upper(),'name':lobe}
+    lobes_mapper[index+1] = {'abbreviation':lobe[:3].upper(),'name':lobe}
 lobes_mapper
 ~~~
 
-> ## Output
-> > ~~~
-{0: {'abbreviation': 'FRO', 'name': 'frontal'},
- 1: {'abbreviation': 'PAR', 'name': 'parietal'},
- 2: {'abbreviation': 'TEM', 'name': 'temporal'},
- 3: {'abbreviation': 'OCC', 'name': 'occipital'},
- 4: {'abbreviation': 'INS', 'name': 'insula'}}
-> > ~~~
-> > {: .output}
-{: .solution}
+~~~
+{1: {'abbreviation': 'FRO', 'name': 'frontal'},
+ 2: {'abbreviation': 'PAR', 'name': 'parietal'},
+ 3: {'abbreviation': 'TEM', 'name': 'temporal'},
+ 4: {'abbreviation': 'OCC', 'name': 'occipital'},
+ 5: {'abbreviation': 'INS', 'name': 'insula'}}
+~~~
+{: .output}
+
+### Let's unpack the whole thing
+
+| Code | Explenation | Data structures  | 
+| `lobe_names = ['frontal','parietal','temporal', 'occipital','insula']` | Assign list with strings to a variable | `list`, `variable` | 
+| `lobes_mapper = {}` | Create an empty dictionary and assign it to a variable named lobes_mapper| `variable`,`dict` | 
+| `for index,lobe in enumerate(lobe_names):` | Declare a for loop that iterates over all the elements in lobe_names using enumerate to construct an index value pair, and unpack that pair to the two variables  index and lobe | `variable`, `tuple`, `list` `iterator` |
+| `lobes_mapper[index] = {'abbreviation':lobe[:3].upper(),'name':lobe}` | Create a dictionary with two keys and two values. In the first pair, we transform the first three letters into uppercase and assign them to the key abbreviation. The second pair simply adds the lobe name to the key. We can now assign this local dictionary to the lobes_mapper dictionary we created at the beginning, with the key being the current  index +1| `dict` | 
+| `lobes_mapper` | print out the contents of the dict to the screen 
+
+
+
 
 
 # Exercises for loops 
@@ -640,7 +650,7 @@ For those interested in learning more...
 
 - [Python Range() Function](https://www.datacamp.com/community/tutorials/python-range-function)
 - [Playing with iterators](https://campus.datacamp.com/courses/python-data-science-toolbox-part-2/using-iterators-in-pythonland)
-
+- [Data Structures](https://docs.python.org/3/tutorial/datastructures.html)
 
 
 {% include links.md %}
