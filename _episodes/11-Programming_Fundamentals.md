@@ -469,6 +469,16 @@ Week_25, Week_71, Week_117, Week_163,
 {: .output}
 
 > ## Here is one possible solution 
+> > ## using while
+> > ~~~python
+index,seq = 0,range(25,190,46)
+while True:
+    if index<len(seq)-1:
+        index+=1
+        print(f'Week_{seq[index]}',end=', ')
+    else:
+        break   
+> > ~~~
 > > ## using for 
 > > ~~~python
 for num in range(25,190,46):
@@ -488,9 +498,30 @@ _ = [print(f'Week_{num}',end=', ') for num in range(25,190,46)]
 {: .output}
 
 > ## Here is one possible solution
+> > ## using while
+> > ~~~python
+index,seq = 0,range(1,16)
+while True:
+    if index<len(seq):
+        if seq[index]%2 == 0 : # if is number modulo 2 has no reminder it is even
+            print(f'{seq[index]}-E',end=',')
+        else:
+            print(f'{seq[index]}-O',end=',')    
+        index+=1    
+    else:
+        break   
+> > ~~~
+> > ## using for
 > > ~~~python
 for num in range(1,16):
-    print(f'{num}-{["E","O"][num%2]}',end=',')
+    if num%2:
+        print(f'{num}-O',end=',') 
+    else:
+        print(f'{num}-E',end=',')  
+> > ~~~
+> > ## using list comprehensions
+> > ~~~python
+print(",".join([f'{num}-{["E","O"][num%2]}' for num in range(1,16)]))
 > > ~~~
 {: .solution}
 
@@ -503,11 +534,25 @@ a-l,b-l,c-l,d-l,E-U,F-U,G-U,H-U,j-l,d-l,0-l,r-l,G-U,
 {: .output}
 
 > ## Here is one possible solution
+> > ## using while
+> > ~~~python
+index,seq = 0,'abcdEFGHjd0rG'
+while len(seq)>index:
+    char = seq[index]
+    index += 1
+    print(f'{char}-{["l","U"][char.isupper()]}',end=',')
+> > ~~~
+> > ## using for
 > > ~~~python
 for char in 'abcdEFGHjd0rG':
     print(f'{char}-{["l","U"][char.isupper()]}',end=',')
 > > ~~~
+> > ## using list comprehensions
+> > ~~~python
+print(",".join([f'{char}-{["l","U"][char.isupper()]}' for char in 'abcdEFGHjd0rG']))
+> > ~~~
 {: .solution}
+
 
 ### E4. Using one of the following quotes
     - "People say nothing is impossible, but I do nothing every day."
@@ -520,12 +565,31 @@ The_best_thing_about_the_future_is_that_it_comes_one_day_at_a_time.
 ~~~
 {: .output}
 
+
 > ## Here is one possible solution
+> > ## using while
+> > ~~~python
+index,seq = 0,list("The best thing about the future is that it comes one day at a time.")
+while len(seq)>index:
+    char = seq[index]
+    if char.isspace():
+        print(f'_',end='')
+    else: 
+        print(char,end='')    
+    index += 1
+> > ~~~
+> > ## using for
 > > ~~~python
 for char in "The best thing about the future is that it comes one day at a time.":
     print(f'{[char,"_"][char.isspace()]}',end='')
 > > ~~~
+> > ## using list comprehensions
+> > ~~~python
+seq = "The best thing about the future is that it comes one day at a time."
+print("".join([f'{[char,"_"][char.isspace()]}' for char in seq]))
+> > ~~~
 {: .solution}
+
 
 ### E5. Using the same quote print each word independently stacked
 
@@ -548,12 +612,27 @@ time.
 ~~~
 {: .output}
 
+
 > ## Here is one possible solution
+> > ## using while
+> > ~~~python
+index,seq = 0,"The best thing about the future is that it comes one day at a time.".split()
+while len(seq)>index:
+    print(f'{seq[index]}')
+    index += 1
+> > ~~~
+> > ## using for
 > > ~~~python
 for word in "The best thing about the future is that it comes one day at a time.".split():
     print(f'{word}')
 > > ~~~
+> > ## using list comprehensions
+> > ~~~python
+seq = "The best thing about the future is that it comes one day at a time."
+[print(f'{word}') for word in seq.split()]
+> > ~~~
 {: .solution}
+
 
 ## Links to expand your understanding 
 
