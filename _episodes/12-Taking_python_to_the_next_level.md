@@ -147,6 +147,207 @@ Hello this function is Eyal Soreq third function
 > > {: .output}
 {: .solution}
 
+- In Python, whenever a function is called, a dictionary of name-value pairs is searched for arguments needed. The process begins with the local scope, moves to the enclosing scope, then moves to the global scope, and ends with the built-in scope. If the  variable name cannot be found, an error will be returned
+
+# In this example, last_name is explicitly deleted
+
+~~~python
+del last_name
+def my_third_function(first_name):
+    print(f"Hello this function is {first_name} {last_name} third function")
+my_third_function('Eyal')  
+~~~
+
+> ## What do you think will happen now?
+> > ~~~
+NameError: name 'last_name' is not defined
+> > ~~~
+> > {: .error}
+{: .solution}
+
+
+~~~python
+def my_fourth_function(first_name='Eyal',last_name='Soreq'):
+    print(f"Hello this function is {first_name} {last_name} fourth function")
+my_fourth_function()
+~~~
+
+
+> ## What do you think will happen now?
+> > ~~~
+Hello this function is Eyal Soreq fourth function
+> > ~~~
+> > {: .output}
+{: .solution}
+
+
+# Adding docstrings to functions to help you
+
+
+~~~python
+help(my_fourth_function)
+~~~
+
+~~~
+Help on function my_fourth_function in module __main__:
+
+my_fourth_function(first_name='Eyal', last_name='Soreq')
+~~~
+{: .output}
+
+
+~~~python
+def my_fourth_function(first_name='Eyal',last_name='Soreq'):
+    """Prints "Hello from function".
+
+    Returns:
+        None
+    """
+    print(f"Hello this function is {first_name} {last_name} fourth function")
+help(my_fourth_function)
+~~~
+
+~~~
+Help on function my_fourth_function in module __main__:
+
+my_fourth_function(first_name='Eyal', last_name='Soreq')
+    Prints "Hello from function".
+    
+    Returns:
+        None
+~~~
+{: .output}
+
+
+# What are Lambda functions?
+
+#### Lambda functions are anonymous functions in Python or functions with no name. It's a small and restricted function with only one  line. As with normal functions, Lambda functions can take more than one argument.
+
+#### Python anonymous functions have three  parts:
+1. The lambda keyword.
+1. The parameters (or bound variables), and
+1. The function body.
+
+
+#### Syntax
+
+`lambda arguments : expression`
+
+## Try recreating the following output with a lambda function, the following expression, and list comprehension: 
+
+$$ f(x) = x^3 + x^2 - x $$
+
+~~~
+'0,1,10,33,76,145,246,385,568,801,1090,1441,1860,2353,2926,3585,4336,5185,6138,7201'
+~~~
+{: .output}
+
+> ## Here is one possible solution
+> > ~~~python
+f = lambda x: x**3 + x**2 - x
+",".join([str(f(x)) for x in range(20)])
+> > ~~~
+{: .solution}
+
+
+# Python Classes and Methods
+
+In Python, most code is implemented with a special construct called a class, which is one of the core features of object-oriented programming. Classes are used by programmers to group related items together. Classes allow us to combine methods and attributes which share a common purpose.
+
+You create a class in Python by typing `class`.
+
+`Instance = class(arguments)`
+
+
+# How to create a class
+
+The simplest class can be created using the class keyword. For example, let's create a simple, empty class with no functionalities.
+
+~~~python
+class My_first_class:
+    name = 'my name attribute'
+
+instance_of_mfc = My_first_class()
+instance_of_mfc.name
+~~~
+
+
+~~~
+'my name attribute'
+~~~
+{: .output}
+
+# Methods
+
+- As soon as the class has attributes, you can define functions to access the class attributes. 
+- Methods are what these functions are called. 
+- Methods are defined with a self keyword as the first argument.
+
+~~~python
+class My_first_class:
+    name = 'my name attribute'
+    
+    def change_name(self, new_name): 
+        self.name = new_name
+
+mfc = My_first_class()
+mfc.change_name('my new name attribute')
+mfc.name
+~~~
+
+~~~
+'my new name attribute'
+~~~
+{: .output}
+
+# Instance attributes in python and the init method
+
+
+~~~python
+class My_first_class:
+
+    def __init__(self, name):
+        self.name = name
+    
+    def change_name(self, new_name): 
+        self.name = new_name
+
+mfc = My_first_class('my init name attribute')
+mfc.name
+~~~
+
+~~~
+'my init name attribute'
+~~~
+{: .output}
+
+
+- We can define default values just like in functions
+- And we can have as many instances as we like
+
+
+~~~python
+class My_first_class:
+
+    def __init__(self, name='1st class',id=0):
+        self.name = name
+        self.id = id
+    
+    def change_name(self, new_name): 
+        self.name = new_name
+
+mfc_0 = My_first_class()
+mfc_1 = My_first_class('my init name attribute',3)
+print(f"mfc_0 name is {mfc_0.name} and it's id is {mfc_0.id}")
+print(f"mfc_1 name is {mfc_1.name} and it's id is {mfc_1.id}") 
+~~~
+
+~~~
+mfc_0 name is 1st class and it's id is 0
+mfc_1 name is my init name attribute and it's id is 3
+~~~
+{: .output}
+
 <!-- # Imports best practice 
 
 We will go over this in detail next week, but it should be stated. 
@@ -160,6 +361,6 @@ We will go over this in detail next week, but it should be stated.
 
 For those interested in learning more...
 
-- [functions-python-tutorial](https://www.datacamp.com/community/tutorials/functions-python-tutorial)
+- [python-scope-legb-rule](https://realpython.com/python-scope-legb-rule/)
 
 {% include links.md %}
