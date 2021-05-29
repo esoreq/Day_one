@@ -218,6 +218,84 @@ my_fourth_function(first_name='Eyal', last_name='Soreq')
 ~~~
 {: .output}
 
+# What is the map function
+
+- The map function allows you to "map" a function to an iterable object. 
+- in other words, we call the same function for every item in an iterable, such as a list. 
+- For example, the function below is used to convert numeric age to a categorical age_group?
+
+
+
+
+~~~python
+def age_group(age):
+    if age<=11:
+        return 'children'
+    elif age<=21:
+        return 'teens'
+    elif age<=65:
+        return 'adults'
+    else: 
+        return 'elderly'
+print(list(map(age_group,  list(range(1,90,3)))))
+~~~
+
+
+> ## Output
+> > ~~~
+['children', 'children', 'children', 'children', 'teens', 'teens', 'teens', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'elderly', 'elderly', 'elderly', 'elderly', 'elderly', 'elderly', 'elderly', 'elderly']
+> > ~~~
+{: .solution}
+
+
+# what about multiple iterables?
+
+- Map() can accept more than one iterable. 
+- However, the iterables should be the same length
+- If they are not, the shortest iterable will terminate the function
+
+
+
+~~~python
+def list2grid(s,e):
+    return list(range(s,e))
+grid = list(map(list2grid,  list(range(1,10)),list(range(2,30,3))))
+grid
+~~~
+
+> ## Output
+> > ~~~
+[[1],
+[2, 3, 4],
+[3, 4, 5, 6, 7],
+[4, 5, 6, 7, 8, 9, 10],
+[5, 6, 7, 8, 9, 10, 11, 12, 13],
+[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+[8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]]
+> > ~~~
+{: .solution}
+
+
+
+# filter function
+
+- The filter function creates an iterator containing only items for which a function(item) is true. 
+- In other words, similar to map() you combine a function with a list.
+- The list is then filtered returning only **True** results.
+
+
+```python
+def is_children(age_group):
+    return age_group == 'children'
+print(list(filter(is_children, age_group)))
+```
+```
+['children', 'children', 'children', 'children']
+```
+
+
 
 # What are Lambda functions?
 
@@ -248,6 +326,53 @@ f = lambda x: x**3 + x**2 - x
 ",".join([str(f(x)) for x in range(20)])
 > > ~~~
 {: .solution}
+
+
+# Why are Lambda Expressions useful?
+
+- A lambda function is used for creating small, one-time, anonymous function object in Python. 
+- Because a lambda function is an expression, it can be named. 
+- Multi-arguments are expressed by separating arguments with a comma (,)
+- However, Lambda expressions are rarely named - these are just to make a point
+
+
+
+### Here are some more examples 
+
+~~~python
+square = lambda x: x**2
+product = lambda x,y: x*y
+power = lambda x,y: x**y
+~~~
+
+
+
+# Using if else in Lambda function
+
+- Using if-else in lambda function is little tricky, the syntax is as follows 
+- if you shouted Ternary Operators pat yourself on the back
+
+
+~~~python
+lambda <arguments> : <Value if True> if <condition> else <Value if False>
+~~~
+
+# Consider our previous map example and compare it with this compact version
+
+~~~python
+age2group = lambda age: 'children' if age<=11 else 'teens' if age<=21 else 'adults' if age<=65 else 'elderly'
+print(list(map(age2group,  list(range(1,30,1)))))
+~~~
+
+
+> ## Output
+> > ~~~
+['children', 'children', 'children', 'children', 'children', 'children', 'children', 'children', 'children', 'children', 'children', 'teens', 'teens', 'teens', 'teens', 'teens', 'teens', 'teens', 'teens', 'teens', 'teens', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults', 'adults']
+> > ~~~
+{: .solution}
+
+
+
 
 
 # Python Classes and Methods
@@ -382,10 +507,15 @@ Additionally, you imported a module called datetime from a Python package called
 ",".join(dir(datetime))
 ~~~
 
-~~~
+
+> ## Output
+> > ~~~
 '__add__, __class__, __delattr__, __dir__, __doc__, __eq__, __format__, __ge__, __getattribute__, __gt__, __hash__, __init__, __init_subclass__, __le__, __lt__, __ne__, __new__, __radd__, __reduce__, __reduce_ex__, __repr__, __rsub__, __setattr__, __sizeof__, __str__, __sub__, __subclasshook__, astimezone, combine, ctime, date, day, dst, fold, fromisocalendar, fromisoformat, fromordinal, fromtimestamp, hour, isocalendar, isoformat, isoweekday, max, microsecond, min, minute, month, now, replace, resolution, second, strftime, strptime, time, timestamp, timetuple, timetz, today, toordinal, tzinfo, tzname, utcfromtimestamp, utcnow, utcoffset, utctimetuple, weekday, year'
-~~~
-{: .output}
+> > ~~~
+{: .solution}
+
+
+
 
 As you can see these are all methods and functions associated with dealing with time
 
@@ -396,10 +526,12 @@ import datetime
 ",".join(dir(datetime))
 ~~~
 
-~~~
+
+> ## Output
+> > ~~~
 'MAXYEAR,MINYEAR,__builtins__,__cached__,__doc__,__file__,__loader__,__name__,__package__,__spec__,date,datetime,datetime_CAPI,sys,time,timedelta,timezone,tzinfo'
-~~~
-{: .output}
+> > ~~~
+{: .solution}
 
 This higher level of abstraction involves modules or classes that are independently functional but have a common temporal function
 
@@ -425,5 +557,8 @@ This higher level of abstraction involves modules or classes that are independen
 For those interested in learning more...
 
 - [python-scope-legb-rule](https://realpython.com/python-scope-legb-rule/)
+- [lambda-expressions](https://docs.python.org/3/tutorial/controlflow.html?highlight=lambda#lambda-expressions)
+- [filter](https://docs.python.org/3/library/functions.html#filter) 
+
 
 {% include links.md %}
