@@ -348,14 +348,77 @@ mfc_1 name is my init name attribute and it's id is 3
 ~~~
 {: .output}
 
-<!-- # Imports best practice 
 
-We will go over this in detail next week, but it should be stated. 
+# What are Modules? 
+
+
+Modules are files that contain Python statements and definitions.
+Let’s create an example of a module:
+
+> ## challenge
+>
+> Create a text file and rename it `utils.py`
+> In the file copy and paste the following code
+> ~~~
+def temporal_hello():
+    from datetime import datetime,time
+    local_dt = datetime.now()
+    if (time(6)<local_dt.time()<time(12)): 
+        print("Good Morning")
+    elif (time(12)<local_dt.time()<time(18)):    
+        print("Good Afternoon")
+    else:
+        print("Good night") 
+> ~~~
+>
+{: .challenge}
+
+You just created a module called utils and added a a function into it. 
+Additionally, you imported a module called datetime from a Python package called  datetime
+
+# let's look inside the module first 
+
+~~~python
+",".join(dir(datetime))
+~~~
+
+~~~
+'__add__, __class__, __delattr__, __dir__, __doc__, __eq__, __format__, __ge__, __getattribute__, __gt__, __hash__, __init__, __init_subclass__, __le__, __lt__, __ne__, __new__, __radd__, __reduce__, __reduce_ex__, __repr__, __rsub__, __setattr__, __sizeof__, __str__, __sub__, __subclasshook__, astimezone, combine, ctime, date, day, dst, fold, fromisocalendar, fromisoformat, fromordinal, fromtimestamp, hour, isocalendar, isoformat, isoweekday, max, microsecond, min, minute, month, now, replace, resolution, second, strftime, strptime, time, timestamp, timetuple, timetz, today, toordinal, tzinfo, tzname, utcfromtimestamp, utcnow, utcoffset, utctimetuple, weekday, year'
+~~~
+{: .output}
+
+As you can see these are all methods and functions associated with dealing with time
+
+# Now compare it with the following 
+
+~~~python
+import datetime
+",".join(dir(datetime))
+~~~
+
+~~~
+'MAXYEAR,MINYEAR,__builtins__,__cached__,__doc__,__file__,__loader__,__name__,__package__,__spec__,date,datetime,datetime_CAPI,sys,time,timedelta,timezone,tzinfo'
+~~~
+{: .output}
+
+This higher level of abstraction involves modules or classes that are independently functional but have a common temporal function
+
+# Why use Modules? 
+
+- Using modules, you can break down large programs into smaller, more manageable pieces. 
+- Code can also be reused through modules.
+- Instead of copying their definitions between different programs, we can create modules for our most commonly used functions.
+- a module is also the simplest way to share code with a collaborator
+
+# Imports best practice 
 
 - Use **import x** for importing packages and modules.
 - Use **from x import y** where x is the package prefix, and y is the module name with no prefix.
 - Use **from x import y as z** if two modules named y are to be imported or if y is an inconveniently long name.
-- Use **import y as z** only when z is a standard abbreviation (e.g., np for NumPy). -->
+- Use **import y as z** only when z is a standard abbreviation (e.g., np for NumPy).
+
+
+
 
 ## Links to expand your understanding 
 
