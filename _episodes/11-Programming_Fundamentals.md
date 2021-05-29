@@ -413,9 +413,7 @@ for i in range(3):
 ~~~
 {: .output}
 
-- This weird beahviour is useful for many things outside the scope of this course but is important to know
-
-# Using `enumerate()` to keep index 
+# Using `enumerate()` function to keep index 
 - enumerate is a function that returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
 
 ~~~python
@@ -463,11 +461,116 @@ lobes_mapper
 | `lobes_mapper = {}` | Create an empty dictionary and assign it to a variable named lobes_mapper| `variable`,`dict` | 
 | `for index,lobe in enumerate(lobe_names):` | Declare a for loop that iterates over all the elements in lobe_names using enumerate to construct an index value pair, and unpack that pair to the two variables  index and lobe | `variable`, `tuple`, `list` `iterator` |
 | `lobes_mapper[index] = {'abbreviation':lobe[:3].upper(),'name':lobe}` | Create a dictionary with two keys and two values. In the first pair, we transform the first three letters into uppercase and assign them to the key abbreviation. The second pair simply adds the lobe name to the key. We can now assign this local dictionary to the lobes_mapper dictionary we created at the beginning, with the key being the current  index +1| `dict` | 
-| `lobes_mapper` | print out the contents of the dict to the screen 
+| `lobes_mapper` | print out the contents of the dict to the screen  | `dict` |
 
 
 
+# What are list comprehensions?
 
+- List comprehension is a way to define and create lists building on existing lists.
+- The syntax is elegant `some_list = [expression for item in list]`
+- Consider the following example:
+
+~~~python
+grid = []
+for row in range(5):
+    grid.append(list(range(5)))
+grid    
+~~~~
+
+~~~
+[[0, 1, 2, 3, 4],
+[0, 1, 2, 3, 4],
+[0, 1, 2, 3, 4],
+[0, 1, 2, 3, 4],
+[0, 1, 2, 3, 4]]
+~~~
+{: .output}
+
+
+- Now compare it to this form: 
+
+~~~python
+[list(range(5)) for row in range(5)]
+~~~~
+
+
+# Nested List comprehensions rotated grid example 
+
+- In the same way we can created hierarchy in for loops we can create nested lists
+
+~~~python
+grid_rot90 =[]
+for col in range(5):
+    tmp = []
+    for row in grid:
+        tmp.append(row[col])
+    grid_rot90.append(tmp)   
+grid_rot90  
+~~~~
+
+~~~
+[[0, 0, 0, 0, 0],
+ [1, 1, 1, 1, 1],
+ [2, 2, 2, 2, 2],
+ [3, 3, 3, 3, 3],
+ [4, 4, 4, 4, 4]]
+~~~
+{: .output}
+
+- Now compare it to this form: 
+
+~~~python
+[[row[col] for row in grid] for col in range(5)]
+~~~~
+
+
+# Using `zip()` to create complex combinations
+
+- Zip creates an iterator of tuples, where each tuple contains the i-th element of each argument sequence or iterable. When the shortest input iterable is exhausted, the iterator stops. 
+
+~~~python
+num_list = list(range(1,7))
+str_list  = list('string')
+result = list(zip(num_list[::-1], str_list))
+result
+~~~
+
+~~~
+[(1, 's'), (2, 't'), (3, 'r'), (4, 'i'), (5, 'n'), (6, 'g')]
+~~~
+{: .output}
+
+# In contrast to enumerate we are not limited to two lists 
+
+~~~python
+num_list = list(range(1,7))
+str_list  = list('string')
+result = list(zip(num_list[::-1], str_list,num_list))
+result
+~~~
+
+~~~
+[(6, 's', 1), (5, 't', 2), (4, 'r', 3), (3, 'i', 4), (2, 'n', 5), (1, 'g', 6)]
+~~~
+{: .output}
+
+
+# Zip has the ability to unpack a list of tuples as well
+
+~~~python
+a1,a2,a3 = zip(*result)
+print(a1)
+print(a2)
+print(a3)
+~~~
+
+~~~
+(6, 5, 4, 3, 2, 1)
+('s', 't', 'r', 'i', 'n', 'g')
+(1, 2, 3, 4, 5, 6)
+~~~
+{: .output}
 
 # Exercises for loops 
 
@@ -644,6 +747,54 @@ seq = "The best thing about the future is that it comes one day at a time."
 {: .solution}
 
 
+### E6. How would you create the multiplication matrix
+
+~~~
+[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20],
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30],
+[4, 8, 12, 16, 20, 24, 28, 32, 36, 40],
+[5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+[6, 12, 18, 24, 30, 36, 42, 48, 54, 60],
+[7, 14, 21, 28, 35, 42, 49, 56, 63, 70],
+[8, 16, 24, 32, 40, 48, 56, 64, 72, 80],
+[9, 18, 27, 36, 45, 54, 63, 72, 81, 90],
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]]
+~~~
+{: .output}
+
+
+> ## Here is one possible solution
+> > ## using while
+> > ~~~python
+rows,cols=10,10
+ir,ic = 1,1
+prod_matrix = []
+while rows>=ir:
+    tmp = []
+    while cols>=ic:
+        tmp.append(ir*ic)
+        ic += 1
+    ir += 1
+    ic = 1
+    prod_matrix.append(tmp)  
+> > ~~~
+> > ## using for
+> > ~~~python
+prod_matrix = []
+for row in range(1,11):
+    tmp = []
+    for col in range(1,11):
+        tmp.append(row*col)
+    prod_matrix.append(tmp)    
+prod_matrix
+> > ~~~
+> > ## using list comprehensions
+> > ~~~python
+[[row*col for row in range(1,11)] for col in range(1,11)]
+> > ~~~
+{: .solution}
+
 ## Links to expand your understanding 
 
 For those interested in learning more...
@@ -651,6 +802,7 @@ For those interested in learning more...
 - [Python Range() Function](https://www.datacamp.com/community/tutorials/python-range-function)
 - [Playing with iterators](https://campus.datacamp.com/courses/python-data-science-toolbox-part-2/using-iterators-in-pythonland)
 - [Data Structures](https://docs.python.org/3/tutorial/datastructures.html)
-
+- [list-comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+- [Zip](https://docs.python.org/3/library/functions.html#zip)
 
 {% include links.md %}
