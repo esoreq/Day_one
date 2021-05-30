@@ -1,7 +1,7 @@
 ---
 title: "Syntax Essentials and Best Practices"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "01/06/2021"
 teaching: 15
 exercises: 0
 questions:

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Linux Terminal"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "31/05/2021"
 teaching: 25
 exercises: 5
 questions:
@@ -365,6 +365,35 @@ A close relative of `echo` is `cat` (short for “concatenate“) one of the mor
 > # file_1 content will be appended at the end of file
 > ~~~
 {: .output}
+
+
+
+## cp,mv - copy, move or rename files and directories
+
+Just as a side note this is how you copy or move file around in bash 
+
+### Examples
+
+~~~bash
+cd ~/sandbox # make sure we are at sandbox
+output=dir_root/dir_branch/dir_leaf
+# make a variable to store path
+mkdir -p $output # varify that output exists and if not create it
+mkdir -p dir_root/dir_branch2
+# Create  another branch in dir_root
+cp file $output # copy file to path
+mv file_1 $output # move file_1 to output
+ls $output # list files in output
+mv file $output/file_renamed
+# move file to output and rename it
+mkdir -p dir_1 dir_2
+mv -t dir_root/dir_branch2 dir_1 dir_2
+# move folders to --target-directory (long form of -t)
+cp -R dir_root/dir_branch2 $output
+# recursively copy folder content to path
+ls -FR $output # list files in output again
+~~~
+
 
 
 ## `tee` — Often we would like to write multi line files

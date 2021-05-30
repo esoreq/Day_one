@@ -1,13 +1,15 @@
 ---
 title: "Jupyter lab revisited"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
-teaching: 15
+date: "02/06/2021"
+teaching: 45
 exercises: 0
 questions:
-- What are Magic commands
+- What are Magic commands?
+- How to setup a python_sandbox kernel?
 objectives:
-- FIXME
+- Learn what magic commands are and how to use them 
+- Learn how to setup a python kernel and how to set it up 
 keypoints:
 - FIXME
 ---
@@ -50,6 +52,15 @@ date = !date +%s%N
 date
 ~~~
 
+# But %%bash can be even more useful
+
+~~~python
+%%bash 
+
+echo "Printing text with newline"
+echo -n "Printing text without newline"
+echo -e "\nRemoving \t backslash \t characters\n"
+~~~
 
 # %whos
 
@@ -206,8 +217,146 @@ No variables match your requested type.
 </svg>
 ~~~
 
-# But %%bash is useful 
 
+#  %%writefile Hello_world.py
+
+- Write the contents of a cell to a file in the same folder 
+
+~~~python
+%%writefile Hello_world.py
+print('Hello World')
+Hello = 'World'
+~~~
+
+> ## Output
+> > ~~~
+Writing Hello_world.py
+> > ~~~
+{: .solution}
+
+## What will happen if we run ot again?
+
+> ## Output
+> > ~~~
+Overwriting Hello_world.py
+> > ~~~
+{: .solution}
+
+## What about appending?  
+
+~~~python
+%%writefile setup.py
+first_name = 'Eyal'
+iter_num = 50
+~~~
+~~~
+Writing setup.py
+~~~
+
+{: .output}
+~~~python
+%%writefile -a setup.py
+
+last_name = 'Soreq'
+small_num = -1e12
+~~~
+~~~
+Appending to setup.py
+~~~
+{: .output}
+
+
+
+#  %run Hello_world.py
+- If we can write we can also run
+
+~~~python
+%run Hello_world.py
+print(f'{"*"*30}')
+%whos str
+~~~
+
+~~~
+Hello World
+******************************
+Variable   Type    Data/Info
+----------------------------
+Hello      str     World
+~~~
+{: .output}
+
+
+~~~python
+%reset -f
+%run setup.py
+%whos str
+~~~
+
+~~~
+Variable     Type    Data/Info
+------------------------------
+first_name   str     Eyal
+last_name    str     Soreq
+~~~
+{: .output}
+
+
+
+# How do we setup our new kernel 
+
+- Open a terminal and run the following commands
+
+~~~python
+conda create --name python_sandbox
+conda activate python_sandbox
+python -m ipykernel install --user --name=python_sandbox
+~~~
+
+- Now use your newly acquired magic power to add FSL bash environment variables
+
+~~~python
+%%writefile ~/.local/share/jupyter/kernels/python_sandbox/kernel.json
+{
+ "argv": [
+  "/opt/conda/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "python_sandbox",
+  "env": {
+     "FSLDIR":"/home/jovyan/fsl",
+     "PATH":"$PATH:/home/jovyan/fsl/bin",
+     "FSLOUTPUTTYPE":"NIFTI_GZ"
+},
+ "language": "python"
+}
+~~~
+
+# Test that fsl is accessible 
+
+~~~python
+hdr = !fslinfo ~/fsl/data/standard/MNI152_T1_1mm_brain.nii.gz
+[line.split('\t') for line in hdr]
+~~~
+
+~~~
+[['data_type', 'INT16'],
+ ['dim1', '', '182'],
+ ['dim2', '', '218'],
+ ['dim3', '', '182'],
+ ['dim4', '', '1'],
+ ['datatype', '4'],
+ ['pixdim1', '', '1.000000'],
+ ['pixdim2', '', '1.000000'],
+ ['pixdim3', '', '1.000000'],
+ ['pixdim4', '', '1.000000'],
+ ['cal_max', '', '8000.000000'],
+ ['cal_min', '', '3000.000000'],
+ ['file_type', 'NIFTI-1+']]
+~~~
+{: .output}
 
 
 ## Links to expand your understanding 
