@@ -196,32 +196,17 @@ No variables match your requested type.
 <svg width="800" height="200">
   <g transform="translate(100,100)"> 
     <text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:24; visibility:hidden"> It's MAGIC!
-      <set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="5s" fill="freeze" />
-      <animateMotion path="M 0 0 L 100 100" begin="1s" dur="5s" fill="freeze" />
-      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="5s" fill="freeze" /> 
-      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="5s" fill="freeze" /> 
+      <set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="6s" fill="freeze" repeatCount="indefinite" />
+      <animateMotion path="M 0 0 L 100 100" begin="1s" dur="3s" fill="freeze" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="3s" fill="freeze" repeatCount="indefinite"/> 
+      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="3s" fill="freeze" repeatCount="indefinite" /> 
     </text> 
   </g> 
   Sorry, your browser does not support inline SVG.
 </svg>
 ~~~
 
-
-> ## Output
-> > ~~~
-<svg width="800" height="200">
-  <g transform="translate(100,100)"> 
-    <text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:24; visibility:hidden"> It's MAGIC!
-      <set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="5s" fill="freeze" />
-      <animateMotion path="M 0 0 L 100 100" begin="1s" dur="5s" fill="freeze" />
-      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="5s" fill="freeze" /> 
-      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="5s" fill="freeze" /> 
-    </text> 
-  </g> 
-  Sorry, your browser does not support inline SVG.
-</svg>
-> > ~~~
-{: .solution}
+# But %%bash is useful 
 
 
 
