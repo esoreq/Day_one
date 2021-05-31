@@ -371,10 +371,33 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sys
 sys.path.append("../Code/")
+%matplotlib inline
+%load_ext autoreload
+%autoreload 2
 ~~~
 
+# What to do when things go wrong
 
+- Here's what you do when your Notebook won't start, your Kernel won't connect, or the environments you created have grown out of control and you have to start over.
 
+- 
+
+- In a new terminal just run the following ([Based on this link](https://info.gwdg.de/docs/doku.php?id=en:services:application_services:jupyter:start#notebook_does_not_start_kernel_can_not_connect)): 
+
+~~~bash
+mv -v .local/ .local.gwdg-disable 
+~~~
+
+- Renaming all our local configuration files instructs the cloud to  spawn a new virtual machine with default settings. 
+
+# Is it enough? 
+
+- No, I still need to delete the different environments I created. Hench the recommendation to keep them together in one place.
+
+# What about removing specific environments
+
+- This can be done using `conda env remove` and `jupyter kernelspec remove`
+- Or if you are brave just delete the specific kernel and env folder   
 
 
 ## Links to expand your understanding 
