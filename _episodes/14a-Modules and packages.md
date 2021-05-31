@@ -2,7 +2,7 @@
 title: "Modules and packages as a focus"
 author: "Dr. Eyal Soreq" 
 date: "02/06/2021"
-teaching: 15
+teaching: 45
 exercises: 0
 questions:
 - FIXME
@@ -195,66 +195,60 @@ from my_package import my_stats
 my_stats._std(list(range(3,20)))
 ~~~
 
-# How do I install additional packages?
+# Installing from PyPI
+- The most common usage of pip is to install from the Python Package Index using a requirement specifier. 
+- The Python Package Index, abbreviated as PyPI and also known as the Cheese Shop, is the official third-party software repository for Python. 
+- Some package managers, including pip, use PyPI as the default source for packages and their dependencies.
+- If you create an anconda environment you can use pip to install the specific packages into the environment
 
-- Using a package manager such as Anaconda makes it easy to install almost any additional package. 
-- Moreover, it simplifies collaboration by sending a jupyter notebook with a special file called `.yml` and that's it 
+## let's learn how to use this (and set the MCN_2021 on the way)
 
+- The following steps should be executed in the bash terminal and then you will see the progress of the different installations
 
-# MCN_2021 
-
-- Here is how you set up your environment for the MCN_2021 course using a `.yml` file 
-- Create a new python notebook and name it `setup_MCN_2021.ipynb`
-- It is up to you to decide what text to include in your markdown cells to remind yourself why you do what you do
+<h2 style="background-color:red;color:white;padding:2%;">USING BASH TERMINAL</h2>
 
 
 ## Step 1. create a folder structure
 
-~~~python
-%%bash
+~~~bash
 mkdir ~/MCN_2021/ && cd ~/MCN_2021/
 . ~/.make_dir
 ~~~
 
-## Step 2. create a .yml file with required dependencies
+## Step 2. create a new environment, activate it and use pip to install the pacakges requested
 
-~~~python
-%%writefile ~/MCN_2021/MCN_2021.yml
-name: MCN_2021
 
-dependencies:
-  - python==3.8
-  - nipype
-  - nilearn
-  - joblib
-  - scikit-learn==0.22.0
-  - nitime
-  - bokeh
-  - pip
-  - pip:
-    - nibabel==2.5.2
-    - niwidgets
-    - jupyterlab
+~~~bash
+conda env create --name MCN_2021 
+conda activate MCN_2021
+
+pip install --user nipype  
+pip install --user nibabel 
+pip install -U --user nilearn
+pip install -U --user joblib
+pip install -U --user sklearn
+
+pip install --user nitime 
+
+#we install niwidgets to do interactive plots. 
+#It needs an earlier nibabel version (2.5.2) 
+pip install --user nibabel==2.5.2 --use-feature=2020-resolver
+pip install --user -U niwidgets 
+
+#We also want nipy (which also relies on earlier version of numpy, so we install it in the end)
+pip install nipy
+
+#We also want a specific scikit-learn version
+pip install scikit-learn==0.22.0
 ~~~
 
-## Step 3. use yml file to create a new environment 
+## Step 3. register the new environment using  ipykernel
 
-- If you would like to confirm that everything worked as expected, you can perform this step in the terminal.
-
-~~~python
-%%bash
-conda env create --name MCN_2021 --file  ~/MCN_2021/MCN_2021.yml
-~~~
-
-## Step 4. register the new environment using  ipykernel
-
-~~~python
-%%bash
+~~~bash 
 python -m ipykernel install --user --name MCN_2021 --display-name "Python (MCN_2021)"
 ~~~
 
-
-## Step 5. Include FSL environment variables
+## Step 4. Include FSL environment variables
 
 ~~~python
 %%writefile ~/.local/share/jupyter/kernels/MCN_2021/kernel.json
@@ -269,15 +263,59 @@ python -m ipykernel install --user --name MCN_2021 --display-name "Python (MCN_2
  "display_name": "Python (MCN_2021)",
   "env": {
      "FSLDIR":"/home/jovyan/fsl",
-     "PATH":"$PATH:/home/jovyan/fsl/bin",
+     "PATH":"$PATH:/home/jovyan/fsl/bin:/home/jovyan/.local/bin",
      "FSLOUTPUTTYPE":"NIFTI_GZ"
 },
  "language": "python"
 }
 ~~~
 
-# And what about this course? 
+## Step 5. Test instellation
 
+- We will now create a new notebook in our MCN_2021/notebooks folder using our Python (MCN_2021) kernel
+- Copy the following code if it runs and spits out correct versions you are ready for next week 
+
+
+~~~python
+import warnings
+warnings.filterwarnings('ignore')
+import nipype
+import nibabel as nib
+import sklearn as skl
+import nilearn as nil
+import niwidgets as niw
+import numpy as np
+import scipy
+
+print(f"nipype version {nipype.__version__}")
+print(f"nibabel version {nib.__version__}")
+print(f"sklearn version {skl.__version__}")
+print(f"nilearn version {nil.__version__}")
+print(f"niwidgets version {niw.__version__}")
+print(f"numpy version {np.__version__}")
+print(f"scipy version {scipy.__version__}")
+~~~
+
+# How do I install additional packages?
+
+- Using a package manager such as Anaconda makes it easy to install almost any additional package. 
+- Moreover, it simplifies collaboration by sending a jupyter notebook with a special file called `.yml` 
+
+# So why didn't we use it for the MCN kernel? 
+
+- The MCN course relies on a few "old" packages that were last updated in 2018. 
+- Compared to the fast-paced Python ecosystem, these are ancient packages. 
+- Due to their dependency on common strong packages that are updated weekly, they generate a complex dependency hell that is unmanageable automatically.
+- Which is why Judy gave you the correct chain of installation that makes it available to use.
+- We can, however, export the current state of the kernel to a yml file, which will at least provide you with a glimpse into the complexities that exist beneath the hood
+
+
+# SYS_2021 
+
+- One thing that is very useful when working with collaborators of different levels of proficiency is creating a setup file that automates the whole process of setting an environment for you.
+- Here is how you set up your environment for the this course using a `.yml` file 
+- Create a new python notebook and name it `setup_SYS_2021.ipynb`
+- It is up to you to decide what text to include in your markdown cells to remind yourself why you do what you do
 - This is an introductory course so we are much simpler 😊
 
 ## Step 1. create a folder structure
@@ -291,33 +329,53 @@ mkdir ~/SYS_2021/ && cd ~/SYS_2021/
 ## Step 2. create a .yml file with required dependencies
 
 ~~~python
-%%writefile ~/SYS_2021/SYS_2021.yml
+%%writefile ~/SYS_2021/setup.sh
+tee ~/SYS_2021/SYS_2021.yml << END
 name: SYS_2021
-
+channels:
+  - conda-forge
 dependencies:
-  - python==3.8
-  - scikit-learn
-  - numpy 
+  - numpy
   - pandas
+  - scipy
+  - statsmodels
+  - pingouin
+  - scikit-learn
   - matplotlib
-  - bokeh
   - seaborn
   - plotly
-~~~
+prefix: /home/jovyan/envs/SYS_2021
 
-## Step 3. use yml file to create a new environment 
 
-~~~python
-%%bash
-conda env create --name SYS_2021 --file  ~/SYS_2021/SYS_2021.yml
-~~~
+END
 
-## Step 4. register the new environment using  ipykernel
+conda env create --file  ~/SYS_2021/SYS_2021.yml
 
-~~~python
-%%bash
 python -m ipykernel install --user --name SYS_2021 --display-name "Python (SYS_2021)"
+
 ~~~
+
+## Step 3. run the setup file in a terminal
+
+- If you would like to confirm that everything worked as expected, you can perform this step in the terminal.
+
+~~~bash
+source ~/SYS_2021/setup.sh
+~~~
+
+## Step 4. Test that the kernel exists and that the packages are installed
+
+~~~python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
+sys.path.append("../Code/")
+~~~
+
+
+
+
 
 ## Links to expand your understanding 
 

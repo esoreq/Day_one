@@ -1,7 +1,7 @@
 ---
 title: "Numpy essentials"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "03/06/2021"
 start: true
 teaching: 15
 exercises: 0

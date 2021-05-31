@@ -1,7 +1,7 @@
 ---
 title: "Array objects and Matrix manipulation"
 author: "Dr. Eyal Soreq" 
-date: "05/03/2021"
+date: "03/06/2021"
 teaching: 15
 exercises: 0
 questions:

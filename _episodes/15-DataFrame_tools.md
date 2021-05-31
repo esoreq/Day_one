@@ -1,7 +1,8 @@
 ---
-title: "Unpacking Pandas DataFrame"
+title: "Unpacking Pandas"
 author: "Dr. Eyal Soreq" 
-date: "02/06/2021"
+date: "03/06/2021"
+start: true
 teaching: 15
 exercises: 0
 questions:
