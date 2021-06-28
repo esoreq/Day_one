@@ -38,8 +38,8 @@ The function is simple and logically divided into three parts.
 
 1. Construct a name for the file based on the defined stage 
 1. Verify the existence of the file 
-  1. If found, the data in the file is loaded (unless explicitly instructed not to)
-  1. If not, it executes the processing stages you specify that returns processed data. 
+    - If found, the data in the file is loaded (unless explicitly instructed not to)
+    - If not, it executes the processing stages you specify that returns processed data. 
 1. Finally, return data. 
 
 ```python
