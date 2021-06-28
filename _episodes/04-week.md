@@ -203,7 +203,7 @@ def drop_missing_columns(df,thr):
     return df,columns_2_drop 
 ```  
 
-## Combine evrything in the top function
+## Combine everything in the top function
 - We assume that an intermediate raw file exists, even though this function can be applied to data files rather than paths.
 - The file is then loaded using the *load_pickle()* method 
 - Then, for each dataset contained within the dictionary, it drops the columns that are missing 
@@ -221,7 +221,7 @@ def clean_data(output_file,thr = 0.9):
 ```
 
 ## Extend your load_data function
-Now we just add a stage to our `load_data` function to excute the new function
+Now we just add a stage to our `load_data` function to execute the new function
 
 ```python
 def load_data(stage,input_path,input_name,reapply=False):
