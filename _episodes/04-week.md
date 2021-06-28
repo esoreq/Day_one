@@ -1,5 +1,5 @@
 ---
-title: "Staying sane while converting a notebook to pdf"
+title: "Cleaning real data"
 author: "Dr. Eyal Soreq" 
 start: true
 date: "29/06/2021"
