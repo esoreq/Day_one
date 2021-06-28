@@ -21,7 +21,7 @@ objectives:
 There are many steps in an analytical project, and one person is rarely responsible for all stages of the project throughout its entire life cycle. 
 It is more common that different stages will be assigned to other people with complementary skills.  The likelihood of the project being successful increases if you create an easy-to-understand and extendable pipeline from the beginning. 
 
-![]('../files/data_cycle.svg')
+![]('../fig/data_cycle.svg')
 
 ## Cleaning real data 
 Today's session is all about the real world. 
@@ -615,7 +615,6 @@ def process_bmi(output_file):
   df = df.iloc[:,[0,1,3,18,19]] 
   # rename columns for simplicity 
   df.columns = ['pid','subj','age_at_entry','height','weight']
-
 > > ~~~
 {: .solution}
 
