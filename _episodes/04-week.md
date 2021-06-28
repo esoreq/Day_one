@@ -21,8 +21,7 @@ objectives:
 There are many steps in an analytical project, and one person is rarely responsible for all stages of the project throughout its entire life cycle. 
 It is more common that different stages will be assigned to other people with complementary skills.  The likelihood of the project being successful increases if you create an easy-to-understand and extendable pipeline from the beginning. 
 
-![png](../fig/data_cycle.png)
-
+<img src=../fig/data_cycle.pn alt="data_cycle" style="display: block;margin-left: auto;margin-right: auto;width: 80%;"/>
 
 ## Cleaning real data 
 Today's session is all about the real world. 
