@@ -753,4 +753,4 @@ ax.legend()
 ```
 ![png](../fig/output_39_1.png)
 
-Our focus this week was on covering the concept of a pipeline and givi
+The focus of this week was to teach you how to build a modular pipeline to organize your preprocessing steps in a reproducible and transparent manner. You can experiment with this approach and apply it to other aspects of this data set, other datasets, and your own. The topic of feature engineering and domain expertise will be discussed next week.
