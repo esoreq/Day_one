@@ -49,8 +49,11 @@ def load_data(stage,input_path,input_name,reapply=False):
   if not reapply and Path(input_file).exists():
     data = load_pickle(input_file)
   else:
-    data = {'some_stage': process_some_stage}[stage](input_file)
-    
+    pipeline = {'some_stage': process_some_stage}
+    if stage in pipeline:
+      data = pipeline[stage](input_file)
+    else:
+      raise Exception(f"Sorry, {stage} is not a valid pipeline stage")
   return data
 ```
 
@@ -141,8 +144,11 @@ def load_data(stage,input_path,input_name,reapply=False):
   if not reapply and Path(input_file).exists():
     data = load_pickle(input_file)
   else:
-    data = {'raw': download_data}[stage](input_file)
-    
+    pipeline = {'raw': download_data}
+    if stage in pipeline:
+      data = pipeline[stage](input_file)
+    else:
+      raise Exception(f"Sorry, {stage} is not a valid pipeline stage")
   return data
 ```
 
@@ -246,9 +252,12 @@ def load_data(stage,input_path,input_name,reapply=False):
   if not reapply and Path(input_file).exists():
     data = load_pickle(input_file)
   else:
-    data = {'raw': download_data,
-            'clean': clean_data}[stage](input_file)
-    
+    pipeline = {'raw': download_data,
+                'clean': clean_data}
+    if stage in pipeline:
+      data = pipeline[stage](input_file)
+    else:
+      raise Exception(f"Sorry, {stage} is not a valid pipeline stage")
   return data
 ```
 
@@ -728,8 +737,7 @@ def process_bmi(output_file):
 > > ~~~
 {: .solution}
 
-
-# The `process_bmi` function 
+# Step 7. The `process_bmi` function 
 Here is the complete function without comments 
 
 > ## Solution 
@@ -755,7 +763,31 @@ def process_bmi(output_file):
 {: .solution}
 
 
-# Test it 
+# Step 8. extend piepline
+Last step before testing we need to add a stage call in our pipeline
+
+
+> ## Solution 
+> > ~~~python
+def load_data(stage,input_path,input_name,reapply=False):
+
+  input_file = f'{input_path}/{stage}_{input_name}.pkl'
+  if not reapply and Path(input_file).exists():
+    data = load_pickle(input_file)
+  else:
+    pipeline = {'raw': download_data,
+                'clean': clean_data,
+                'bmi': process_bmi}
+    if stage in pipeline:
+      data = pipeline[stage](input_file)
+    else:
+      raise Exception(f"Sorry, {stage} is not a valid pipeline stage")
+  return data
+> > ~~~
+{: .solution}
+
+
+# Step 8. Test piepline
 
 ```python
 data = load_data('bmi')
