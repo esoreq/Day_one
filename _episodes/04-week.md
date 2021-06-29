@@ -71,6 +71,11 @@ Module for (de)serialization. i.e. storing complete Python objects into binary f
 # Loading Pickles 
 
 ```python
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from pathlib import Path
 import _pickle as cPickle #use this function it is faster than most
 
 def load_pickle(input_name):
@@ -742,8 +747,7 @@ def process_bmi(output_file):
 # Test it 
 
 ```python
-%%time
-data = load_data('bmi',reapply=True)
+data = load_data('bmi')
 fig,ax = plt.subplots(figsize=(12,5))
 for name,group in data.groupby('bmi_cat'):
   ax.scatter(group['age'],group['weight'],label=name,alpha=0.5)
