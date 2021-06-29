@@ -70,6 +70,7 @@ Module for (de)serialization. i.e. storing complete Python objects into binary f
 
 # Loading Pickles 
 
+## start with packages 
 ```python
 import numpy as np
 import pandas as pd
@@ -77,7 +78,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
 import _pickle as cPickle #use this function it is faster than most
+sns.set()
 
+%matplotlib inline
+%load_ext autoreload
+%autoreload 2
+plt.style.use('ggplot')
+```
+
+## Now the load_pickle function 
+
+```python
 def load_pickle(input_name):
     input_pickle = open(input_name, 'rb')
     data = cPickle.load(input_pickle)
