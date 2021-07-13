@@ -1,5 +1,5 @@
 ---
-title: "An exploration of natural speration within a squashed dataset"
+title: "An exploration of natural separation within a squashed dataset"
 author: "Dr. Eyal Soreq" 
 start: true
 date: "13/07/2021"
