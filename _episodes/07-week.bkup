@@ -1,0 +1,124 @@
+---
+title: "An exploration of natural speration within a squashed dataset"
+author: "Dr. Eyal Soreq" 
+start: true
+date: "13/07/2021"
+teaching: 60
+exercises: 0
+questions:
+- What is feature extraction?
+- What is Dimensionality Reduction?
+- What is feature extraction?
+- What is Feature Scaling and Centering?
+- What is Feature transformation?
+- What is Feature construction?
+objectives:
+- Go over some basic terminology for ML
+- Learn how to mean center a variable
+- Learn how to standardise a variable
+- Learn how to create functions to automate cleaning
+- Learn how to transform your features
+- Learn how to construct new features
+---
+
+# Some basic terminology we should all know 
+
+## What are models? 
+
+Modelling is a way of representing some phenomenon in a simple, useful way 
+It is useful because it makes it easier to understand, define, quantify, visualize, or simulate that phenomenon.
+Models can be simple equations that represent the relationship between two variables or complex systems with intricate laws.
+And most importently models  allow us to convert complex datasets to stories. 
+
+## Use models to describe a dataset 
+
+We have already discussed some of the different data models that can be used for describing data properties. 
+Let's take a quick look at them 
+ 
+### We covered the mean 
+
+We defined it as the sum of the sample divided by the number of observed elements
+
+$$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
+
+With $x_i$	representing the value of one random observation, and $\bar{x}$	as the mean value of all observations
+and $n$	is the number of observations. And in our course observation is exactly the same as an event.
+
+### We covered the variance
+
+As the expectation of the squared deviation of a random variable from its mean.
+In other words, it measures how far a set of numbers is spread out from their average value.  
+$$ \sigma^2 =  \frac{\sum_{i=1}^n(x_i-\bar{x})^2} {n} $$
+
+### We also discussed the normelised version of variance standard deviation
+
+By determining each data point's deviation from the mean, the standard deviation is calculated as the square root of variance.
+Within the data set, there will be a higher deviation if the data points are further away from the mean; 
+Therefore, the higher the standard deviation, the more spread out the data is.
+
+$$ \sigma =  \frac{\sum_{i=1}^n(x_i-\bar{x})^2} {n} $$
+
+### You should have covered probability in the stats course 
+
+Probability = The expected **relative** frequency of some outcome.  
+e.g. for a fair coin $P(heads)=P(tails)=0.5$
+
+
+### Which leads to the idea of a random variable and conditional probability 
+- Variable determined by a random experiemnt or sampling 
+
+For example:
+
+According to Nature (http://www.nature.com/articles/s41598-019-55432-z#data-availability) almost all females have a foot size smaller than 280mm[1].
+In men, the probability of having a foot size larger than 280 is around 0.3, as you can see from this recent study that analyzed 1.2 million foot scans.
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-019-55432-z/MediaObjects/41598_2019_55432_Fig2_HTML.png?as=webp)
+
+We can confidently state the following from these plots of the probability distribution function (pdf) of different conditional distributions: 
+
+$$ P(FL>fl|M) \neq P(FL>fl|F) $$  
+
+The conditional probability of foot size for males being larger than some limit fl is most of the time different than females
+
+We can be more specific in our comparison and state the directionality of the relationship   
+
+$$ P(FL>fl|M) > P(FL>fl|F) $$  
+
+### The expected value is equal to the sample mean, i.e. the random variable in some experiment 
+
+So $ E[Y] = \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
+And the variance would be describing the dispersion or the spread of the sampled observations around the mean
+And Covariance would be the paired variance of two random variables 
+$ Cov[X,Y] = E[[(X-E[X])(Y-E[Y])] $$
+
+### What is an estimator and how do we assess it? 
+An "estimator" or "point estimate" is a statistic used to infer the 
+value of an unknown parameter in a statistical model.
+
+#### We have some error in every prediction, which is a function of the **accuracy** of your estimator and the **quality** of the observed sample 
+
+$$ \epsilon(x) = \widehat\Theta(x) - \Theta $$
+
+#### We have also the sampling deviation 
+
+The difference is accepting that each sampling has its own error, which is different from the actual error
+
+$$ d(x) = \widehat\Theta(x) - E(\widehat\Theta(X)) $$
+
+#### Which brings us back to Variance 
+
+The variance of $\widehat\Theta$ is simply the expected value of the squared sampling deviations
+
+$$ VAR(\widehat\theta)=E[(\widehat\theta-E[\widehat\theta])^2] $$
+
+#### And Bias
+
+$$ B(\widehat\theta) = E(\widehat\theta)-\theta = E(\widehat\theta-\theta) $$
+
+Which is the expected value of the error, i.e. the mean error of the sample 
+Or the difference between the Predicted Value and the Expected Value. 
+
+### The linear equation as a simple estimator
+
+$$ Y = \beta_0 + \beta_1 X + \epsilon $$
+
+Discovering natural relationships in datasets at lower dimensions
