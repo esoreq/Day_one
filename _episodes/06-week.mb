@@ -1,0 +1,331 @@
+---
+title: "Why, When, and How of Feature Engineering"
+author: "Dr. Eyal Soreq" 
+start: true
+date: "6/07/2021"
+teaching: 60
+exercises: 0
+questions:
+- What is feature extraction?
+- What is Dimensionality Reduction?
+objectives:
+- Learn how to perform linear (PCA) feature extraction?
+---
+
+## What are models? 
+
+Modelling is a way of representing some phenomenon in a simple, useful way 
+It is useful because it makes it easier to understand, define, quantify, visualize, or simulate that phenomenon.
+Models can be simple equations that represent the relationship between two variables or complex systems with intricate laws.
+And most importently models  allow us to convert complex datasets to stories. 
+
+## Use models to describe a dataset 
+
+We have already discussed some of the different data models that can be used for describing data properties.
+Today we will cover models that try to discover some natural relationships in datasets at lower dimension. 
+
+## What is Dimensionality
+
+Dimensionality is the number of variables, characteristics or features present in the dataset.
+This dimensions are represented as columns, and the goal is to reduce the number of them.
+
+Last week we covered the concept of Feature Selection where we select a subset of features of the original dataset.
+We also touched breifly on various wasy to do that selection.
+
+## Today we will cover feature extraction
+
+Feature extraction is a process of reducing the dimensionality of a dataset. 
+Feature extraction involves combining the existing features into new ones, 
+thereby reducing the number of features in the dataset. 
+This process reduces the amount of data into manageable sizes for algorithms to process without 
+distorting the original relationships or relevant information.
+
+## The advantages of feature extraction
+
+- Reduce computational complexity 
+- Reduce noise effects 
+- Improve our understanding of the big picture 
+- Merge together collinear features
+
+
+## However before we dive into examples and algorithms lets start by making sure the basics are known
+
+### We covered the mean 
+
+We defined it as the sum of the sample divided by the number of observed elements
+
+$$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
+
+With $x_i$	representing the value of one random observation, and $\bar{x}$	as the mean value of all observations
+and $n$	is the number of observations. And in our course observation is exactly the same as an event.
+
+### We covered the variance
+
+As the expectation of the squared deviation of a random variable from its mean.
+In other words, it measures how far a set of numbers is spread out from their average value.  
+$$ \sigma^2 =  \frac{\sum_{i=1}^n(x_i-\bar{x})^2} {n} $$
+
+### We also discussed the normelised version of variance standard deviation
+
+By determining each data point's deviation from the mean, the standard deviation is calculated as the square root of variance.
+Within the data set, there will be a higher deviation if the data points are further away from the mean; 
+Therefore, the higher the standard deviation, the more spread out the data is.
+
+$$ \sigma =  \frac{\sum_{i=1}^n(x_i-\bar{x})^2} {n} $$
+
+### You should have covered probability in the stats course 
+
+Probability = The expected **relative** frequency of some outcome.  
+e.g. for a fair coin $P(heads)=P(tails)=0.5$
+
+
+### Which leads to the idea of a random variable and conditional probability 
+- Variable determined by a random experiemnt or sampling 
+
+For example:
+
+According to Nature (http://www.nature.com/articles/s41598-019-55432-z#data-availability) almost all females have a foot size smaller than 280mm[1].
+In men, the probability of having a foot size larger than 280 is around 0.3, as you can see from this recent study that analyzed 1.2 million foot scans.
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-019-55432-z/MediaObjects/41598_2019_55432_Fig2_HTML.png?as=webp)
+
+We can confidently state the following from these plots of the probability distribution function (pdf) of different conditional distributions: 
+
+$$ P(FL>fl|M) \neq P(FL>fl|F) $$  
+
+The conditional probability of foot size for males being larger than some limit fl is most of the time different than females
+
+We can be more specific in our comparison and state the directionality of the relationship   
+
+$$ P(FL>fl|M) > P(FL>fl|F) $$  
+
+### The expected value is equal to the sample mean, i.e. the random variable in some experiment 
+
+So $ E[Y] = \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
+And the variance would be describing the dispersion or the spread of the sampled observations around the mean
+And Covariance would be the paired variance of two random variables 
+$ Cov[X,Y] = E[[(X-E[X])(Y-E[Y])] $$
+
+### What is an estimator and how do we assess it? 
+An "estimator" or "point estimate" is a statistic used to infer the 
+value of an unknown parameter in a statistical model.
+
+#### We have some error in every prediction, which is a function of the **accuracy** of your estimator and the **quality** of the observed sample 
+
+$$ \epsilon(x) = \widehat\Theta(x) - \Theta $$
+
+#### We have also the sampling deviation 
+
+The difference is accepting that each sampling has its own error, which is different from the actual error
+
+$$ d(x) = \widehat\Theta(x) - E(\widehat\Theta(X)) $$
+
+#### Which brings us back to Variance 
+
+The variance of $\widehat\Theta$ is simply the expected value of the squared sampling deviations
+
+$$ VAR(\widehat\theta)=E[(\widehat\theta-E[\widehat\theta])^2] $$
+
+#### And Bias
+
+$$ B(\widehat\theta) = E(\widehat\theta)-\theta = E(\widehat\theta-\theta) $$
+
+Which is the expected value of the error, i.e. the mean error of the sample 
+Or the difference between the Predicted Value and the Expected Value. 
+
+## But why do we need all of this? 
+
+A possible reason would be to measure the level of association between two or more variables 
+
+### One simple estimator of the association between two variables would be the Covariance
+
+Remember that covariance indicates how closely two random variables change together.
+It's the unscaled measure that indicates the direction of the linear relationship between variables.
+As such it is hard to compare between two variables of different scales 
+
+### The scaled version of the covariance is (you guessed it) correlation
+
+It is a measure used to measure the strenght of assoication between two random variables 
+And is just the covariance divided by the product of both variables standard deviation. 
+It's values range from -1 to 1 in contrast to the covariance matrix that ranges from $-\infty$ to $\infty$
+
+### Let's make this concrete 
+
+We start by loading the packages 
+
+~~~python
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import sys
+
+sys.path.append("../")
+from Code import preprocessing as pp
+%load_ext autoreload
+%autoreload 2
+plt.style.use('bmh')
+%matplotlib inline
+~~~
+
+In order to demonstrate this point more clearly, I will simulate three variables with known linear dependencies 
+
+~~~python
+rng = np.random.default_rng(seed=2021)
+v1 = rng.normal(260, 20, size=(50,))
+v2 = rng.normal(v1*0.374,20)
+v3 = rng.normal(250 -0.6*v1,2)
+X = np.vstack([v1,v2,v3])
+X[:,15] = [3,7,19]
+~~~
+
+And plot the different views we discussed 
+
+
+~~~python
+fig,ax = plt.subplots(1,3,figsize=(12,4))
+sns.scatterplot(x=X[1,:],y=X[0,:],ax=ax[0],alpha=0.5)
+sns.scatterplot(x=X[2,:],y=X[0,:],ax=ax[0],alpha=0.5)
+sns.heatmap(np.cov(X),ax=ax[1], annot=True, fmt="0.2f")
+sns.heatmap(np.corrcoef(X),ax=ax[2],vmin=-1,vmax=1,
+            center=0, annot=True, fmt="0.2f")
+~~~
+
+Importently we can also inspect the observations (this can be a simple way to screen for outliers)
+
+~~~python
+fig,ax = plt.subplots(1,3,figsize=(12,4))
+sns.scatterplot(x=X[1,:],y=X[0,:],ax=ax[0],alpha=0.5)
+sns.scatterplot(x=X[2,:],y=X[0,:],ax=ax[0],alpha=0.5)
+sns.heatmap(np.cov(X.T),ax=ax[1])
+sns.heatmap(np.corrcoef(X.T),ax=ax[2],vmin=-1,vmax=1,
+            center=0)
+~~~
+
+## Principal Component Analysis (PCA)
+
+By using PCA, we find directions of maximum variance in high-dimensional data,
+and we project these directions into a new subspace with the same or fewer dimensions than the original one.
+
+## Maximal Variance and Information Loss
+Data points will be projected in the direction of maximal variance to form a new axis. 
+The further the points are to the axis, the biggest the information loss.
+
+~~~python
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+X_reduced = pca.fit_transform(X.T)
+sns.scatterplot(x=X_reduced[:,0],y=X_reduced[:,1],alpha=0.95)
+~~~
+
+## Examine the error or the cost of reduction 
+The model can calculate the ratio of explained variance i.e. what is the information loss we pay when doing this
+
+~~~python
+X_hat = pca.inverse_transform(X_reduced)
+fig,ax=plt.subplots(1,3,figsize=(12,3))
+for i in range(3):
+    sns.residplot(x=X_hat[:,i],y=X.T[:,i],ax=ax[i])
+(fig.suptitle(f'Residplot (variance explained ={pca.explained_variance_ratio_.sum()*100:0.2f}%)'
+             , fontsize=16,y=1.1));    
+~~~
+
+
+
+## What about real data 
+
+- As always we will start by downloading the updated preprocessing files
+- And as usual I changed things for you to explore 
+
+
+~~~python
+%%bash 
+mkdir -p ../Code
+wget https://github.com/esoreq/esoreq_personal/blob/main/files/preprocessing_w6.py\
+    -O ../Code/preprocessing.py 
+~~~
+
+
+## What need to load packages 
+
+~~~python
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import sys
+
+sys.path.append("../")
+from Code import preprocessing as pp
+%load_ext autoreload
+%autoreload 2
+plt.style.use('bmh')
+%matplotlib inline
+~~~
+
+## Let's load freesurfer complete volume estimation 
+
+~~~python
+volume = pp.load('volume',reapply=True)
+volume.head(5)
+~~~
+
+
+## And examine the correlation matrix 
+
+~~~python
+assc = volume.iloc[:,6:].corr()
+_df = assc.apply(pp.missing_profile).T
+retain = _df.index[_df['%missing']<0.9]
+assc = assc.loc[retain,retain]
+~~~
+
+## Let's order it in a naive way 
+
+~~~python
+order = assc.mean().sort_values()
+sns.heatmap(assc.loc[order.index,order.index],vmin=-1,vmax=1,center=0)
+~~~
+
+## Now reduce it's dimensionality using pca 
+
+~~~python
+from sklearn.decomposition import PCA
+pca = PCA()
+volume_reduced = pca.fit(volume.iloc[:,6:])
+~~~
+
+## This time the explained_variance is measuring the entire feature space 
+
+~~~python
+fig,ax = plt.subplots(1,2,figsize=(12,4))
+ax[0].plot(pca.explained_variance_ratio_[:10],'r-*')
+ax[1].plot(np.cumsum(pca.explained_variance_ratio_[:10]),'r-*')
+~~~
+
+
+## And we can see that the reduced space is retaining some differentiability of sex 
+
+~~~python
+plt.figure(figsize=(12,5))
+sns.scatterplot(
+    x=volume_reduced[:,0], y= volume_reduced[:,1],
+    palette=sns.color_palette("hls",volume['M/F'].unique().shape[0]),
+    alpha=0.3,hue=volume['M/F']
+)
+~~~
+
+## The PCA is a global model what about local models? 
+
+~~~python
+from sklearn.manifold import TSNE
+tsne = TSNE(n_components=2, verbose=1)
+tsne_results = tsne.fit_transform(volume.iloc[:,6:])
+plt.figure(figsize=(16,10))
+sns.scatterplot(
+    x=tsne_results[:,1], y= tsne_results[:,0],
+    palette=sns.color_palette("hls", 2),
+    alpha=0.9,hue=volume['M/F'])
+~~~
+
+## Questions? 
+
