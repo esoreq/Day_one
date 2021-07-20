@@ -16,7 +16,7 @@ You are not required to download any additional material from the OASIS website 
 
 # What is expected from the assessment?
 
-- You have two weeks to complete the Opt-out assessment.
+- You have two weeks to complete the assessment.
 
 - The PDF report should be submitted with the notebook used to generate it that can be reproduced all the steps you took.
 
