@@ -64,7 +64,10 @@ ax[1].scatter(X[:,0], X[:,1],c=y);
 
 # Classification using Linear Discriminant Analysis (LDA) (the simplest parametric model) 
 
-- In LDA our goal is to estimate $$P(Y=k|X=x)$$ 
+- In LDA our goal is to estimate 
+
+$$P(Y=k|X=x)$$ 
+
 - In other words, we want to model each classes normal distribution parameters 
 (mean and covariance across feature space) and use them to calculate 
 the probability of any point in space being associated with a specific class 
