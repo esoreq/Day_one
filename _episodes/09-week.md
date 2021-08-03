@@ -12,10 +12,10 @@ questions:
 - How do we measure perfomance in Regression problems? 
 - What are the most common Regression models?
 objectives:
-- Understand difference between regression and classification
+- Understand the difference between regression and classification
 - Understand when and why we use regression 
 - Go over the General types of Regression methods
-Understand the diffrence between parametric and non-parametric models 
+- Understand the diffrence between parametric and non-parametric models 
 - Understand how to aproximate the perfomance of regression algorithems
 - Learn how to apply different Regression algorithms
 - Learn how to approximate perfomance to compare between algorithms
