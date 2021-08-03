@@ -17,6 +17,7 @@ objectives:
 - Learn how to apply different Classification algorithms
 - Learn how to approximate perfomance to compare between algorithms
 ---
+
 # What is Supervised Learning?
 - Supervised Learning is all about learning from examples.
 - The basic idea is to identify meaningful patterns assoicated with some target label or value.
