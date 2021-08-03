@@ -20,6 +20,8 @@ Understand the diffrence between parametric and non-parametric models
 - Learn how to apply different Regression algorithms
 - Learn how to approximate perfomance to compare between algorithms
 ---
+
+
 # What is Supervised Learning?
 - Supervised Learning is all about learning from examples.
 - The basic idea is to identify meaningful patterns assoicated with some target label or value.
