@@ -115,7 +115,7 @@ xx, yy = np.meshgrid(np.linspace(np.min(X[:,0]), np.max(X[:,0]), 100),
                      np.linspace(np.min(X[:,1]), np.max(X[:,1]), 100))
 Z = mdl.predict_proba(np.c_[xx.ravel(), yy.ravel()])
 Z = Z[:, 1].reshape(xx.shape)
-plt.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys')                     
+plt.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys',shading='auto')                     
 ```
 
 # So how can we adress this problem? 
@@ -143,7 +143,7 @@ for ix,degree in enumerate(np.arange(1,10,1)):
     Z = mdl.predict_proba(pf.fit_transform(np.c_[xx.ravel(), yy.ravel()]))
     Z = Z[:, 1].reshape(xx.shape)
     ax.scatter(X[:,0], X[:,1],c=y);  
-    ax.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys')
+    ax.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys',shading='auto')
     ax.set_title(f"Polynom degree={degree} (dim={XP.shape[1]})")
 ```
 
@@ -187,7 +187,7 @@ for ix,degree in enumerate(np.arange(1,32,2)):
     Z = mdl.predict(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
     ax.scatter(X[:,0], X[:,1],c=y,alpha=0.2);  
-    ax.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys')
+    ax.pcolormesh(xx, yy, Z, zorder=0,cmap='Greys',shading='auto')
     ax.set_title(f"max_depth={degree} (dim={X.shape[1]})")
 ```
 
@@ -219,7 +219,6 @@ the feature that splits the most significant clusters that might reflect a possi
 - The idea is simple given some relationship to find a set of rules to predict a value 
 
 
-
 # Start with a simple problem
 
 - let's start with a linear problem with one feature and one response vector $$ y = 0.5x+\epsilon $$
@@ -238,10 +237,11 @@ the easier it is to fit a line (with only two parameters) that will minimise the
 
 # Start with the linear model 
 ~~~python
+rng = np.random.default_rng(2021)
 f = lambda x,noise: 0.5 * x + noise*rng.uniform(0,1,size=x.shape)
 N = 100
 x = rng.normal(10,5,size=(N,))
-x_range = np.linspace(np.min(y),np.max(y),100)
+x_range = np.linspace(np.min(x),np.max(x),100)
 fig, ax = plt.subplots(1, 5,sharey=True,sharex=True,figsize=(20,5))
 for i,sd in enumerate(np.arange(1,10,2)):
     y = f(x,sd)
@@ -472,6 +472,9 @@ def calc_error(y,y_hat,i=None,kind='model'):
 - Make sure to remove nan's i.e. observations with no age 
 
 ```python
+import sys
+sys.path.append("../")
+from Code import preprocessing as pp
 d_clinical = pp.load('clean')["ADRC_ADRCCLINICALDATA"]
 d_volume = pp.load('volume')
 age_mapper = d_clinical.set_index('Subject')[['ageAtEntry']].drop_duplicates().to_dict()['ageAtEntry']
@@ -488,6 +491,7 @@ X = d_volume.iloc[:,7:]
 - If you enouge data it is always a good idea to check your model compared to a baseline model
 
 ```python
+import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import ShuffleSplit
 rng = np.random.default_rng(2021)
@@ -508,6 +512,7 @@ for i,(ix_train, ix_test) in enumerate(ss.split(X)):
 # How did we do? 
 
 ```python
+import seaborn as sns
 sns.scatterplot(data=score,x='r2',y='MAD',hue='Kind')
 ```
 
