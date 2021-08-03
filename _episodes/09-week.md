@@ -64,7 +64,7 @@ ax[1].scatter(X[:,0], X[:,1],c=y);
 
 # Classification using Linear Discriminant Analysis (LDA) (the simplest parametric model) 
 
-- In LDA our goal is to estimate 
+- In LDA our goal is to estimate  
 
 $$P(Y=k|X=x)$$ 
 
@@ -401,12 +401,12 @@ for ix,degree in enumerate(np.arange(1,18,2)):
 # Perfomance measures in regression 
 - Recall that in regression our task is to predict a continuous value (the depndent variable)
 based a set of independent variables that we assume hold some informative association to the target.
-- The various metrics we will use to evaluate regression results are
-    - Mean Absolute Error (MAE) $$\text{MAE} = 1/n \sum^n_{i=1} |y_i-\hat y_i|$$    
-    - Mean Squared Error(MSE) $$\text{MSE} = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
-    - Root-Mean-Squared-Error(RMSE) $$ \text{RMSE} = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$$
-    - Median absolute error (MAD)  $$\text{MAD}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid).$$
-    - $$R^2$$ Error $$ R^2 = 1-\frac{MSE(model)}{MSE(baseline)}$$
+- The various metrics we will use to evaluate regression results are  
+    - Mean Absolute Error (MAE)    
+    - Mean Squared Error(MSE) 
+    - Root-Mean-Squared-Error(RMSE) 
+    - Median absolute error (MAD)  
+    - $$R^2$$ Error 
 
 
 # Mean Absolute Error (MAE)  
@@ -415,7 +415,7 @@ based a set of independent variables that we assume hold some informative associ
 - MAE is a linear score which means all the individual differences are weighted equally.
 - One benefit of MAE is that it is simple to interpret as no transformation are done to the data.
 
-$$MAE = 1/n \sum^n_{i=1} |y_i-\hat y_i|$$
+$$\text{MAE} = 1/n \sum^n_{i=1} |y_i-\hat y_i|$$ 
 
 
 # Mean Squared Error (MSE) 
@@ -424,7 +424,7 @@ $$MAE = 1/n \sum^n_{i=1} |y_i-\hat y_i|$$
 - Squareing the differences means the metric is sensative even to small errors
 - This leads to over-estimation of error.
 
-$$MSE = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
+$$\text{MSE} = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
 
 # Root Mean Squared Error (RMSE)
 - RMSE is the most widely used metric for regression tasks
@@ -433,7 +433,14 @@ $$MSE = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
 - This poses a high penalty on large errors. 
 - And suggests that RMSE is most useful when large errors are undesired.    
 
-$$RMSE = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$$ 
+$$ \text{RMSE} = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$$
+
+# Median absolute error (MAD)
+- A robust measure of the variability of a univariate sample of quantitative data. 
+- It is a more resilient error measure to outliers in a data set than the standard deviation.
+- It is easy to comunicate 
+
+$$\text{MAD}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid).$$
 
 # $$R^2$$ Error
 - $$R^2$$ is another metric used for evaluating the performance of a regression model
