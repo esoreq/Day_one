@@ -399,11 +399,11 @@ for ix,degree in enumerate(np.arange(1,18,2)):
 - Recall that in regression our task is to predict a continuous value (the depndent variable)
 based a set of independent variables that we assume hold some informative association to the target.
 - The various metrics we will use to evaluate regression results are
-    - Mean Absolute Error (MAE) $text{MAE} = 1/n \sum^n_{i=1} |y_i-\hat y_i|$    
-    - Mean Squared Error(MSE) $text{MSE} = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$
-    - Root-Mean-Squared-Error(RMSE) $ text{RMSE} = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$ 
-    - Median absolute error (MAD)  $\text{MAD}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid).$
-    - $R^2$ Error $ R^2 = 1-\frac{MSE(model)}{MSE(baseline)}$
+    - Mean Absolute Error (MAE) $$text{MAE} = 1/n \sum^n_{i=1} |y_i-\hat y_i|$$    
+    - Mean Squared Error(MSE) $$text{MSE} = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
+    - Root-Mean-Squared-Error(RMSE) $$ text{RMSE} = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$$
+    - Median absolute error (MAD)  $$\text{MAD}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid).$$
+    - $$R^2$$ Error $$ R^2 = 1-\frac{MSE(model)}{MSE(baseline)}$$
 
 
 # Mean Absolute Error (MAE)  
@@ -432,11 +432,11 @@ $$MSE = 1/n \sum^n_{i=1} (y_i-\hat y_i)^2$$
 
 $$RMSE = \sqrt{\frac{\sum^n_{i=1} (y_i-\hat y_i)^2}{n}}$$ 
 
-# $R^2$ Error
-- $R^2$ is another metric used for evaluating the performance of a regression model
-- The $R^2$ metric is used to compare a regression model with some constant baseline (usually the mean)
+# $$R^2$$ Error
+- $$R^2$$ is another metric used for evaluating the performance of a regression model
+- The $$R^2$$ metric is used to compare a regression model with some constant baseline (usually the mean)
 - The larger the difference, between the model and the baseline the greater the value (and the better the model)
-- $$R^2$ range is $(-\infty,1)$$; as a result, worse models then the mean constant will be negative 
+- $$R^2$$ range is $$(-\infty,1)$$; as a result, worse models then the mean constant will be negative 
 
 $$ R^2 = 1-\frac{MSE(model)}{MSE(baseline)}$$
 
