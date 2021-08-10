@@ -368,7 +368,7 @@ pg.ttest(score_ideal[ix].MAD.values, score_ideal[-ix].MAD.values)
 ~~~
     - Or r2
 ~~~python        
-sns.displot(x='r2', hue='Kind', data=score)
+sns.displot(x='r2', hue='Kind', data=score_ideal)
 ix = score_ideal.Kind == 'Bayesian'
 pg.ttest(score_ideal[ix].r2.values, score_ideal[-ix].r2.values)
 ~~~
