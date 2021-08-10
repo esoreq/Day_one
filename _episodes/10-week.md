@@ -452,8 +452,9 @@ ax.set_title('Bootstrap');
 
 
 ~~~python
-vm = score[ix].r2.mean()
-empirical_p = (np.sum(vm > score[-ix].r2)+1)/(n_perms+1)
+ix = score_boot.Kind == 'Bayesian'
+vm = score_boot[ix].r2.mean()
+empirical_p = (np.sum(vm > score_boot[-ix].r2)+1)/(n_perms+1)
 fig, ax = plt.subplots(figsize=(12, 4))
 sns.scatterplot(x='r2', y='Kind', hue='Kind', data=score_boot,  ax=ax)
 ax.plot([vm,vm],[0,1], 'r:*')
