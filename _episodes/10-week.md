@@ -399,12 +399,12 @@ ax[0].set_title('Naive 10xCV');
 ## We can measure the significance 
 
 ~~~python        
-sns.displot(x='r2', hue='Kind', data=score)
+sns.displot(x='r2', hue='Kind', data=score_naive)
 ix = score_naive.Kind == 'Bayesian'
 pg.ttest(score_naive[ix].r2.values, score_naive[-ix].r2.values)
 ~~~
 ~~~python        
-sns.displot(x='MAD', hue='Kind', data=score)
+sns.displot(x='MAD', hue='Kind', data=score_naive)
 ix = score_naive.Kind == 'Bayesian'
 pg.ttest(score_naive[ix].MAD.values, score_naive[-ix].MAD.values)
 ~~~
